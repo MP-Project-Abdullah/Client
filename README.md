@@ -55,4 +55,4 @@
 
 ## Project
 
-[project][project.com]
+[wireframe.pdf](https://github.com)
