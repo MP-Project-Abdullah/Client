@@ -37,6 +37,10 @@
 | /newProject     | user        | create new project   | Authentication |
 | /account        | user        | info user            | Authentication |
 
+## Project
+
+[Project URL](www.abdullah.com)
+
 # UML
 
 ![Screenshot (133)](https://user-images.githubusercontent.com/92247941/146355647-546d7063-c5e4-4e6f-8c99-73f555f88a6a.png)
@@ -52,7 +56,3 @@
 ![New project](https://user-images.githubusercontent.com/92247941/146673151-178803f2-a05c-48ba-bc13-98fa66c7bf85.png)
 
 [wireframe.pdf](https://github.com/MP-Project-Abdullah/Client/files/7740657/wireframe.pdf)
-
-## Project
-
-[Project URL](www.abdullah.com)
