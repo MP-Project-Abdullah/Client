@@ -55,4 +55,4 @@
 
 ## Project
 
-[wireframe.pdf](www.abdullah.com)
+[Project URL](www.abdullah.com)
