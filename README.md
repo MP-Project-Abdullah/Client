@@ -26,6 +26,8 @@
 
 - [clinte](https://github.com/MP-Project-Abdullah/Client/blob/main/README.md)
 
+- [Project URL](www.abdullah.com)
+
 ## Routers
 
 | URL             | Permissions | Behavior             | Auth           |
@@ -40,10 +42,6 @@
 | /donate/:id     | user        | donation page        | Authentication |
 | /newProject     | user        | create new project   | Authentication |
 | /account        | user        | info user            | Authentication |
-
-## Project
-
-[Project URL](www.abdullah.com)
 
 # UML
 
