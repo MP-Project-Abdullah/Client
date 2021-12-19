@@ -25,3 +25,17 @@
 # UML
 
 ![Screenshot (133)](https://user-images.githubusercontent.com/92247941/146355647-546d7063-c5e4-4e6f-8c99-73f555f88a6a.png)
+
+## Routers
+
+| URL             | Permissions | Behavior             |
+| --------------- | ----------- | -------------------- |
+| /register       | Public      | create new account   |
+| /login          | Public      | Login                |
+| /               | Public      | Home page            |
+| /projects/:kind | Public      | project base on kind |
+| /story          | Public      | info story           |
+| /project        | Public      | info project         |
+| /donate         | Private     | donation page        |
+| /newProject     | Private     | create new project   |
+| /account        | Private     | info user            |
