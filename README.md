@@ -43,7 +43,8 @@
 
 # UML
 
-![Screenshot (133)](https://user-images.githubusercontent.com/92247941/146355647-546d7063-c5e4-4e6f-8c99-73f555f88a6a.png)
+![Untitled Diagram drawio](https://user-images.githubusercontent.com/92247941/146675787-33823d2e-4c50-4bcc-a104-1d7f7665e44d.png)
+
 
 # Wireframe
 
