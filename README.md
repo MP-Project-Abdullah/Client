@@ -47,6 +47,8 @@
 
 # Wireframe
 
+[wireframe.pdf](https://github.com/MP-Project-Abdullah/Client/files/7740657/wireframe.pdf)
+
 ![Home](https://user-images.githubusercontent.com/92247941/146673150-9826b816-360f-4764-82d7-35d29ee7da8d.png)
 ![Projects](https://user-images.githubusercontent.com/92247941/146673147-e47d7427-3854-424c-b760-2c14c6cf0369.png)
 ![Project info compaign](https://user-images.githubusercontent.com/92247941/146673144-0372ff6a-6162-4d17-b823-d6320233a550.png)
@@ -54,5 +56,3 @@
 ![Account](https://user-images.githubusercontent.com/92247941/146673149-e0b6a253-36ba-4eec-950d-166efe08b28d.png)
 ![Account edit](https://user-images.githubusercontent.com/92247941/146673148-258cb6c6-6bbd-409c-9a66-515da97a2f95.png)
 ![New project](https://user-images.githubusercontent.com/92247941/146673151-178803f2-a05c-48ba-bc13-98fa66c7bf85.png)
-
-[wireframe.pdf](https://github.com/MP-Project-Abdullah/Client/files/7740657/wireframe.pdf)
