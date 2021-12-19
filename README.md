@@ -40,3 +40,9 @@
 | /donate/:id     | Private     | donation page        |
 | /newProject     | Private     | create new project   |
 | /account        | Private     | info user            |
+
+
+# Wireframe 
+
+[wireframe.pdf](https://github.com/MP-Project-Abdullah/Client/files/7740657/wireframe.pdf)
+
