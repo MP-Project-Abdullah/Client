@@ -28,18 +28,18 @@
 
 ## Routers
 
-| URL             | Permissions | Behavior             |
-| --------------- | ----------- | -------------------- |
-| /register       | geust       | create new account   |
-| /login          | geust       | Login                |
-| /               | geust       | Home page            |
-| /projects/:kind | geust       | project base on kind |
-| /project/:id    | geust       | project by id        |
-| /storys         | geust       | all story            |
-| /story          | geust       | info story           |
-| /donate/:id     | user        | donation page        |
-| /newProject     | user        | create new project   |
-| /account        | user        | info user            |
+| URL             | Permissions | Behavior             | Auth           |
+| --------------- | ----------- | -------------------- | -------------- |
+| /register       | geust       | create new account   |                |
+| /login          | geust       | Login                |                |
+| /               | geust       | Home page            |                |
+| /projects/:kind | geust       | project base on kind |                |
+| /project/:id    | geust       | project by id        |                |
+| /storys         | geust       | all story            |                |
+| /story          | geust       | info story           |                |
+| /donate/:id     | user        | donation page        | Authentication |
+| /newProject     | user        | create new project   | Authentication |
+| /account        | user        | info user            | Authentication |
 
 # Wireframe
 
