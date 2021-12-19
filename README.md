@@ -18,10 +18,6 @@
 
 - **Update project** : As a user i can update my project description or upload new images, although must be approved by the admin.
 
-# Trello 
-
-[Trello](https://trello.com/b/I4xUaGQ9/mp-project-abdullah)
-
 # UML 
 
 ![Screenshot (133)](https://user-images.githubusercontent.com/92247941/146355647-546d7063-c5e4-4e6f-8c99-73f555f88a6a.png)
