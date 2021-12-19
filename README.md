@@ -34,8 +34,9 @@
 | /login          | Public      | Login                |
 | /               | Public      | Home page            |
 | /projects/:kind | Public      | project base on kind |
+| /project/:id    | Public      | project by id        |
+| /storys         | Public      | all story            |
 | /story          | Public      | info story           |
-| /project        | Public      | info project         |
-| /donate         | Private     | donation page        |
+| /donate/:id     | Private     | donation page        |
 | /newProject     | Private     | create new project   |
 | /account        | Private     | info user            |
