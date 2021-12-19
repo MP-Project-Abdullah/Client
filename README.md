@@ -30,19 +30,17 @@
 
 | URL             | Permissions | Behavior             |
 | --------------- | ----------- | -------------------- |
-| /register       | Public      | create new account   |
-| /login          | Public      | Login                |
-| /               | Public      | Home page            |
-| /projects/:kind | Public      | project base on kind |
-| /project/:id    | Public      | project by id        |
-| /storys         | Public      | all story            |
-| /story          | Public      | info story           |
-| /donate/:id     | Private     | donation page        |
-| /newProject     | Private     | create new project   |
-| /account        | Private     | info user            |
+| /register       | geust       | create new account   |
+| /login          | geust       | Login                |
+| /               | geust       | Home page            |
+| /projects/:kind | geust       | project base on kind |
+| /project/:id    | geust       | project by id        |
+| /storys         | geust       | all story            |
+| /story          | geust       | info story           |
+| /donate/:id     | user        | donation page        |
+| /newProject     | user        | create new project   |
+| /account        | user        | info user            |
 
-
-# Wireframe 
+# Wireframe
 
 [wireframe.pdf](https://github.com/MP-Project-Abdullah/Client/files/7740657/wireframe.pdf)
-
