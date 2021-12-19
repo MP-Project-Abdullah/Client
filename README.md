@@ -22,10 +22,6 @@
 
 [Trello](https://trello.com/b/I4xUaGQ9/mp-project-abdullah)
 
-# UML
-
-![Screenshot (133)](https://user-images.githubusercontent.com/92247941/146355647-546d7063-c5e4-4e6f-8c99-73f555f88a6a.png)
-
 ## Routers
 
 | URL             | Permissions | Behavior             | Auth           |
@@ -40,6 +36,10 @@
 | /donate/:id     | user        | donation page        | Authentication |
 | /newProject     | user        | create new project   | Authentication |
 | /account        | user        | info user            | Authentication |
+
+# UML
+
+![Screenshot (133)](https://user-images.githubusercontent.com/92247941/146355647-546d7063-c5e4-4e6f-8c99-73f555f88a6a.png)
 
 # Wireframe
 
