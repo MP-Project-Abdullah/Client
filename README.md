@@ -32,13 +32,13 @@
 
 | URL             | Permissions | Behavior             | Auth           |
 | --------------- | ----------- | -------------------- | -------------- |
-| /register       | geust       | create new account   |                |
-| /login          | geust       | Login                |                |
-| /               | geust       | Home page            |                |
-| /projects/:kind | geust       | project base on kind |                |
-| /project/:id    | geust       | project by id        |                |
-| /storys         | geust       | all story            |                |
-| /story          | geust       | info story           |                |
+| /register       | guest       | create new account   |                |
+| /login          | guest       | Login                |                |
+| /               | guest       | Home page            |                |
+| /projects/:kind | guest       | project base on kind |                |
+| /project/:id    | guest       | project by id        |                |
+| /storys         | guest       | all story            |                |
+| /story          | guest       | info story           |                |
 | /donate/:id     | user        | donation page        | Authentication |
 | /newProject     | user        | create new project   | Authentication |
 | /account        | user        | info user            | Authentication |
