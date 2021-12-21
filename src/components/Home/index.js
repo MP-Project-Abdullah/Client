@@ -59,12 +59,15 @@ const Home = () => {
 
   return (
     <div>
+        <h1 className="welcoming">Blab leb lab lob</h1>
       <div className="totalDonateProject">
         <div className="total">
-          <h1>Total donations : 2000 $</h1>
+          <h1>2000 $</h1>
+          <p>Total donations </p>
         </div>
         <div className="total">
-          <h1>Total projects : 20</h1>
+          <h1> 20 </h1>
+          <p>Total projects</p>
         </div>
       </div>
       <h1 className="h1Leatest">Leatest work:</h1>
@@ -116,6 +119,7 @@ const Home = () => {
               </div>
             </div>
           )}
+          <div className="lineBetween"> </div>
           <div className="storysDiv">
             {stories.length &&
               stories.map((item) => {
@@ -127,6 +131,7 @@ const Home = () => {
                       <div className="lineFirst"></div>
                       <p className="descStorys">{item.desc}</p>
                     </div>
+                    <div className="lineBetweenStory"> </div>
                   </div>
                 );
               })}
