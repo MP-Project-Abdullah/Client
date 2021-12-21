@@ -1,0 +1,80 @@
+.totalDonateProject {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+.total {
+  padding: 2%;
+  width: 42%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.h1Leatest {
+  margin-top: 4%;
+  border-bottom: 1px solid black;
+  width: 35vh;
+  margin-left: 2%;
+  font-size: 4vh;
+}
+
+.leatestImg {
+  width: 100%;
+  height: 38vh;
+}
+
+.projectLeatsetDiv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
+  padding: 2%;
+}
+
+.projectLeatset {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.divInsideLeatestProject {
+  padding: 3%;
+}
+
+.titleLeatestProject {
+  margin: 2vh 0;
+}
+
+.describeProjectLeatest {
+  font-size: 15px;
+}
+
+.goalLeatsetProject {
+  margin: 1vh 0;
+}
+
+.pledgedLeatsetProject {
+  margin: 1vh 0;
+}
+
+.pDescribe {
+  height: 15vh;
+}
+
+.time {
+  font-size: 8px;
+  margin-top: 1vh;
+}
+
+.kindAndLocation {
+  display: flex;
+}
+
+.kind {
+  text-decoration: underline;
+}
+
+.location {
+  margin-left: 8vh;
+  text-decoration: underline;
+}
