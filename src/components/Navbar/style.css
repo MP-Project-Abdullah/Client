@@ -1,0 +1,23 @@
+.navbar {
+  margin-top: 0.5%;
+}
+
+.ulNav {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5%;
+
+}
+
+.ulNav li {
+  cursor: pointer;
+}
+
+.websiteName {
+  text-align: center;
+  padding: 0.5%;
+}
+
+
+

@@ -1,0 +1,50 @@
+.divLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.wrapperLogin {
+  text-align: center;
+}
+
+.btnsForm {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+}
+
+.inputLogin {
+  height: 2.5rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#loginSubmit {
+  cursor: pointer;
+  background-color: rgba(1, 80, 252, 0.603);
+  border: 0;
+  transition: 0.3s ease-in-out;
+}
+
+#loginSubmit:hover {
+  transition: 0.3s ease-in-out;
+  background-color: rgba(1, 80, 252, 0.705);
+}
+/* 
+.google {
+  height: 2.5rem;
+  margin-top: 5px;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+} */
+
+/* .google:hover {
+  transition: 0.3s ease-in-out;
+
+  background-color: rgb(255, 72, 72);
+} */

@@ -1,0 +1,194 @@
+.totalDonateProject {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
+.welcoming {
+  text-align: center;
+  margin-top: 4vh;
+}
+
+.total {
+  padding: 1%;
+  width: 42%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+  text-align: center;
+}
+
+.h1Leatest {
+  margin-top: 4%;
+  width: 35vh;
+  margin-left: 2%;
+  font-size: 4vh;
+  color: rgb(106, 106, 106);
+}
+
+.leatestImg {
+  width: 100%;
+  height: 38vh;
+}
+
+.projectLeatsetDiv {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
+  padding: 2%;
+}
+
+.projectLeatset {
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+.projectLeatset:hover {
+  transform: scale(1.05);
+}
+
+.divInsideLeatestProject {
+  padding: 3%;
+}
+
+.titleLeatestProject {
+  margin: 2vh 0;
+}
+
+.describeProjectLeatest {
+  font-size: 15px;
+}
+
+.goalLeatsetProject {
+  font-size: 13px;
+  margin: 1vh 0;
+}
+
+.pledgedLeatsetProject {
+  font-size: 13px;
+  margin: 1vh 0;
+}
+
+.deadlineLeatsetProject {
+  font-size: 13px;
+}
+
+.pDescribe {
+  height: 15vh;
+}
+
+.time {
+  font-size: 8px;
+  margin-top: 1vh;
+}
+
+.kindAndLocation {
+  display: flex;
+  font-size: 13px;
+}
+
+.kind {
+  text-decoration: underline;
+}
+
+.location {
+  margin-left: 8vh;
+  text-decoration: underline;
+}
+.containerStory {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+  width: 96%;
+  margin: auto;
+  margin-top: 4vh;
+}
+.imgStory {
+  width: 35vh;
+  height: 35vh;
+}
+
+.storyDiv {
+  display: flex;
+  padding: 2%;
+}
+
+.lastStory {
+  width: 70%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.lastStory:hover {
+  transform: scale(1.01);
+}
+
+.lastStoryImg {
+  width: 100%;
+  height: 75vh;
+}
+
+.titleStory {
+  font-size: 15px;
+}
+
+.descStorys {
+  font-size: 10px;
+  margin-top: 10px;
+}
+
+.lastStoryP {
+  margin-top: 10px;
+}
+
+.storysDiv {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 5vh;
+  margin-right: 4vh;
+}
+
+.story {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.story:hover {
+  transform: scale(1.01);
+}
+
+.imgStory {
+  width: 100%;
+}
+
+.paddingPandTitle {
+  padding: 2%;
+}
+
+.line {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.313);
+  width: 80%;
+  margin: auto;
+}
+
+.lineFirst {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.313);
+  width: 80%;
+}
+
+.lineAll {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.313);
+  width: 100%;
+}
+
+.lineBetween {
+  border-right: 1px solid rgba(0, 0, 0, 0.313);
+  margin: 0 5vh;
+}
+
+/* .container { */
+  /* background-image: url("https://firebasestorage.googleapis.com/v0/b/project-2-4f59d.appspot.com/o/background.png?alt=media&token=86b3212d-913e-4bdf-9624-4dcc26c8bddb");
+  background-repeat: no-repeat; */
+  /* background-size: cover; */
+/* } */
