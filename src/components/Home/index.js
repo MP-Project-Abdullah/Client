@@ -58,19 +58,21 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container"> 
+      <div className="backgroundDiv">
         <h1 className="welcoming">Blab leb lab lob</h1>
-      <div className="totalDonateProject">
-        <div className="total">
-          <h1>2000 $</h1>
-          <p>Total donations </p>
-        </div>
-        <div className="total">
-          <h1> 20 </h1>
-          <p>Total projects</p>
+        <div className="totalDonateProject">
+          <div className="total">
+            <h1>2000 $</h1>
+            <p>Total donations </p>
+          </div>
+          <div className="total">
+            <h1> 20 </h1>
+            <p>Total projects</p>
+          </div>
         </div>
       </div>
-      <h1 className="h1Leatest">Leatest work:</h1>
+      <h1 className="h1Leatest">Leatest work</h1>
       <div className="projectLeatsetDiv">
         {latestWork &&
           latestWork.map((item) => {
@@ -101,7 +103,7 @@ const Home = () => {
           })}
       </div>
       <div className="line"></div>
-      <h1 className="h1Leatest">Success storys:</h1>
+      <h1 className="h1Leatest">Success storys</h1>
       <div className="containerStory">
         <div className="storyDiv">
           {lastStory.length && (

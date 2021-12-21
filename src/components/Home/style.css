@@ -18,10 +18,10 @@
 
 .h1Leatest {
   margin-top: 4%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.313);
   width: 35vh;
   margin-left: 2%;
   font-size: 4vh;
+  color: rgb(106, 106, 106);
 }
 
 .leatestImg {
@@ -186,3 +186,9 @@
   border-right: 1px solid rgba(0, 0, 0, 0.313);
   margin: 0 5vh;
 }
+
+/* .container { */
+  /* background-image: url("https://firebasestorage.googleapis.com/v0/b/project-2-4f59d.appspot.com/o/background.png?alt=media&token=86b3212d-913e-4bdf-9624-4dcc26c8bddb");
+  background-repeat: no-repeat; */
+  /* background-size: cover; */
+/* } */
