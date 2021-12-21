@@ -5,15 +5,53 @@ import { useEffect } from "react";
 import axios from "axios";
 const Home = () => {
   const [latestWork, setLatestWork] = useState([]);
+  const [stories, setStories] = useState([]);
+  const [lastStory, setLastStory] = useState([]);
 
   const getLetestWork = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/projects`);
     let newArr = [];
-    for (let i = 0; i < 4; i++) {
-      newArr.push(res.data[i]);
+    for (let i = res.data.length - 1; i > res.data.length - 5; i--) {
+      if (i > -1) {
+        newArr.push(res.data[i]);
+      }
     }
     setLatestWork(newArr);
   };
+
+  const getStories = async () => {
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/storys`);
+    let newArr = [];
+    for (let i = res.data.length - 2; i > res.data.length - 4; i--) {
+      if (i > -1) {
+        newArr.push(res.data[i]);
+      }
+    }
+    console.log(newArr);
+    setStories(newArr);
+  };
+
+  //////////////////
+
+  const getLastStory = async () => {
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/storys`);
+    let newArr = [];
+    for (let i = res.data.length - 1; i > res.data.length - 2; i--) {
+      if (i > -1) {
+        newArr.push(res.data[i]);
+      }
+    }
+    console.log(newArr);
+    setLastStory(newArr);
+  };
+
+  useEffect(() => {
+    getLastStory();
+  }, []);
+
+  useEffect(() => {
+    getStories();
+  }, []);
 
   useEffect(() => {
     getLetestWork();
@@ -51,13 +89,49 @@ const Home = () => {
                   </p>
                   <div className="kindAndLocation">
                     <p className="kind">{item.kind}</p>
-                    <p className="location">Round Pushpin on SoftBank {item.location}</p>
+                    <p className="location"> {item.location}</p>
                   </div>
                   <p className="time">{item.time}</p>
                 </div>
               </div>
             );
           })}
+      </div>
+      <div className="line"></div>
+      <h1 className="h1Leatest">Success storys:</h1>
+      <div className="containerStory">
+        <div className="storyDiv">
+          {lastStory.length && (
+            <div className="lastStory">
+              <img
+                className="lastStoryImg"
+                src={lastStory[0].img}
+                alt="imgStory"
+              />{" "}
+              <div className="paddingPandTitle">
+                <h2>{lastStory[0].title}</h2>
+                <div className="lineFirst"></div>
+
+                <p className="lastStoryP">{lastStory[0].desc}</p>
+              </div>
+            </div>
+          )}
+          <div className="storysDiv">
+            {stories.length &&
+              stories.map((item) => {
+                return (
+                  <div className="story" key={item._id}>
+                    <img className="imgStory" src={item.img} alt="story" />
+                    <div className="paddingPandTitle">
+                      <h2 className="titleStory">{item.title}</h2>
+                      <div className="lineFirst"></div>
+                      <p className="descStorys">{item.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
       </div>
       <p>a</p>
       <p>a</p>

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <h1 className="websiteName">Website name</h1>
-      <hr />
+      <div className="lineAll"></div>
       <ul className="ulNav">
         <li>Home</li>
         <li>Kind</li>
@@ -12,7 +12,7 @@ const Navbar = () => {
         <li>Kind</li>
         <li>Profile</li>
       </ul>
-      <hr />
+      <div className="lineAll"></div>
     </div>
   );
 };
