@@ -38,7 +38,7 @@ export const login_reducser = (data) => {
   };
 };
 
-export const logout = (data) => {
+export const logout_reducser= (data) => {
   return {
     type: "LOGOUT",
     payload: data,
