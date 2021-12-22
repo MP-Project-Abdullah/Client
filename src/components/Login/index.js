@@ -33,25 +33,26 @@ const Login = () => {
       return Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Wrong email or password",
+        text: "Wrong email or username or password",
       });
     }
     if (res.data === "not found") {
       return Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Wrong email or password",
+        text: "Wrong email or username or password",
       });
     }
 
     // if (res.data.result.activate === false) {
     //   return navigate("/Confirm");
     // } else {
-      const data = {
-        user: res.data.result,
-        token: res.data.token,
-      };
-      dispatch(login_reducser({ data }));
+    const data = {
+      user: res.data.result,
+      token: res.data.token,
+    };
+    dispatch(login_reducser({ data }));
+    navigate("/");
     // }
   };
 
@@ -73,57 +74,53 @@ const Login = () => {
         } else {
           const data = { token: user.token, user: user.result };
           dispatch(login_reducser({ data }));
-          navigate("/");
+          navigate("/home");
         }
       }
     );
   };
   return (
     <div>
-      {state.signin_reducer.token ? (
-        <Home />
-      ) : (
-        <div className="divLogin">
-          <div className="wrapperLogin">
-            <h1>Login</h1>
-            <div className="btnsLogin">
-              <form onSubmit={logIn} className="btnsForm">
-                <input
-                  className="inputLogin"
-                  type="text"
-                  name="email"
-                  placeholder="Email or Username"
-                  onChange={(e) => setEmailOrUsername(e.target.value)}
-                  required
-                />
-                <input
-                  className="inputLogin"
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-                <input
-                  className="inputLogin"
-                  id="loginSubmit"
-                  type="submit"
-                  value="Login"
-                />
-              </form>
-            </div>
-            <button className="google" onClick={oAuth}>
-              Google+
-            </button>
-            <p onClick={reg} style={{ cursor: "pointer" }}>
-              Not have an account ?
-            </p>{" "}
-            <p style={{ cursor: "pointer" }} onClick={reset}>
-              Forgot the password ?
-            </p>
+      <div className="divLogin">
+        <div className="wrapperLogin">
+          <h1>Login</h1>
+          <div className="btnsLogin">
+            <form onSubmit={logIn} className="btnsForm">
+              <input
+                className="inputLogin"
+                type="text"
+                name="email"
+                placeholder="Email or Username"
+                onChange={(e) => setEmailOrUsername(e.target.value)}
+                required
+              />
+              <input
+                className="inputLogin"
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <input
+                className="inputLogin"
+                id="loginSubmit"
+                type="submit"
+                value="Login"
+              />
+            </form>
           </div>
+          <button className="google" onClick={oAuth}>
+            Google+
+          </button>
+          <p onClick={reg} style={{ cursor: "pointer" }}>
+            Not have an account ?
+          </p>{" "}
+          <p style={{ cursor: "pointer" }} onClick={reset}>
+            Forgot the password ?
+          </p>
         </div>
-      )}
+      </div>
     </div>
   );
 };
