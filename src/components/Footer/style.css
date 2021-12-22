@@ -1,0 +1,23 @@
+.footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  height: 19vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+}
+
+.ulFooter {
+  list-style: none;
+}
+
+.liFooter {
+  cursor: pointer;
+  width: max-content;
+}
+
+.liFooter:hover {
+  text-decoration: underline;
+}
