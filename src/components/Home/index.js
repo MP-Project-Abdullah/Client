@@ -3,6 +3,8 @@ import "./style.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import AboutUs from "../AboutUs";
+import Footer from "../Footer";
 const Home = () => {
   const [latestWork, setLatestWork] = useState([]);
   const [stories, setStories] = useState([]);
@@ -58,7 +60,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container"> 
+    <div className="container">
       <div className="backgroundDiv">
         <h1 className="welcoming">Blab leb lab lob</h1>
         <div className="totalDonateProject">
@@ -140,29 +142,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
+      <div className="circle"></div>
+      <div className="circle2"></div>
+      <div className="circle3"></div>
+
+      <div className="aboutUs">
+        <AboutUs />
+      </div>
     </div>
   );
 };

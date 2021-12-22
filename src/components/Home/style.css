@@ -187,8 +187,66 @@
   margin: 0 5vh;
 }
 
-/* .container { */
-  /* background-image: url("https://firebasestorage.googleapis.com/v0/b/project-2-4f59d.appspot.com/o/background.png?alt=media&token=86b3212d-913e-4bdf-9624-4dcc26c8bddb");
-  background-repeat: no-repeat; */
-  /* background-size: cover; */
-/* } */
+.aboutUs {
+  margin-top: 25vh;
+  padding: 2%;
+}
+
+.circle {
+  margin-top: 8.5%;
+  background-color: rgba(95, 158, 160, 0.388);
+  width: 35vh;
+  height: 40vh;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: -7%;
+}
+
+.circle2 {
+  margin-top: 2%;
+  background-color: rgba(95, 158, 160, 0.388);
+  width: 35vh;
+  height: 40vh;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: -10%;
+}
+
+.circle3 {
+  margin-top: 14%;
+  background-color: rgba(95, 158, 160, 0.388);
+  width: 35vh;
+  height: 40vh;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: -10%;
+}
+
+/* .circle4 {
+  margin-top: -16%;
+  background-color: rgba(95, 158, 160, 0.388);
+  width: 35vh;
+  height: 40vh;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: 5%;
+}
+
+.circle5 {
+  margin-top: -16%;
+  background-color: rgba(95, 158, 160, 0.388);
+  width: 35vh;
+  height: 40vh;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: 78%;
+}
+.circle6 {
+  margin-top: -16%;
+  background-color: rgba(95, 158, 160, 0.388);
+  width: 35vh;
+  height: 40vh;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: 41%;
+} */
