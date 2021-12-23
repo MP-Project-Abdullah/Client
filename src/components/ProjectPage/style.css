@@ -1,0 +1,77 @@
+.containerInfoProject {
+  display: flex;
+  padding: 5%;
+  justify-content: space-around;
+}
+
+.divTitleProject {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.h1Title {
+  border-bottom: 1px solid #bf8c4c;
+  width: max-content;
+}
+
+.imgProjectInfo {
+  width: 110vh;
+  height: 65vh;
+}
+
+.divGPD {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25%;
+  font-size: 5.5vh;
+  border-top: 3px solid #bf8c4c;
+  /* border-bottom: 3px solid #bf8c4c; */
+}
+
+.pGPD {
+  margin-bottom: 5px;
+}
+
+.pDeadline {
+  font-size: 11px;
+}
+
+.divDonateBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btnDonate {
+  width: 100%;
+  height: 8vh;
+  background-color: rgba(6, 81, 255, 0.66);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-size: 4vh;
+  color: white;
+}
+
+.btnDonate:hover {
+  background-color: rgba(6, 81, 255, 0.803);
+  transition: 0.3s ease-in-out;
+}
+
+.pLocation {
+  text-decoration: underline;
+}
+
+.pKind {
+  text-decoration: underline;
+}
+
+.divLK {
+  display: flex;
+  gap: 2rem;
+}
