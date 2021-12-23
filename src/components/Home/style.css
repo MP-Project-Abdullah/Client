@@ -42,9 +42,13 @@
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  transition: 0.3s ease-in-out ,
+  
+
 }
-.projectLeatset:hover {
+.projectLeatset:hover  {
   transform: scale(1.05);
+  transition: 0.3s ease-in-out;
 }
 
 .divInsideLeatestProject {

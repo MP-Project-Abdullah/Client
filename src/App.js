@@ -6,7 +6,9 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import "./App.css"
+import Art from "./components/Art";
+import ProjectPage from "./components/ProjectPage";
+import "./App.css";
 function App() {
   return (
     <div className="App">
@@ -15,9 +17,10 @@ function App() {
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/:art" element={<Art />} />
+        <Route exact path="/project/:id" element={<ProjectPage />} />
       </Routes>
       <Footer />
-
     </div>
   );
 }

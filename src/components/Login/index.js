@@ -44,9 +44,6 @@ const Login = () => {
       });
     }
 
-    // if (res.data.result.activate === false) {
-    //   return navigate("/Confirm");
-    // } else {
     const data = {
       user: res.data.result,
       token: res.data.token,
