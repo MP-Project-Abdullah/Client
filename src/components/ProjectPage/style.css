@@ -4,12 +4,16 @@
   justify-content: space-around;
 }
 
+.pDescribeInfo {
+  font-size: 18px;
+}
+
 .divTitleProject {
   margin-top: 5%;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .h1Title {
@@ -25,19 +29,15 @@
 .divGPD {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 25%;
   font-size: 5.5vh;
   border-top: 3px solid #bf8c4c;
-  /* border-bottom: 3px solid #bf8c4c; */
-}
-
-.pGPD {
-  margin-bottom: 5px;
 }
 
 .pDeadline {
   font-size: 11px;
+  margin-top: -12%;
 }
 
 .divDonateBtn {
@@ -50,7 +50,7 @@
 .btnDonate {
   width: 100%;
   height: 8vh;
-  background-color: rgba(6, 81, 255, 0.66);
+  background-color: #bf8c4c;
   border: none;
   cursor: pointer;
   transition: 0.3s ease-in-out;
@@ -59,7 +59,7 @@
 }
 
 .btnDonate:hover {
-  background-color: rgba(6, 81, 255, 0.803);
+  background-color: #cc8c3d;
   transition: 0.3s ease-in-out;
 }
 
@@ -74,4 +74,54 @@
 .divLK {
   display: flex;
   gap: 2rem;
+}
+
+.divBtnsCC {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.divBtnCompaign {
+  width: 40.4%;
+}
+
+.divBtnComments {
+  width: 40.4%;
+}
+
+.btnCC {
+  width: 100%;
+  height: 10vh;
+  font-size: 4.5vh;
+  background-color: #bf8c4c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Compaign */
+
+.containerProjectInfo {
+  padding: 8%;
+}
+
+.divProjectPinfo {
+  /* text-align: center; */
+  margin-bottom: 4%;
+  font-size: 18px;
+}
+
+.divInfoProjectImg {
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+  margin-bottom: 4%;
+}
+
+
+.divTitle {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
 }
