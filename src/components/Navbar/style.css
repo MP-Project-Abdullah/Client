@@ -1,5 +1,8 @@
 .navbar {
   margin-top: 0.5%;
+  background-color: transparent;
+  position: relative;
+  z-index: 3;
 }
 
 .ulNav {
@@ -7,11 +10,14 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0.5%;
-
 }
 
 .ulNav li {
   cursor: pointer;
+}
+
+.ulNav:hover li {
+  color: saddlebrown;
 }
 
 .websiteName {
@@ -24,4 +30,6 @@
   color: black;
 }
 
-
+.linkNav:hover {
+  color: #bf8c4c;
+}
