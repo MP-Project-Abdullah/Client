@@ -27,7 +27,7 @@ const ProjectPage = () => {
       {project.length &&
         project.map((item) => {
           return (
-            <div key={item._id}>
+            <div key={item._id} className="containerProjectAll">
               <div className="divTitleProject">
                 <h1 className="h1Title">{item.title}</h1>
                 <p className="pDescribeInfo">{item.describe}</p>

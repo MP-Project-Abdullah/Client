@@ -4,11 +4,14 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import AboutUs from "../AboutUs";
-import Footer from "../Footer";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [latestWork, setLatestWork] = useState([]);
   const [stories, setStories] = useState([]);
   const [lastStory, setLastStory] = useState([]);
+
+  const navigate = useNavigate();
 
   const getLetestWork = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/projects`);
@@ -59,6 +62,10 @@ const Home = () => {
     getLetestWork();
   }, []);
 
+  const projectPage = (id) => {
+    navigate(`/project/${id}`);
+  };
+
   return (
     <div className="container">
       <div className="backgroundDiv">
@@ -79,7 +86,11 @@ const Home = () => {
         {latestWork &&
           latestWork.map((item) => {
             return (
-              <div key={item._id} className="projectLeatset">
+              <div
+                key={item._id}
+                className="projectLeatset "
+                onClick={() => projectPage(item._id)}
+              >
                 <img className="leatestImg" src={item.img} alt="project" />
                 <div className="divInsideLeatestProject">
                   <h2 className="titleLeatestProject">Title: {item.title}</h2>
@@ -142,7 +153,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-     
 
       <div className="aboutUs">
         <AboutUs />
