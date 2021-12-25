@@ -22,7 +22,7 @@
 }
 
 .imgProjectInfo {
-  width: 110vh;
+  width: 120vh;
   height: 65vh;
 }
 
@@ -33,6 +33,10 @@
   width: 25%;
   font-size: 5.5vh;
   border-top: 3px solid #bf8c4c;
+}
+
+#goal {
+  color: #bf8c4c;
 }
 
 .pDeadline {
@@ -107,7 +111,6 @@
 }
 
 .divProjectPinfo {
-  /* text-align: center; */
   margin-bottom: 4%;
   font-size: 18px;
 }
@@ -125,5 +128,7 @@
   height: 80vh;
 }
 
-.divProjectPinfo {
+.comment {
+  margin-top: 5%;
+  padding: 4.5%;
 }

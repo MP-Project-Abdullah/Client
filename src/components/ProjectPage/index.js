@@ -6,11 +6,14 @@ import { useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
 import Title from "react-vanilla-tilt";
 import "./style.css";
+import Comment from "../Comment";
 const ProjectPage = () => {
-  const id = useParams().id;
+  const id = useParams().id; // Get project id
 
-  const [project, setProject] = useState([]);
-  const [compaignComment, setCompaignComment] = useState(true);
+  const [project, setProject] = useState([]); // The project
+  const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
+
+  // Get project by id
   const getData = async () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
@@ -18,10 +21,12 @@ const ProjectPage = () => {
     setProject(res.data);
   };
 
+  // Invoke getData
   useEffect(() => {
     getData();
   }, []);
 
+  // Return
   return (
     <div>
       {project.length &&
@@ -51,7 +56,9 @@ const ProjectPage = () => {
                 <div className="divGPD">
                   {" "}
                   <div>
-                    <p className="pGPD">Goal {item.goal} US$</p>
+                    <p className="pGPD" id="goal">
+                      Goal {item.goal} 💰
+                    </p>
                   </div>
                   <div>
                     <p className="pGPD">Pledged {item.pledged}</p>{" "}
@@ -75,22 +82,53 @@ const ProjectPage = () => {
               <div>
                 <div className="divBtnsCC">
                   <div className="divBtnCompaign">
-                    <button
-                      className="btnCC"
-                      onClick={() => setCompaignComment(true)}
-                    >
-                      {" "}
-                      Compaign{" "}
-                    </button>
+                    {compaignComment ? (
+                      <button
+                        className="btnCC"
+                        onClick={() => setCompaignComment(true)}
+                      >
+                        {" "}
+                        Compaign{" "}
+                      </button>
+                    ) : (
+                      <button
+                        style={{
+                          background: "white",
+                          color: "black",
+                          border: "1px solid black",
+                        }}
+                        className="btnCC"
+                        onClick={() => setCompaignComment(true)}
+                      >
+                        {" "}
+                        Compaign{" "}
+                      </button>
+                    )}
                   </div>{" "}
-                  <div className="divBtnComments">
-                    <button
-                      className="btnCC"
-                      onClick={() => setCompaignComment(false)}
-                    >
-                      Comment
-                    </button>
-                  </div>
+                  {compaignComment ? (
+                    <div className="divBtnComments">
+                      <button
+                        style={{
+                          background: "white",
+                          color: "black",
+                          border: "1px solid black",
+                        }}
+                        className="btnCC"
+                        onClick={() => setCompaignComment(false)}
+                      >
+                        Comment
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="divBtnComments">
+                      <button
+                        className="btnCC"
+                        onClick={() => setCompaignComment(false)}
+                      >
+                        Comment
+                      </button>
+                    </div>
+                  )}
                 </div>{" "}
               </div>
               <div>
@@ -248,7 +286,10 @@ const ProjectPage = () => {
                       })}
                   </div>
                 ) : (
-                  <div> false</div>
+                  <div className="comment">
+                    {" "}
+                    <Comment id={id} />{" "}
+                  </div>
                 )}
               </div>
             </div>

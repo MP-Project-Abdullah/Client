@@ -5,43 +5,46 @@ import { useEffect } from "react";
 import axios from "axios";
 import AboutUs from "../AboutUs";
 import { useNavigate } from "react-router-dom";
+import Title from "react-vanilla-tilt";
 
 const Home = () => {
-  const [latestWork, setLatestWork] = useState([]);
-  const [stories, setStories] = useState([]);
-  const [lastStory, setLastStory] = useState([]);
-  const [donations, setDonations] = useState("");
-  const [projects, setProjects] = useState([]);
-  const [totalProject, setTotalProject] = useState(0);
+  const [latestWork, setLatestWork] = useState([]); // Leatest work
+  const [stories, setStories] = useState([]); // All stories
+  const [lastStory, setLastStory] = useState([]); // Leatest stories
+  const [donations, setDonations] = useState(""); // All donations
+  const [projects, setProjects] = useState([]); // All projects
+  const [totalProject, setTotalProject] = useState(0); // Total projects
 
   const navigate = useNavigate();
 
+  // Get all project
   const getData = async () => {
     let res = await axios.get(`${process.env.REACT_APP_BASE_URL}/projects`);
     setProjects(res.data);
     setTotalProject(res.data.length);
   };
 
+  // Invoke getData
   useEffect(() => {
     getData();
   }, []);
 
+  // Sum all donations
+  const sumDonations = () => {
+    let sum = 0;
+
+    projects.map((item) => {
+      sum += item.pledged;
+    });
+    setDonations(sum);
+  };
+
+  // Invoke sumDonations
   useEffect(() => {
     sumDonations();
   }, [projects]);
 
-  const sumDonations = () => {
-    console.log(projects);
-    let sum = 0;
-
-    projects.map((item) => {
-      console.log(item.pledged);
-      sum += item.pledged;
-    });
-    console.log(sum, "SUM");
-    setDonations(sum);
-  };
-
+  // Get leatest project
   const getLetestWork = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/projects`);
     let newArr = [];
@@ -53,6 +56,7 @@ const Home = () => {
     setLatestWork(newArr);
   };
 
+  // Get stories
   const getStories = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/storys`);
     let newArr = [];
@@ -64,8 +68,7 @@ const Home = () => {
     setStories(newArr);
   };
 
-  //////////////////
-
+  // Get leatest story
   const getLastStory = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/storys`);
     let newArr = [];
@@ -77,22 +80,27 @@ const Home = () => {
     setLastStory(newArr);
   };
 
+  // Invoke getLastStory
   useEffect(() => {
     getLastStory();
   }, []);
 
+  // Invoke getStories
   useEffect(() => {
     getStories();
   }, []);
 
+  // Invoke getLetestWork
   useEffect(() => {
     getLetestWork();
   }, []);
 
+  // Navigate to project page
   const projectPage = (id) => {
     navigate(`/project/${id}`);
   };
 
+  // Return
   return (
     <div className="container">
       <div className="divImg">
@@ -106,13 +114,29 @@ const Home = () => {
           {/* <h1 className="welcoming">Blab leb lab lob</h1> */}
           <div className="totalDonateProject">
             <div className="total">
-              <h1>{donations} $</h1>
-
-              <p>Total donations </p>
+              <Title
+                style={{
+                  height: "0",
+                }}
+              >
+                <div> 
+                  <h1>{donations} $</h1>
+                  <p>Total donations </p>
+                </div>
+              </Title>
             </div>
+
             <div className="total">
-              <h1> {totalProject} </h1>
-              <p>Total projects</p>
+              <Title
+                style={{
+                  height: "0",
+                }}
+              >
+                <div>
+                  <h1> {totalProject} </h1>
+                  <p>Total projects</p>
+                </div>
+              </Title>
             </div>
           </div>
         </div>

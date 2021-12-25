@@ -5,14 +5,73 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-
 }
 
 .btnNotLogin {
   width: 30%;
-  background-color: #BF8C4C;
+  background-color: #bf8c4c;
   border: none;
   height: 6.5vh;
   color: white;
-  
+  cursor: pointer;
+}
+
+.containerAccount {
+  padding: 5%;
+}
+
+.avatar {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 100%;
+}
+
+.avatarAndName {
+  display: flex;
+  gap: 2vh;
+}
+
+.nameAndUsernmae {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 4vh;
+}
+
+.infoAndEdit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.editProfile {
+  border: none;
+  width: 20vh;
+  height: 6vh;
+  background-color: #bf8c4c;
+  color: white;
+  font-size: 3vh;
+  cursor: pointer;
+}
+
+.divBio {
+  padding: 1%;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.newBioInput {
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  font-size: 2vh;
+}
+
+#newName {
+  color: gray;
+}
+
+#newBio {
+  color: gray;
 }
