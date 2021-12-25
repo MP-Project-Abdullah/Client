@@ -106,7 +106,7 @@ const Home = () => {
       <div className="divImg">
         <div className="backgroundDiv"></div>
         <img
-          src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          src="https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           alt="background"
           className="background"
         />
