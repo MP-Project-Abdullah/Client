@@ -7,8 +7,9 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Art from "./components/Art";
-import Account from "./components/Account"
+import Account from "./components/Account";
 import ProjectPage from "./components/ProjectPage";
+import Reset from "./components/Reset";
 import "./App.css";
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/:art" element={<Art />} />
         <Route exact path="/profile" element={<Account />} />
+        <Route exact path="/reset" element={<Reset />} />
 
         <Route exact path="/project/:id" element={<ProjectPage />} />
       </Routes>
