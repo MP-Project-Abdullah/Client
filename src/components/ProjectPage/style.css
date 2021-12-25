@@ -119,9 +119,11 @@
   margin-bottom: 4%;
 }
 
-
 .divTitle {
   display: flex;
   justify-content: center;
   height: 80vh;
+}
+
+.divProjectPinfo {
 }

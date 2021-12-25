@@ -1,0 +1,18 @@
+.notLogin {
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+.btnNotLogin {
+  width: 30%;
+  background-color: #BF8C4C;
+  border: none;
+  height: 6.5vh;
+  color: white;
+  
+}

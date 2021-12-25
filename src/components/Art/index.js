@@ -19,7 +19,6 @@ const Art = () => {
   }, []);
 
   const projectPage = (id) => {
-    console.log(id);
     navigate(`/project/${id}`);
   };
 

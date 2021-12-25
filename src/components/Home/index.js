@@ -4,11 +4,43 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import AboutUs from "../AboutUs";
-import Footer from "../Footer";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [latestWork, setLatestWork] = useState([]);
   const [stories, setStories] = useState([]);
   const [lastStory, setLastStory] = useState([]);
+  const [donations, setDonations] = useState("");
+  const [projects, setProjects] = useState([]);
+  const [totalProject, setTotalProject] = useState(0);
+
+  const navigate = useNavigate();
+
+  const getData = async () => {
+    let res = await axios.get(`${process.env.REACT_APP_BASE_URL}/projects`);
+    setProjects(res.data);
+    setTotalProject(res.data.length);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  useEffect(() => {
+    sumDonations();
+  }, [projects]);
+
+  const sumDonations = () => {
+    console.log(projects);
+    let sum = 0;
+
+    projects.map((item) => {
+      console.log(item.pledged);
+      sum += item.pledged;
+    });
+    console.log(sum, "SUM");
+    setDonations(sum);
+  };
 
   const getLetestWork = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/projects`);
@@ -29,7 +61,6 @@ const Home = () => {
         newArr.push(res.data[i]);
       }
     }
-    console.log(newArr);
     setStories(newArr);
   };
 
@@ -43,7 +74,6 @@ const Home = () => {
         newArr.push(res.data[i]);
       }
     }
-    console.log(newArr);
     setLastStory(newArr);
   };
 
@@ -59,27 +89,45 @@ const Home = () => {
     getLetestWork();
   }, []);
 
+  const projectPage = (id) => {
+    navigate(`/project/${id}`);
+  };
+
   return (
     <div className="container">
-      <div className="backgroundDiv">
-        <h1 className="welcoming">Blab leb lab lob</h1>
-        <div className="totalDonateProject">
-          <div className="total">
-            <h1>2000 $</h1>
-            <p>Total donations </p>
-          </div>
-          <div className="total">
-            <h1> 20 </h1>
-            <p>Total projects</p>
+      <div className="divImg">
+        <div className="backgroundDiv"></div>
+        <img
+          src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          alt="background"
+          className="background"
+        />
+        <div className="totalDiv">
+          {/* <h1 className="welcoming">Blab leb lab lob</h1> */}
+          <div className="totalDonateProject">
+            <div className="total">
+              <h1>{donations} $</h1>
+
+              <p>Total donations </p>
+            </div>
+            <div className="total">
+              <h1> {totalProject} </h1>
+              <p>Total projects</p>
+            </div>
           </div>
         </div>
       </div>
+
       <h1 className="h1Leatest">Leatest work</h1>
       <div className="projectLeatsetDiv">
         {latestWork &&
           latestWork.map((item) => {
             return (
-              <div key={item._id} className="projectLeatset">
+              <div
+                key={item._id}
+                className="projectLeatset "
+                onClick={() => projectPage(item._id)}
+              >
                 <img className="leatestImg" src={item.img} alt="project" />
                 <div className="divInsideLeatestProject">
                   <h2 className="titleLeatestProject">Title: {item.title}</h2>
@@ -105,7 +153,7 @@ const Home = () => {
           })}
       </div>
       <div className="line"></div>
-      <h1 className="h1Leatest">Success storys</h1>
+      <h1 className="h1Success">Success storys</h1>
       <div className="containerStory">
         <div className="storyDiv">
           {lastStory.length && (
@@ -142,7 +190,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-     
 
       <div className="aboutUs">
         <AboutUs />
