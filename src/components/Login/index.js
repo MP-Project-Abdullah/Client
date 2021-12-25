@@ -5,7 +5,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login_reducser } from "../../reducers/login";
 import { useSelector } from "react-redux";
-import Home from "../Home";
 import "./style.css";
 import Swal from "sweetalert2";
 
