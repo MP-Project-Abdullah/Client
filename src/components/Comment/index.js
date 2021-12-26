@@ -49,7 +49,7 @@ const Comment = ({ id }) => {
         <input type="text" name="comment" id="comment" className="newComment" placeholder="New comment..." />
         <input type="submit" value="Post" className="submitNewComment" />
       </form>
-      {comment.length &&
+      {comment.length > 0 ? (
         comment.map((item) => {
           return (
             <div className="containerComment" key={item._id}>
@@ -74,9 +74,9 @@ const Comment = ({ id }) => {
                 {" "}
                 <p className="time">{item.time}</p>{" "}
               </div>
-            </div>
+            </div> 
           );
-        })}
+        }) ) : (<div> <h2>No Comments</h2></div>)}
     </div>
   );
 };

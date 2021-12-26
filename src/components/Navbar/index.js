@@ -57,6 +57,12 @@ const Navbar = () => {
         </li>
         <li className="liFooter">
           {" "}
+          <Link className="linkNav" to="/newProject">
+            New Project
+          </Link>
+        </li>
+        <li className="liFooter">
+          {" "}
           <Link className="linkNav" to="/profile">
             Profile
           </Link>
