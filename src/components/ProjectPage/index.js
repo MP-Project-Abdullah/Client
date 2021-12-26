@@ -18,6 +18,7 @@ const ProjectPage = () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
     );
+    console.log(res.data);
     setProject(res.data);
   };
 
@@ -41,7 +42,7 @@ const ProjectPage = () => {
                 <div>
                   {" "}
                   <img
-                    src={item.img}
+                    src={item.url[0]}
                     alt="projectImg"
                     className="imgProjectInfo"
                   />{" "}
@@ -143,7 +144,7 @@ const ProjectPage = () => {
                               <p className="projectPinfo"> {item.desc}</p>
                             </div>
 
-                            {item.img1 ? (
+                            {item.url[1] ? (
                               <div className="divTitle">
                                 <Title
                                   style={{
@@ -156,7 +157,7 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.img1} alt="project img" />
+                                    <img src={item.url[1]} alt="project img" />
                                   </div>
                                 </Title>
                               </div>
@@ -166,7 +167,7 @@ const ProjectPage = () => {
                             <div className="divProjectPinfo">
                               <p className="projectPinfo">{item.desc1}</p>
                             </div>
-                            {item.img2 ? (
+                            {item.url[2] ? (
                               <div className="divTitle">
                                 <Title
                                   style={{
@@ -179,7 +180,7 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.img2} alt="project img" />
+                                    <img src={item.url[2]} alt="project img" />
                                   </div>
                                 </Title>
                               </div>
@@ -189,7 +190,7 @@ const ProjectPage = () => {
                             <div className="divProjectPinfo">
                               <p className="projectPinfo">{item.desc2}</p>
                             </div>
-                            {item.img3 ? (
+                            {item.url[3] ? (
                               <div className="divTitle">
                                 <Title
                                   style={{
@@ -202,7 +203,7 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.img3} alt="project img" />
+                                    <img src={item.url[3]} alt="project img" />
                                   </div>
                                 </Title>
                               </div>
@@ -212,7 +213,7 @@ const ProjectPage = () => {
                             <div className="divProjectPinfo">
                               <p className="projectPinfo">{item.desc3}</p>
                             </div>
-                            {item.img4 ? (
+                            {item.url[4] ? (
                               <div className="divTitle">
                                 <Title
                                   style={{
@@ -225,7 +226,7 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.img4} alt="project img" />
+                                    <img src={item.url[4]} alt="project img" />
                                   </div>
                                 </Title>
                               </div>
@@ -235,7 +236,7 @@ const ProjectPage = () => {
                             <div className="divProjectPinfo">
                               <p className="projectPinfo">{item.desc4}</p>
                             </div>
-                            {item.img5 ? (
+                            {item.url[5] ? (
                               <div className="divTitle">
                                 <Title
                                   style={{
@@ -248,7 +249,7 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.img5} alt="project img" />
+                                    <img src={item.url[5]} alt="project img" />
                                   </div>
                                 </Title>
                               </div>
@@ -258,7 +259,7 @@ const ProjectPage = () => {
                             <div className="divProjectPinfo">
                               <p className="projectPinfo">{item.desc5}</p>
                             </div>
-                            {item.img6 ? (
+                            {item.url[6] ? (
                               <div className="divTitle">
                                 <Title
                                   style={{
@@ -271,7 +272,7 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.img6} alt="project img" />
+                                    <img src={item.url[6]} alt="project img" />
                                   </div>
                                 </Title>
                               </div>

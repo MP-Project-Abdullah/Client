@@ -152,7 +152,7 @@ const Home = () => {
                 className="projectLeatset "
                 onClick={() => projectPage(item._id)}
               >
-                <img className="leatestImg" src={item.img} alt="project" />
+                <img className="leatestImg" src={item.url[0]} alt="project" />
                 <div className="divInsideLeatestProject">
                   <h2 className="titleLeatestProject">Title: {item.title}</h2>
                   <div className="pDescribe">

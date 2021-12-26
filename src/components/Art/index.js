@@ -12,6 +12,7 @@ const Art = () => {
       `${process.env.REACT_APP_BASE_URL}/projectsKind/art`
     );
     setArt(res.data);
+    console.log(res.data[13].url[0]);
   };
 
   useEffect(() => {
@@ -33,7 +34,8 @@ const Art = () => {
                 className="projectLeatset"
                 onClick={() => projectPage(item._id)}
               >
-                <img className="leatestImg" src={item.img} alt="project" />
+                {console.log(item.url[0])}
+                <img className="leatestImg" src={item.url[0]} alt="project" />
                 <div className="divInsideLeatestProject">
                   <h2 className="titleLeatestProject">Title: {item.title}</h2>
                   <div className="pDescribe">
