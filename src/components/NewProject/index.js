@@ -19,36 +19,27 @@ const NewProject = () => {
   // New project state
   const [kind, setKind] = useState("art");
   const [title, setTitle] = useState("");
-  const [img, setImg] = useState("");
   const [describe, setDescribe] = useState("");
   const [desc, setDesc] = useState("");
   const [goal, setGoal] = useState(0);
   const [deadline, setDeadline] = useState(0);
   const [location, setLocation] = useState("");
   const [desc1, setDesc1] = useState("");
-  //   const [img1, setImg1] = useState("");
   const [desc2, setDesc2] = useState("");
-  //   const [img2, setImg2] = useState("");
   const [desc3, setDesc3] = useState("");
-  //   const [img3, setImg3] = useState("");
   const [desc4, setDesc4] = useState("");
-  //   const [img4, setImg4] = useState("");
   const [desc5, setDesc5] = useState("");
-  //   const [img5, setImg5] = useState("");
   const [desc6, setDesc6] = useState("");
-  //   const [img6, setImg6] = useState("");
 
+  // Uplad image
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
   };
-  // console.log("here");
 
+  // Upload image
   const handleUpload = (e) => {
-    console.log(url, "URL");
-    console.log(urlString, "STRING");
-    // console.log(image, "IMAGE");
     e.preventDefault();
     const uploadImg = storage.ref(`images/${image.name}`).put(image);
 
@@ -76,13 +67,13 @@ const NewProject = () => {
     );
   };
 
+  // Create new project
   const newProject = async () => {
     let res = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newProject/${state.signin_reducer.user._id}`,
       {
         kind: kind,
         title: title,
-        img: img,
         desc: desc,
         describe: describe,
         goal: goal,
@@ -95,15 +86,9 @@ const NewProject = () => {
         desc4: desc4,
         desc5: desc5,
         desc6: desc6,
-        // img1: img1,
-        // img2: img2,
-        // img3: img3,
-        // img4: img4,
-        // img5: img5,
-        // img6: img6,
       }
     );
-    console.log(res);
+    navigate(`/newPackage/${res.data._id}/${res.data.user}`);
   };
   return (
     <div>
@@ -460,11 +445,13 @@ const NewProject = () => {
           <button onClick={newProject}>Submit</button>
         </div>
       ) : (
-        <div className="notLogin">
-          You must login
-          <button className="btnNotLogin" onClick={() => navigate("/login")}>
-            Login
-          </button>
+        <div className="containerAccount">
+          <div className="notLogin">
+            You must login
+            <button className="btnNotLogin" onClick={() => navigate("/login")}>
+              Login
+            </button>
+          </div>
         </div>
       )}
     </div>
