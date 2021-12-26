@@ -11,6 +11,7 @@ import Account from "./components/Account";
 import ProjectPage from "./components/ProjectPage";
 import Reset from "./components/Reset";
 import NewProject from "./components/NewProject";
+import NewPackage from "./components/newPackage";
 import "./App.css";
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/profile" element={<Account />} />
         <Route exact path="/reset" element={<Reset />} />
         <Route exact path="/newProject" element={<NewProject />} />
+        <Route exact path="/newPackage/:postId/:userId" element={<NewPackage />} />
 
         <Route exact path="/project/:id" element={<ProjectPage />} />
       </Routes>
