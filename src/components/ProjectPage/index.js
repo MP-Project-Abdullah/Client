@@ -7,12 +7,14 @@ import { IoLocationSharp } from "react-icons/io5";
 import Title from "react-vanilla-tilt";
 import "./style.css";
 import Comment from "../Comment";
+import { useNavigate } from "react-router-dom";
 const ProjectPage = () => {
   const id = useParams().id; // Get project id
 
   const [project, setProject] = useState([]); // The project
   const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
 
+  const navigate = useNavigate();
   // Get project by id
   const getData = async () => {
     const res = await axios.get(
@@ -68,7 +70,12 @@ const ProjectPage = () => {
                     <p className="pGPD">Backers {item.deadline}</p>{" "}
                   </div>
                   <div className="divDonateBtn">
-                    <button className="btnDonate">Donate</button>{" "}
+                    <button
+                      className="btnDonate"
+                      onClick={() => navigate(`/donate/${item._id}`)}
+                    >
+                      Donate
+                    </button>{" "}
                   </div>
                   <div>
                     {" "}
