@@ -4,6 +4,11 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Payment from "./../Payment"
+// import PaymentTest from "../PaymentTest.svelte"
+// import PaymentTest
+// import PaymentTest from "../paymentTest"
+// import "../"
 const Donate = () => {
   const projectId = useParams().projectId;
   const navigate = useNavigate();
@@ -51,6 +56,7 @@ const Donate = () => {
                   >
                     Donate
                   </button>
+                  {/* <Payment/> */}
                 </div>
               </div>
             );
@@ -75,42 +81,7 @@ const Donate = () => {
           />
         </form>
       </div>
-      <p>a</p> <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
+      {/* <PaymentTest amount={1999} name={"test"} sku={"prod_Kqwnfq6kgu22J5"} /> */}
     </div>
   );
 };

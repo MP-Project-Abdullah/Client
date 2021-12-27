@@ -32,7 +32,6 @@ function App() {
           path="/newPackage/:postId/:userId"
           element={<NewPackage />}
         />
-
         <Route exact path="/project/:id" element={<ProjectPage />} />
         <Route exact path="/donate/:projectId" element={<Donate />} />
         <Route exact path="/payment" element={<Payment />} />
