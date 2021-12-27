@@ -30,6 +30,7 @@ const NewPackage = () => {
     e.target[1].value = "";
     e.target[2].value = "";
     e.target[3].value = "";
+    console.log("HERE");
   };
 
   return (
