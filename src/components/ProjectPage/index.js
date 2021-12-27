@@ -20,7 +20,6 @@ const ProjectPage = () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
     );
-    console.log(res.data);
     setProject(res.data);
   };
 
