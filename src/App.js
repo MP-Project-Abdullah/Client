@@ -14,6 +14,7 @@ import NewProject from "./components/NewProject";
 import NewPackage from "./components/newPackage";
 import Donate from "./components/Donate";
 import Payment from "./components/Payment";
+import SuccessPay from "./components/SuccessPay";
 import "./App.css";
 function App() {
   return (
@@ -32,10 +33,14 @@ function App() {
           path="/newPackage/:postId/:userId"
           element={<NewPackage />}
         />
-
         <Route exact path="/project/:id" element={<ProjectPage />} />
         <Route exact path="/donate/:projectId" element={<Donate />} />
-        <Route exact path="/payment" element={<Payment />} />
+        <Route exact path="/payment/:projectId/:donate" element={<Payment />} />
+        <Route
+          exact
+          path="/successPay/:projectId/:donate"
+          element={<SuccessPay />}
+        />
       </Routes>
       <Footer />
     </div>

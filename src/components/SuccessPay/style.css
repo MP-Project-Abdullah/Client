@@ -1,0 +1,19 @@
+.success {
+  /* background-color: rgba(128, 128, 128, 0.120); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* padding: 2%; */
+}
+
+.imgSuccess {
+  width: 40%;
+  z-index: -1;
+}
+
+.h1SuccessPay {
+  position: absolute;
+  margin-left: 35%;
+  margin-top: 1.5%;
+}

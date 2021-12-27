@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+
 const Donate = () => {
   const projectId = useParams().projectId;
   const navigate = useNavigate();
 
   const [packages, setPackages] = useState([]);
-  const [amount, setAmount] = useState(0);
 
   const getData = async () => {
     let res = await axios.get(
@@ -24,7 +24,6 @@ const Donate = () => {
 
   const payment = (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
     navigate(`/payment/${projectId}/${e.target[0].value}`);
   };
 
@@ -34,28 +33,35 @@ const Donate = () => {
 
   return (
     <div>
-      <h2 className="packagesDomnationsH2">Packages</h2>
-      <div className="containerPackages">
-        {packages &&
-          packages.map((item) => {
-            return (
-              <div className="divPackages">
-                <h2 className="packageTitle">{item.title}</h2>
-                <p className="packageDescribe">{item.describe}</p>
-                <p className="packageAmount">Amount : {item.amount}</p>
-                <p className="packageArrive">Arrive :{item.arrive}</p>
-                <div className="divBtnDonate">
-                  <button
-                    className="packageButtonDonate"
-                    onClick={() => paymentPackage(item.amount)}
-                  >
-                    Donate
-                  </button>
+      {packages.length > 0 ? (
+        <div>
+          <h2 className="packagesDomnationsH2">Packages</h2>
+          <div className="containerPackages">
+            {" "}
+            {packages.map((item) => {
+              return (
+                <div className="divPackages" key={item._id}>
+                  <h2 className="packageTitle">{item.title}</h2>
+                  <p className="packageDescribe">{item.describe}</p>
+                  <p className="packageAmount">Amount : {item.amount}</p>
+                  <p className="packageArrive">Arrive :{item.arrive}</p>
+                  <div className="divBtnDonate">
+                    <button
+                      className="packageButtonDonate"
+                      onClick={() => paymentPackage(item.amount)}
+                    >
+                      Donate
+                    </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-      </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+
       <div>
         <div>
           <h2 className="packagesDomnationsH2">Donations</h2>
@@ -67,50 +73,9 @@ const Donate = () => {
             id="donate"
             placeholder="Enter your donations here..."
           />
-          <input
-            type="submit"
-            value="Donate"
-            id="submitDonate"
-            // onChange={(e) => setAmount(e.target.value)}
-          />
+          <input type="submit" value="Donate" id="submitDonate" />
         </form>
       </div>
-      <p>a</p> <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
     </div>
   );
 };
