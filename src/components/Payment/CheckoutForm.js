@@ -6,7 +6,7 @@ import {
 } from "@stripe/react-stripe-js";
 import "./style.css"
 
-export default function CheckoutForm({ projectId, donate }) {
+export default function CheckoutForm({ projectId, donate,packageId }) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -56,7 +56,7 @@ export default function CheckoutForm({ projectId, donate }) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `http://localhost:3000/successPay/${projectId}/${donate}`,
+        return_url: `http://localhost:3000/successPay/${projectId}/${donate}/${packageId}`,
       },
     });
 
@@ -68,6 +68,8 @@ export default function CheckoutForm({ projectId, donate }) {
 
     setIsLoading(false);
   };
+
+
 
   return (
       <div className="containerPayment">

@@ -24,11 +24,11 @@ const Donate = () => {
 
   const payment = (e) => {
     e.preventDefault();
-    navigate(`/payment/${projectId}/${e.target[0].value}`);
+    navigate(`/payment/${projectId}/${e.target[0].value}/0`);
   };
 
-  const paymentPackage = (val) => {
-    navigate(`/payment/${projectId}/${val}`);
+  const paymentPackage = (val, packageId) => {
+    navigate(`/payment/${projectId}/${val}/${packageId}`);
   };
 
   return (
@@ -48,7 +48,11 @@ const Donate = () => {
                   <div className="divBtnDonate">
                     <button
                       className="packageButtonDonate"
-                      onClick={() => paymentPackage(item.amount)}
+                      onClick={() => {
+                        {
+                          paymentPackage(item.amount, item._id);
+                        }
+                      }}
                     >
                       Donate
                     </button>

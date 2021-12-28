@@ -7,6 +7,7 @@
 .background {
   z-index: -1;
   width: 100%;
+  filter: brightness(70%);
 }
 
 .totalDiv {
@@ -33,7 +34,7 @@
   width: 42%;
   text-align: center;
   font-size: 50px;
-  color:black ;
+  color: #bf8c4c;
 }
 
 .h1Leatest {
@@ -251,4 +252,3 @@
   position: absolute;
   margin-left: -10%;
 }
-

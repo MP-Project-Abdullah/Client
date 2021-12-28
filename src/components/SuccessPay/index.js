@@ -3,12 +3,18 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "./style.css";
 const SuccessPay = () => {
   const projectId = useParams().projectId;
   const donate = useParams().donate;
+  const packageId = useParams().packageId;
 
   const navigate = useNavigate();
+
+  const state = useSelector((state) => {
+    return state;
+  });
 
   const successPayment = async () => {
     let res = await axios.put(
@@ -16,6 +22,23 @@ const SuccessPay = () => {
     );
     console.log(res);
   };
+
+  const addPackage = async () => {
+    if (packageId == 0) {
+      console.log("NOT");
+      return;
+    } else {
+      console.log("HERE");
+      let res = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}`
+      );
+      console.log(res.data);
+    }
+  };
+
+  useEffect(() => {
+    addPackage();
+  }, []);
 
   useEffect(() => {
     successPayment();
@@ -37,7 +60,7 @@ const SuccessPay = () => {
   return (
     <div className="success">
       <div>
-        <h1 className="h1SuccessPay">Thnak you for helping our community </h1>
+        <h1 className="h1SuccessPay">Thank you for helping our community </h1>
       </div>
       <div>
         <img

@@ -12,6 +12,7 @@ export const stripePromise = loadStripe(
 const Payment = () => {
   const projectId = useParams().projectId;
   const donate = useParams().donate;
+  const packageId = useParams().packageId;
 
   const [clientSecret, setClientSecret] = useState("");
 
@@ -39,7 +40,11 @@ const Payment = () => {
     <div className="App">
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
-          <CheckoutForm projectId={projectId} donate={donate} />
+          <CheckoutForm
+            projectId={projectId}
+            donate={donate}
+            packageId={packageId}
+          />
         </Elements>
       )}
     </div>

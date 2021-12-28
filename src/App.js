@@ -35,10 +35,10 @@ function App() {
         />
         <Route exact path="/project/:id" element={<ProjectPage />} />
         <Route exact path="/donate/:projectId" element={<Donate />} />
-        <Route exact path="/payment/:projectId/:donate" element={<Payment />} />
+        <Route exact path="/payment/:projectId/:donate/:packageId" element={<Payment />} />
         <Route
           exact
-          path="/successPay/:projectId/:donate"
+          path="/successPay/:projectId/:donate/:packageId"
           element={<SuccessPay />}
         />
       </Routes>
