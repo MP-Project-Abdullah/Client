@@ -56,7 +56,7 @@ const Account = () => {
     // Take only the packages
     let newArr = [];
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].package !== undefined) {
+      if (res.data[i].package != undefined) {
         newArr.push(res.data[i]);
       }
     }
@@ -212,7 +212,7 @@ const Account = () => {
             <h4>**************</h4>
           </div>
           <div>
-            <h2>Your contributions</h2>
+            <h2>Your Packages</h2>
             <div className="containerPackages">
               {packages.length > 0 ? (
                 packages.map((item) => {
