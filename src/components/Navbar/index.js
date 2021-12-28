@@ -13,7 +13,7 @@ const Navbar = () => {
   const logout = () => {
     localStorage.clear();
     dispatch(logout_reducser());
-    navigate("/login");
+    // navigate("/login");
   };
 
   const state = useSelector((state) => {
@@ -69,7 +69,9 @@ const Navbar = () => {
         </li>
         {state.signin_reducer.token ? (
           <li className="liFooter" onClick={logout}>
-            Logout
+            <Link className="linkNav" to="/login">
+              Logout
+            </Link>
           </li>
         ) : (
           <li className="liFooter">
@@ -78,6 +80,26 @@ const Navbar = () => {
               Login
             </Link>
           </li>
+        )}
+        {state.signin_reducer.token ? (
+          <div>
+            {" "}
+            {state.signin_reducer.user.role == "61c04770ff8aeaad62406e9b" ? (
+              <div>
+                {" "}
+                <li className="liFooter">
+                  {" "}
+                  <Link className="linkNav" to="/dashboard">
+                    Dashboard
+                  </Link>
+                </li>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        ) : (
+          ""
         )}
       </ul>
       <div className="lineAll"></div>

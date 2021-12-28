@@ -25,12 +25,13 @@ const SuccessPay = () => {
 
   const addPackage = async () => {
     if (packageId == 0) {
-      console.log("NOT");
-      return;
+      let res = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${state.signin_reducer.user._id}/${donate}`
+      );
     } else {
       console.log("HERE");
       let res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}`
+        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}/${donate}`
       );
       console.log(res.data);
     }

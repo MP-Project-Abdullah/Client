@@ -5,3 +5,11 @@
   grid-gap: 7rem;
   padding: 5%;
 }
+
+#accountProject {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  /* padding: 5%; */
+}

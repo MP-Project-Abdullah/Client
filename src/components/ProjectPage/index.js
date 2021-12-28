@@ -13,6 +13,7 @@ const ProjectPage = () => {
 
   const [project, setProject] = useState([]); // The project
   const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
+  const [green, setGreen] = useState(false);
 
   const navigate = useNavigate();
   // Get project by id
@@ -20,6 +21,9 @@ const ProjectPage = () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
     );
+    if (res.data.pledged > res.data.goal) {
+      setGreen(true);
+    }
     setProject(res.data);
   };
 
