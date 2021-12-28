@@ -6,11 +6,12 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Donate = () => {
-  const projectId = useParams().projectId;
+  const projectId = useParams().projectId; // Project id
   const navigate = useNavigate();
 
-  const [packages, setPackages] = useState([]);
+  const [packages, setPackages] = useState([]); // All packages of the project
 
+  // Get all packages
   const getData = async () => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/packages/${projectId}`
@@ -18,19 +19,24 @@ const Donate = () => {
     setPackages(res.data);
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
+  // Navigate to payment page with no packages
   const payment = (e) => {
     e.preventDefault();
     navigate(`/payment/${projectId}/${e.target[0].value}/0`);
   };
 
+  // Navigate to payment page with one package
   const paymentPackage = (val, packageId) => {
     navigate(`/payment/${projectId}/${val}/${packageId}`);
   };
 
+  // Invoke get all packges
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+  }, []);
+
+  // Return
   return (
     <div>
       {packages.length > 0 ? (
@@ -48,11 +54,7 @@ const Donate = () => {
                   <div className="divBtnDonate">
                     <button
                       className="packageButtonDonate"
-                      onClick={() => {
-                        {
-                          paymentPackage(item.amount, item._id);
-                        }
-                      }}
+                      onClick={() => paymentPackage(item.amount, item._id)}
                     >
                       Donate
                     </button>

@@ -13,16 +13,18 @@ const Account = () => {
     return state;
   });
 
-  const [editProfile, setEditProfile] = useState(false);
-  const [newName, setNewName] = useState("");
-  const [newBio, setNewBio] = useState("");
-  const [totalDonations, setTotalDonations] = useState(0);
-  const [packages, setPackages] = useState([]);
-  const [totalPleged, setTotalPleged] = useState(0);
   const dispatch = useDispatch();
-  const [userProjects, setUserProjects] = useState([]);
+  const navigate = useNavigate();
 
-  //
+  const [editProfile, setEditProfile] = useState(false); // Toggle edit profie
+  const [newName, setNewName] = useState(""); // set new name
+  const [newBio, setNewBio] = useState(""); // set new bio
+  const [totalDonations, setTotalDonations] = useState(0); // total donations
+  const [packages, setPackages] = useState([]); // user packages
+  const [totalPleged, setTotalPleged] = useState(0); // total pledged
+  const [userProjects, setUserProjects] = useState([]); // all user projects
+
+  // set new name and bio
   const bioAndName = () => {
     if (state.signin_reducer.token) {
       setNewName(state.signin_reducer.user.name);
@@ -30,11 +32,14 @@ const Account = () => {
     }
   };
 
+  // Get user project
   const getUserProject = async () => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/userProjects/${state.signin_reducer.user._id}`
     );
     setUserProjects(res.data);
+
+    // Sum all pledged
     let total = 0;
     for (let i = 0; i < res.data.length; i++) {
       total += res.data[i].pledged;
@@ -42,24 +47,22 @@ const Account = () => {
     setTotalPleged(total);
   };
 
-  useEffect(() => {
-    getUserProject();
-  }, []);
-
-  //
+  // Get all user packages
   const getPackges = async () => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/getUserPackages/${state.signin_reducer.user._id}`
     );
 
+    // Take only the packages
     let newArr = [];
     for (let i = 0; i < res.data.length; i++) {
-      if (res.data[i].package != undefined) {
+      if (res.data[i].package !== undefined) {
         newArr.push(res.data[i]);
       }
     }
     setPackages(newArr);
 
+    // Sum all donations
     let total = 0;
     for (let i = 0; i < res.data.length; i++) {
       total += res.data[i].total;
@@ -67,18 +70,7 @@ const Account = () => {
     setTotalDonations(total);
   };
 
-  //
-  useEffect(() => {
-    getPackges();
-  }, []);
-
-  //
-  useEffect(() => {
-    bioAndName();
-  }, []);
-  const navigate = useNavigate();
-
-  //
+  // Update bio and name
   const changeBioAndName = async () => {
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/updateUser/${state.signin_reducer.user._id}`,
@@ -93,7 +85,23 @@ const Account = () => {
     dispatch(login_reducser({ data }));
   };
 
-  //
+  // Use effects
+  useEffect(() => {
+    getUserProject();
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    getPackges();
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    bioAndName();
+    // eslint-disable-next-line
+  }, []);
+
+  // Return
   return (
     <div className="containerAccount">
       {state.signin_reducer.token ? (

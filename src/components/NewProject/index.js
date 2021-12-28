@@ -11,25 +11,27 @@ const NewProject = () => {
   });
 
   const navigate = useNavigate();
-  const [image, setImage] = useState(null);
-  const [url, setUrl] = useState([]);
-  const [urlString, setUrlString] = useState("");
-  const [progress, setProgress] = useState(0);
+
+  const [image, setImage] = useState(null); // Upload iamge
+  const [url, setUrl] = useState([]); /// Upload iamge
+  // eslint-disable-next-line
+  const [urlString, setUrlString] = useState(""); // Upload iamge
+  const [progress, setProgress] = useState(0); // Upload iamge
 
   // New project state
-  const [kind, setKind] = useState("art");
-  const [title, setTitle] = useState("");
-  const [describe, setDescribe] = useState("");
-  const [desc, setDesc] = useState("");
-  const [goal, setGoal] = useState(0);
-  const [deadline, setDeadline] = useState(0);
-  const [location, setLocation] = useState("");
-  const [desc1, setDesc1] = useState("");
-  const [desc2, setDesc2] = useState("");
-  const [desc3, setDesc3] = useState("");
-  const [desc4, setDesc4] = useState("");
-  const [desc5, setDesc5] = useState("");
-  const [desc6, setDesc6] = useState("");
+  const [kind, setKind] = useState("art"); // Kind of the project
+  const [title, setTitle] = useState(""); // title of the project
+  const [describe, setDescribe] = useState(""); // describe of the project
+  const [desc, setDesc] = useState(""); // desc of the project
+  const [goal, setGoal] = useState(0); // goal of the project
+  const [deadline, setDeadline] = useState(0); // deadline of the project
+  const [location, setLocation] = useState(""); // location of the project
+  const [desc1, setDesc1] = useState(""); // desc  of the project
+  const [desc2, setDesc2] = useState(""); // desc  of the project
+  const [desc3, setDesc3] = useState(""); // desc  of the project
+  const [desc4, setDesc4] = useState(""); // desc  of the project
+  const [desc5, setDesc5] = useState(""); // desc  of the project
+  const [desc6, setDesc6] = useState(""); // desc  of the project
 
   // Uplad image
   const handleChange = (e) => {
@@ -90,6 +92,8 @@ const NewProject = () => {
     );
     navigate(`/newPackage/${res.data._id}/${res.data.user}`);
   };
+
+  // Return
   return (
     <div>
       {state.signin_reducer.token.length > 0 ? (
@@ -238,6 +242,7 @@ const NewProject = () => {
                   type="file"
                   name="postImg"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   onChange={(e) => {
                     handleChange(e);
                     setUrlString(e.target.value);
@@ -275,6 +280,7 @@ const NewProject = () => {
                   type="file"
                   name="postImg"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   onChange={(e) => {
                     handleChange(e);
                     setUrlString(e.target.value);
@@ -312,6 +318,7 @@ const NewProject = () => {
                   type="file"
                   name="postImg"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   onChange={(e) => {
                     handleChange(e);
                     setUrlString(e.target.value);
@@ -349,6 +356,7 @@ const NewProject = () => {
                   type="file"
                   name="postImg"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   onChange={(e) => {
                     handleChange(e);
                     setUrlString(e.target.value);
@@ -386,6 +394,7 @@ const NewProject = () => {
                   type="file"
                   name="postImg"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   onChange={(e) => {
                     handleChange(e);
                     setUrlString(e.target.value);
@@ -423,6 +432,7 @@ const NewProject = () => {
                   type="file"
                   name="postImg"
                   onChange={handleChange}
+                  // eslint-disable-next-line
                   onChange={(e) => {
                     handleChange(e);
                     setUrlString(e.target.value);

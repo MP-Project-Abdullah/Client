@@ -24,17 +24,12 @@ const Home = () => {
     setTotalProject(res.data.length);
   };
 
-  // Invoke getData
-  useEffect(() => {
-    getData();
-  }, []);
-
   // Sum all donations
   const sumDonations = () => {
     let sum = 0;
 
     projects.map((item) => {
-      sum += item.pledged;
+      return (sum += item.pledged);
     });
     setDonations(sum);
   };
@@ -42,6 +37,7 @@ const Home = () => {
   // Invoke sumDonations
   useEffect(() => {
     sumDonations();
+    // eslint-disable-next-line
   }, [projects]);
 
   // Get leatest project
@@ -58,7 +54,7 @@ const Home = () => {
 
   // Get stories
   const getStories = async () => {
-    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/storys`);
+    const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/stories`);
     let newArr = [];
     for (let i = res.data.length - 2; i > res.data.length - 4; i--) {
       if (i > -1) {
@@ -95,6 +91,11 @@ const Home = () => {
     getLetestWork();
   }, []);
 
+  // Invoke getData
+  useEffect(() => {
+    getData();
+  }, []);
+
   // Navigate to project page
   const projectPage = (id) => {
     navigate(`/project/${id}`);
@@ -119,7 +120,7 @@ const Home = () => {
                   height: "0",
                 }}
               >
-                <div> 
+                <div>
                   <h1>{donations} $</h1>
                   <p>Total donations </p>
                 </div>

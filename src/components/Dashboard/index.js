@@ -5,10 +5,11 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState([]); // all projects, not approved
 
   const navigate = useNavigate();
 
+  // Get all projects not approved
   const getData = async () => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/projectsNotApproved`
@@ -16,6 +17,23 @@ const Dashboard = () => {
     setProjects(res.data);
   };
 
+  // Aproved project
+  const aprooved = async (id) => {
+    let res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/aprooved/${id}`
+    );
+    console.log(res.data);
+    getData();
+  };
+
+  // Reject project
+  const reject = async (id) => {
+    let res = await axios.put(`${process.env.REACT_APP_BASE_URL}/reject/${id}`);
+    console.log(res.data);
+    getData();
+  };
+
+  // Invoke get all projects not approved
   useEffect(() => {
     getData();
   }, []);
@@ -25,20 +43,7 @@ const Dashboard = () => {
     navigate(`/project/${id}`);
   };
 
-  const aprooved = async (id) => {
-    let res = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/aprooved/${id}`
-    );
-    console.log(res.data);
-    getData();
-  };
-
-  const reject = async (id) => {
-    let res = await axios.put(`${process.env.REACT_APP_BASE_URL}/reject/${id}`);
-    console.log(res.data);
-    getData();
-  };
-
+  // Return
   return (
     <div>
       {projects.length > 0 ? (

@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 const Art = () => {
-  const [art, setArt] = useState([]);
+  
   const navigate = useNavigate();
+  const [art, setArt] = useState([]); // All projects, kind art
 
+  // Get all projects, kind art
   const getData = async () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/projectsKind/art`
@@ -14,14 +16,17 @@ const Art = () => {
     setArt(res.data);
   };
 
+  // Invoke get all projects, kind art
   useEffect(() => {
     getData();
   }, []);
 
+  // Navigate to project page
   const projectPage = (id) => {
     navigate(`/project/${id}`);
   };
 
+  // Return
   return (
     <div>
       <div className="projects">

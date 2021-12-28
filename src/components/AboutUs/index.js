@@ -3,7 +3,6 @@ import "./style.css";
 const AboutUs = () => {
   return (
     <div className="aboutus">
-      {/* <h2 className="h2About">About us</h2>{" "} */}
       <div className="ourMission">
         <h1>Our mission is to help bring creative</h1>
         <h1> projects to life.</h1>
@@ -26,7 +25,6 @@ const AboutUs = () => {
           vibrant society, and the space to create requires protection.
         </p>
       </div>
-     
     </div>
   );
 };
