@@ -11,21 +11,27 @@ import { useNavigate } from "react-router-dom";
 const ProjectPage = () => {
   const id = useParams().id; // Get project id
 
+  const navigate = useNavigate();
+
   const [project, setProject] = useState([]); // The project
   const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
+  // const [green, setGreen] = useState(false);
 
-  const navigate = useNavigate();
   // Get project by id
   const getData = async () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
     );
+    // if (res.data.pledged > res.data.goal) {
+    //   setGreen(true);
+    // }
     setProject(res.data);
   };
 
   // Invoke getData
   useEffect(() => {
     getData();
+    // eslint-disable-next-line
   }, []);
 
   // Return

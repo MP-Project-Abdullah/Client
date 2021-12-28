@@ -3,20 +3,19 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-const Art = () => {
-  
+const Film = () => {
   const navigate = useNavigate();
-  const [art, setArt] = useState([]); // All projects, kind art
+  const [film, setFilm] = useState([]); // All projects, kind film
 
-  // Get all projects, kind art
+  // Get all projects, kind film
   const getData = async () => {
     const res = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/projectsKind/art`
+      `${process.env.REACT_APP_BASE_URL}/projectsKind/film`
     );
-    setArt(res.data);
+    setFilm(res.data);
   };
 
-  // Invoke get all projects, kind art
+  // Invoke get all projects, kind film
   useEffect(() => {
     getData();
   }, []);
@@ -29,9 +28,10 @@ const Art = () => {
   // Return
   return (
     <div>
+      <h1>Film</h1>
       <div className="projects">
-        {art.length &&
-          art.map((item) => {
+        {film.length &&
+          film.map((item) => {
             return (
               <div
                 key={item._id}
@@ -66,4 +66,4 @@ const Art = () => {
   );
 };
 
-export default Art;
+export default Film;

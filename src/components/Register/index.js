@@ -8,27 +8,20 @@ import "./style.css";
 const Register = () => {
   const navigate = useNavigate();
 
-  const [userName, setUserName] = useState("");
-  const [name, setName] = useState("");
-  const [users, setUsers] = useState([]);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // eslint-disable-next-line
-  const [role, setRole] = useState("61c04786ff8aeaad62406e9d");
+  const [userName, setUserName] = useState(""); // User name
+  const [name, setName] = useState(""); // name
+  const [users, setUsers] = useState([]); // all user
+  const [email, setEmail] = useState(""); // email
+  const [password, setPassword] = useState(""); // password
+  const [errorMessage, setErrorMessage] = useState(""); // Message validate password
 
+  // Get all user
   const getData = async () => {
-    console.log(process.env.REACT_APP_BASE_URL);
     const items = await axios.get(`${process.env.REACT_APP_BASE_URL}/users`);
-    // console.log(items.data);
     setUsers(items.data);
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const [errorMessage, setErrorMessage] = useState("");
-
+  // Complex password
   const validate = (value) => {
     if (
       validator.isStrongPassword(value, {
@@ -45,6 +38,7 @@ const Register = () => {
     }
   };
 
+  // Register
   const register = async () => {
     let check = false;
     // eslint-disable-next-line
@@ -72,14 +66,20 @@ const Register = () => {
         }
       );
       console.log(res.data._id);
-      //   navigate(`/confirm/${res.data._id}`);
     }
   };
 
+  // Invoke get all user
+  useEffect(() => {
+    getData();
+  }, []);
+
+  // Navigate to login page
   const login = () => {
     navigate("/");
   };
 
+  // Wrong password
   const invalPass = () => {
     Swal.fire({
       title: "Invalid email or password",
@@ -92,7 +92,7 @@ const Register = () => {
     });
   };
 
-  // setName
+  // Return
   return (
     <div className="divLogin">
       <div className="wrapperLogin">

@@ -8,26 +8,23 @@ import "./style.css";
 
 const Reset = () => {
   const navigate = useNavigate();
-  const [code, setCode] = useState("");
-  const [newPassForm, setNewPassForm] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [email, setEmail] = useState("");
-  const [users, setUsers] = useState([]);
 
+  const [code, setCode] = useState(""); // Code from email
+  const [newPassForm, setNewPassForm] = useState(false); // toggle div
+  const [errorMessage, setErrorMessage] = useState(""); // error message for password
+  const [email, setEmail] = useState(""); // email user
+  const [users, setUsers] = useState([]); // all users
+
+  // Get all users
   const getUsers = async () => {
     let res = await axios.get(`${process.env.REACT_APP_BASE_URL}/users`);
     console.log(res.data);
     setUsers(res.data);
   };
 
-  useEffect(() => {
-    getUsers();
-    // eslint-disable-next-line
-  }, []);
-
+  // Complex password
   const validate = (e, value) => {
     e.preventDefault();
-    console.log(e, "VALIDATE");
     if (
       validator.isStrongPassword(value, {
         minLength: 8,
@@ -43,6 +40,7 @@ const Reset = () => {
     }
   };
 
+  // Send code to the user
   const resetEmail = async (e) => {
     e.preventDefault();
     let check = false;
@@ -55,14 +53,12 @@ const Reset = () => {
     if (check) {
       Swal.fire({
         icon: "success",
-        // title: "Oops...",
         text: "Please wait",
       });
       try {
         let result = await axios.post(
           `${process.env.REACT_APP_BASE_URL}/resetEmailCode/${e.target[0].value}`
         );
-        console.log(result, "RESULT");
         if (result) {
           let res = await axios.get(
             `${process.env.REACT_APP_BASE_URL}/userEmail/${e.target[0].value}`
@@ -85,6 +81,7 @@ const Reset = () => {
     }
   };
 
+  // Reset user password
   const resetPass = async (e) => {
     e.preventDefault();
     if (e.target[0].value === code) {
@@ -113,6 +110,7 @@ const Reset = () => {
     }
   };
 
+  // Wrong password
   const invalPass = (e) => {
     e.preventDefault();
     Swal.fire({
@@ -126,6 +124,13 @@ const Reset = () => {
     });
   };
 
+  // Invoke get all users
+  useEffect(() => {
+    getUsers();
+    // eslint-disable-next-line
+  }, []);
+
+  // Return
   return (
     <div>
       {newPassForm ? (

@@ -5,8 +5,8 @@ import "./style.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const Comment = ({ id }) => {
-  const [comment, setComment] = useState([]); // All comment
   const navigate = useNavigate();
+  const [comment, setComment] = useState([]); // All comment
 
   const state = useSelector((state) => {
     return state;
@@ -20,15 +20,11 @@ const Comment = ({ id }) => {
     setComment(res.data);
   };
 
-  // Invoke getData
-  useEffect(() => {
-    getData();
-  }, []);
-
   // Create new comment
   const newComment = async (e) => {
     e.preventDefault();
     if (state.signin_reducer.token.length > 0) {
+      // eslint-disable-next-line
       let res = axios.post(
         `${process.env.REACT_APP_BASE_URL}/newComment/${state.signin_reducer.user._id}/${id}`,
         {
@@ -42,11 +38,23 @@ const Comment = ({ id }) => {
     e.target[0].value = "";
   };
 
+  // Invoke getData
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+  }, []);
+
   // Return
   return (
     <div>
       <form onSubmit={(e) => newComment(e)} className="formNewComment">
-        <input type="text" name="comment" id="comment" className="newComment" placeholder="New comment..." />
+        <input
+          type="text"
+          name="comment"
+          id="comment"
+          className="newComment"
+          placeholder="New comment..."
+        />
         <input type="submit" value="Post" className="submitNewComment" />
       </form>
       {comment.length > 0 ? (
@@ -74,9 +82,15 @@ const Comment = ({ id }) => {
                 {" "}
                 <p className="time">{item.time}</p>{" "}
               </div>
-            </div> 
+            </div>
           );
-        }) ) : (<div> <h2>No Comments</h2></div>)}
+        })
+      ) : (
+        <div>
+          {" "}
+          <h2>No Comments</h2>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,36 @@
+.divBtnRejectAndApproved {
+  display: flex;
+  justify-content: space-around;
+  padding: 5%;
+}
+
+.btnApprovedAndReject {
+  border: none;
+  width: 15vh;
+  height: 5vh;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#approved:hover {
+  background-color: rgba(8, 186, 8, 0.558);
+  transition: 0.3s ease-in-out;
+}
+
+#reject:hover {
+  transition: 0.3s ease-in-out;
+  background-color: rgba(255, 1, 1, 0.666);
+}
+
+.noProjectH1 {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.divNoPRoject {
+  min-height: 64vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}

@@ -4,18 +4,20 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const NewPackage = () => {
-  const projectId = useParams().postId;
-  const userId = useParams().userId;
+  const projectId = useParams().postId; // project id
+  const userId = useParams().userId; // User id
 
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState("");
-  const [amount, setAmount] = useState(0);
-  const [describe, setDescribe] = useState("");
-  const [arrive, setArrive] = useState("");
+  const [title, setTitle] = useState(""); // Title of the package
+  const [amount, setAmount] = useState(0); // amount  of the package
+  const [describe, setDescribe] = useState(""); // describe  of the package
+  const [arrive, setArrive] = useState(""); // arrive  of the package
 
+  // Create new package
   const createNewPackage = async (e) => {
     e.preventDefault();
+    // eslint-disable-next-line
     let res = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newPackage/${userId}/${projectId}`,
       {
@@ -31,6 +33,7 @@ const NewPackage = () => {
     e.target[3].value = "";
   };
 
+  // Return
   return (
     <div>
       <div>

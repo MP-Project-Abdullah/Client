@@ -1,19 +1,16 @@
 import React from "react";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { logout_reducser } from "../../reducers/login";
 import { useDispatch } from "react-redux";
 
 const Navbar = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const logout = () => {
     localStorage.clear();
     dispatch(logout_reducser());
-    navigate("/login");
   };
 
   const state = useSelector((state) => {
@@ -69,7 +66,9 @@ const Navbar = () => {
         </li>
         {state.signin_reducer.token ? (
           <li className="liFooter" onClick={logout}>
-            Logout
+            <Link className="linkNav" to="/login">
+              Logout
+            </Link>
           </li>
         ) : (
           <li className="liFooter">
@@ -78,6 +77,26 @@ const Navbar = () => {
               Login
             </Link>
           </li>
+        )}
+        {state.signin_reducer.token ? (
+          <div>
+            {" "}
+            {state.signin_reducer.user.role === "61c04770ff8aeaad62406e9b" ? (
+              <div>
+                {" "}
+                <li className="liFooter">
+                  {" "}
+                  <Link className="linkNav" to="/dashboard">
+                    Dashboard
+                  </Link>
+                </li>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        ) : (
+          ""
         )}
       </ul>
       <div className="lineAll"></div>

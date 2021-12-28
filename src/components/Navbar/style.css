@@ -16,9 +16,9 @@
   cursor: pointer;
 }
 
-.ulNav:hover li {
+/* .ulNav:hover li {
   color: saddlebrown;
-}
+} */
 
 .websiteName {
   text-align: center;
@@ -31,5 +31,9 @@
 }
 
 .linkNav:hover {
+  color: #bf8c4c;
+}
+
+.logout:hover {
   color: #bf8c4c;
 }

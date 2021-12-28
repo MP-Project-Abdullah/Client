@@ -4,23 +4,19 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login_reducser } from "../../reducers/login";
-import { useSelector } from "react-redux";
 import "./style.css";
 import Swal from "sweetalert2";
 
 const popupTools = require("popup-tools");
 
 const Login = () => {
-  const state = useSelector((state) => {
-    return state;
-  });
-  console.log(state);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [emailOrUsername, setEmailOrUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [emailOrUsername, setEmailOrUsername] = useState(""); // Email or username
+  const [password, setPassword] = useState(""); // Password
 
+  // Login
   const logIn = async (e) => {
     e.preventDefault();
     const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, {
@@ -49,17 +45,9 @@ const Login = () => {
     };
     dispatch(login_reducser({ data }));
     navigate("/");
-    // }
   };
 
-  const reg = () => {
-    navigate("/register");
-  };
-
-  const reset = () => {
-    navigate("/reset");
-  };
-
+  // Google login
   const oAuth = () => {
     popupTools.popup(
       `${process.env.REACT_APP_BASE_URL}/auth/google`,
@@ -75,6 +63,18 @@ const Login = () => {
       }
     );
   };
+
+  // Navigate to register
+  const reg = () => {
+    navigate("/register");
+  };
+
+  // Navigate to reset password
+  const reset = () => {
+    navigate("/reset");
+  };
+
+  // Return
   return (
     <div>
       <div className="divLogin">

@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./style.css";
 const SuccessPay = () => {
-  const projectId = useParams().projectId;
-  const donate = useParams().donate;
-  const packageId = useParams().packageId;
+  const projectId = useParams().projectId; // Project id
+  const donate = useParams().donate; // Donate
+  const packageId = useParams().packageId; // package id
+
+  const [seconds, setSeconds] = useState(5); // 5 second to navigate to home page
 
   const navigate = useNavigate();
 
@@ -16,47 +18,58 @@ const SuccessPay = () => {
     return state;
   });
 
+  // Update pleged of the project
   const successPayment = async () => {
+    // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/updateProject/${projectId}/${donate}`
     );
-    console.log(res);
   };
 
+  // Add the package to the user
   const addPackage = async () => {
-    if (packageId == 0) {
-      console.log("NOT");
-      return;
-    } else {
-      console.log("HERE");
+    if (packageId === 0) {
+      // eslint-disable-next-line
       let res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}`
+        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${state.signin_reducer.user._id}/${donate}`
       );
-      console.log(res.data);
+    } else {
+      // eslint-disable-next-line
+      let res = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}/${donate}`
+      );
     }
   };
+  // eslint-disable-next-line
 
-  useEffect(() => {
-    addPackage();
-  }, []);
-
-  useEffect(() => {
-    successPayment();
-  }, []);
-
-  const [seconds, setSeconds] = useState(5);
+  // Navigate to home after 5 second
   useEffect(() => {
     const interval = setInterval(() => {
       setSeconds((seconds) => seconds - 1);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  // Navigate to home after 5 second
   if (seconds <= 0) {
     setTimeout(() => {
       navigate("/");
     }, 500);
   }
 
+  // Invoke add the package to the user
+  useEffect(() => {
+    addPackage();
+    // eslint-disable-next-line
+  }, []);
+
+  // Invoke update pleged of the project
+  useEffect(() => {
+    successPayment();
+    // eslint-disable-next-line
+  }, []);
+
+  // Return
   return (
     <div className="success">
       <div>
