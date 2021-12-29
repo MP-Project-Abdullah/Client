@@ -16,10 +16,6 @@
   cursor: pointer;
 }
 
-/* .ulNav:hover li {
-  color: saddlebrown;
-} */
-
 .websiteName {
   text-align: center;
   padding: 0.5%;
@@ -36,4 +32,52 @@
 
 .logout:hover {
   color: #bf8c4c;
+}
+
+.menu {
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  margin-left: -0.9%;
+}
+
+.toggleMenu {
+  width: 0;
+  height: 0;
+  transition: 2s ease-in-out;
+}
+
+.menuOptions {
+  margin-top: 10%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7);
+  border: 1px solid gray;
+  padding: 12%;
+  width: 16vh;
+  /* background-color: #fefefe; */
+  border-radius: 5%;
+  margin-bottom: 3rem;
+  transition: 0.5s ease;
+  transform: 0.5s;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+/* #menuLink:hover {
+  color: black;
+} */
+
+.ulMenu {
+  list-style: none;
+}
+#linkMenuu {
+  width: 100%;
+}
+#linkMenuu:hover {
+  color: black;
+}
+.marginLinks {
+  margin: 8%;
+}
+
+#linkDashboard {
+  position: absolute;
 }

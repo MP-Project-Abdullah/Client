@@ -15,16 +15,16 @@ const ProjectPage = () => {
 
   const [project, setProject] = useState([]); // The project
   const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
-  // const [green, setGreen] = useState(false);
+  const [green, setGreen] = useState(false); // Change color pf pledged if it more then goal
 
   // Get project by id
   const getData = async () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
     );
-    // if (res.data.pledged > res.data.goal) {
-    //   setGreen(true);
-    // }
+    if (res.data[0].pledged > res.data[0].goal) {
+      setGreen(true);
+    }
     setProject(res.data);
   };
 
@@ -69,7 +69,9 @@ const ProjectPage = () => {
                     </p>
                   </div>
                   <div>
-                    <p className="pGPD">Pledged {item.pledged}</p>{" "}
+                    <p className={green ? "pGPD1" : "pGPD"}>
+                      Pledged {item.pledged}
+                    </p>{" "}
                   </div>
                   <div>
                     <p className="pGPD">Backers {item.deadline}</p>{" "}

@@ -6,14 +6,14 @@ import store from "./reducers/index";
 import { Provider } from "react-redux";
 import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "./components/Payment";
+
 ReactDOM.render(
-  <Provider store={store}>
-  <Elements stripe={stripePromise} 
-  >
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-  </Elements>
+    <Provider store={store}>
+      <Elements stripe={stripePromise}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Elements>
     </Provider>,
 
   document.getElementById("root")
