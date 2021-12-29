@@ -1,27 +1,19 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
-import { IoLocationSharp } from "react-icons/io5";
 import Title from "react-vanilla-tilt";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
 const StoryPage = () => {
   const id = useParams().id; // Get project id
 
-  const navigate = useNavigate();
+  const [story, setStory] = useState([]); // Story info
 
-  const [story, setStory] = useState([]);
-  const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
-
-  // Get project by id
+  // Get Story by id
   const getData = async () => {
     console.log();
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/story/${id}`
     );
-    console.log(res.data);
     setStory(res.data);
   };
 
@@ -34,7 +26,6 @@ const StoryPage = () => {
   // Return
   return (
     <div>
-      <h1>Story page</h1>
       {story.length &&
         story.map((item) => {
           return (
@@ -145,8 +136,7 @@ const StoryPage = () => {
               </div>
             </div>
           );
-        })
-        }
+        })}
     </div>
   );
 };
