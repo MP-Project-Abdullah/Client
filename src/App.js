@@ -17,6 +17,9 @@ import Payment from "./components/Payment";
 import SuccessPay from "./components/SuccessPay";
 import Dashboard from "./components/Dashboard";
 import Film from "./components/Film";
+import NewStory from "./components/newStory";
+import Stories from "./components/Stories";
+import StoryPage from "./components/StoryPage";
 import "./App.css";
 function App() {
   return (
@@ -28,10 +31,14 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/art" element={<Art />} />
         <Route exact path="/film" element={<Film />} />
+        <Route exact path="/stories" element={<Stories />} />
+        <Route exact path="/story/:id" element={<StoryPage />} />
 
         <Route exact path="/profile" element={<Account />} />
         <Route exact path="/reset" element={<Reset />} />
         <Route exact path="/newProject" element={<NewProject />} />
+        <Route exact path="/newStory" element={<NewStory />} />
+
         <Route
           exact
           path="/newPackage/:postId/:userId"

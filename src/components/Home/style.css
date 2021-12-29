@@ -131,7 +131,6 @@
   width: 96%;
   margin: auto;
   margin-top: 4vh;
-  
 }
 .imgStory {
   width: 35vh;
@@ -252,4 +251,10 @@
   border-radius: 100%;
   position: absolute;
   margin-left: -10%;
+}
+
+.iconMenu {
+  margin-bottom: -8%;
+
+  font-size: 20px;
 }

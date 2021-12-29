@@ -55,7 +55,6 @@ const Home = () => {
   // Get stories
   const getStories = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/stories`);
-    console.log(res.data);
     let newArr = [];
     for (let i = res.data.length - 2; i > res.data.length - 4; i--) {
       if (i > -1) {

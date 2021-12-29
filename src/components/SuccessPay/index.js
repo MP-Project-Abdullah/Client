@@ -28,10 +28,11 @@ const SuccessPay = () => {
 
   // Add the package to the user
   const addPackage = async () => {
-    if (packageId === 0) {
+    // eslint-disable-next-line
+    if (packageId == 0) {
       // eslint-disable-next-line
       let res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${state.signin_reducer.user._id}/${donate}`
+        `${process.env.REACT_APP_BASE_URL}/newUserPackage/${state.signin_reducer.user._id}/${donate}`
       );
     } else {
       // eslint-disable-next-line
