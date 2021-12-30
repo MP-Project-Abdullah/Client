@@ -18,18 +18,40 @@ const Dashboard = () => {
   };
 
   // Aproved project
-  const aprooved = async (id) => {
+  const aprooved = async (projectId, userId, projectName) => {
     let res = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/aprooved/${id}`
+      `${process.env.REACT_APP_BASE_URL}/aprooved/${projectId}`
     );
-    console.log(res.data);
+    let titleNotif = `Approved`;
+    let messageNotif = `we are happy to inform you, your project ${projectName} has been approved.`;
+    let result = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/newNotif/${projectId}/${userId}`,
+      {
+        title: titleNotif,
+        message: messageNotif,
+      }
+    );
+
     getData();
   };
 
   // Reject project
-  const reject = async (id) => {
-    let res = await axios.put(`${process.env.REACT_APP_BASE_URL}/reject/${id}`);
-    console.log(res.data);
+  const reject = async (projectId, userId, projectName) => {
+    let res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/reject/${projectId}`
+    );
+
+    let titleNotif = `Rejected`;
+    let messageNotif = `we are sorry to inform you, your project ${projectName} has been rejected.`;
+    let result = await axios.post(
+      `${process.env.REACT_APP_BASE_URL}/newNotif/${projectId}/${userId}`,
+      {
+        title: titleNotif,
+        message: messageNotif,
+      }
+    );
+    console.log(result.data);
+
     getData();
   };
 
@@ -90,7 +112,9 @@ const Dashboard = () => {
                       <button
                         className="btnApprovedAndReject"
                         id="approved"
-                        onClick={() => aprooved(item._id)}
+                        onClick={() =>
+                          aprooved(item._id, item.user, item.title)
+                        }
                       >
                         Approved
                       </button>
@@ -98,7 +122,7 @@ const Dashboard = () => {
                       <button
                         className="btnApprovedAndReject"
                         id="reject"
-                        onClick={() => reject(item._id)}
+                        onClick={() => reject(item._id, item.user, item.title)}
                       >
                         Reject
                       </button>

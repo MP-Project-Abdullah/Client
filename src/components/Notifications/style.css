@@ -1,0 +1,33 @@
+.iconNotif {
+  font-size: 6vh;
+  color: black;
+  /* border: 1px solid black; */
+  background-color: #d18c36;
+  padding: 4px;
+  border-radius: 100%;
+}
+
+.containerNotif {
+  position: fixed;
+  z-index: 99;
+  margin-left: 1%;
+  bottom: 15px;
+}
+
+.notifs {
+  padding: 4px;
+  position: fixed;
+  z-index: 99;
+  margin-left: 1%;
+  bottom: 4rem;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  /* min-width: 10rem; */
+  color: white;
+  width: 15rem;
+}
+
+.test {
+    border-bottom: 1px solid rgba(135, 135, 135, 0.68);
+    margin-bottom: 1rem;
+}

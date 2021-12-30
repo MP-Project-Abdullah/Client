@@ -90,6 +90,7 @@ const NewProject = () => {
         desc6: desc6,
       }
     );
+    console.log(res, "res");
     navigate(`/newPackage/${res.data._id}/${res.data.user}`);
   };
 

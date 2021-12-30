@@ -13,6 +13,8 @@ const Account = () => {
     return state;
   });
 
+  console.log(state);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -15,7 +15,7 @@ const Login = () => {
 
   const [emailOrUsername, setEmailOrUsername] = useState(""); // Email or username
   const [password, setPassword] = useState(""); // Password
-
+  
   // Login
   const logIn = async (e) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ const Login = () => {
         } else {
           const data = { token: user.token, user: user.result };
           dispatch(login_reducser({ data }));
-          navigate("/home");
+          navigate("/");
         }
       }
     );
