@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 import "./style.css";
 const Art = () => {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ const Art = () => {
   // Return
   return (
     <div>
+      <Navbar />
       <div className="divSearchInput">
         <input
           type="text"

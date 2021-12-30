@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       {/* <Notifications /> */}
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />

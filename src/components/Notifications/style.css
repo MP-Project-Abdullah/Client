@@ -5,6 +5,7 @@
   background-color: #d18c36;
   padding: 4px;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .containerNotif {
@@ -22,12 +23,35 @@
   bottom: 4rem;
   background-color: transparent;
   backdrop-filter: blur(10px);
-  /* min-width: 10rem; */
   color: white;
   width: 15rem;
 }
 
-.test {
-    border-bottom: 1px solid rgba(135, 135, 135, 0.68);
-    margin-bottom: 1rem;
+.notHome {
+    padding: 4px;
+    position: fixed;
+    z-index: 99;
+    margin-left: 1%;
+    bottom: 4rem;
+     /* background-color: transparent; */
+    backdrop-filter: blur(10px); 
+    color: black;
+    width: 15rem;
+}
+
+.titleNotif {
+    cursor: pointer;
+}
+
+.messageNotif {
+    cursor: pointer;
+}
+
+.divAprrovedAndIcon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteNotif {
+    cursor: pointer;
 }
