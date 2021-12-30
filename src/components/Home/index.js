@@ -101,6 +101,11 @@ const Home = () => {
     navigate(`/project/${id}`);
   };
 
+  // Navigate to project page
+  const storyPage = (id) => {
+    navigate(`/story/${id}`);
+  };
+
   // Return
   return (
     <div className="container">
@@ -182,7 +187,10 @@ const Home = () => {
       <div className="containerStory">
         <div className="storyDiv">
           {lastStory.length && (
-            <div className="lastStory">
+            <div
+              className="lastStory"
+              onClick={() => storyPage(lastStory[0]._id)}
+            >
               <img
                 className="lastStoryImg"
                 src={lastStory[0].img}
@@ -201,7 +209,11 @@ const Home = () => {
             {stories.length &&
               stories.map((item) => {
                 return (
-                  <div className="story" key={item._id}>
+                  <div
+                    className="story"
+                    key={item._id}
+                    onClick={() => storyPage(item._id)}
+                  >
                     <img className="imgStory" src={item.img} alt="story" />
                     <div className="paddingPandTitle">
                       <h2 className="titleStory">{item.title}</h2>

@@ -3,20 +3,22 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-const Art = () => {
+const Comic = () => {
   const navigate = useNavigate();
-  const [art, setArt] = useState([]); // All projects, kind art
+  const [comic, setComic] = useState([]); // All projects, kind comic
   const [search, setSearch] = useState("");
 
-  // Get all projects, kind art
+  // Get all projects, kind comic
   const getData = async () => {
+    console.log(`${process.env.REACT_APP_BASE_URL}/projectsKind/comic`);
     const res = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/projectsKind/art`
+      `${process.env.REACT_APP_BASE_URL}/projectsKind/comic`
     );
-    setArt(res.data);
+    console.log(res.data);
+    setComic(res.data);
   };
 
-  // Invoke get all projects, kind art
+  // Invoke get all projects, kind comic
   useEffect(() => {
     getData();
   }, []);
@@ -40,8 +42,8 @@ const Art = () => {
         />
       </div>
       <div className="projects">
-        {art.length &&
-          art
+        {comic.length &&
+          comic
             .filter((item) => {
               if (search === "") {
                 return item;
@@ -86,4 +88,4 @@ const Art = () => {
   );
 };
 
-export default Art;
+export default Comic;

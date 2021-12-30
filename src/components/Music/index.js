@@ -3,20 +3,20 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
-const Art = () => {
+const Music = () => {
   const navigate = useNavigate();
-  const [art, setArt] = useState([]); // All projects, kind art
+  const [music, setMusic] = useState([]); // All projects, kind music
   const [search, setSearch] = useState("");
 
-  // Get all projects, kind art
+  // Get all projects, kind music
   const getData = async () => {
     const res = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/projectsKind/art`
+      `${process.env.REACT_APP_BASE_URL}/projectsKind/music`
     );
-    setArt(res.data);
+    setMusic(res.data);
   };
 
-  // Invoke get all projects, kind art
+  // Invoke get all projects, kind music
   useEffect(() => {
     getData();
   }, []);
@@ -38,10 +38,10 @@ const Art = () => {
           placeholder="Search for project..."
           onChange={(e) => setSearch(e.target.value)}
         />
-      </div>
+      </div>{" "}
       <div className="projects">
-        {art.length &&
-          art
+        {music.length &&
+          music
             .filter((item) => {
               if (search === "") {
                 return item;
@@ -86,4 +86,4 @@ const Art = () => {
   );
 };
 
-export default Art;
+export default Music;

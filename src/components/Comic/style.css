@@ -11,16 +11,5 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
   grid-gap: 1rem;
-}
-
-.divSearchInput {
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-}
-
-.inputSearch {
-  width: 90%;
-  height: 8vh;
-  padding: 1%;
+  /* padding: 5%; */
 }
