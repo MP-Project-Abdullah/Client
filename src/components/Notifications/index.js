@@ -101,7 +101,7 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
                         <div>
                           {" "}
                           <MdDeleteOutline
-                          className="deleteNotif"
+                            className="deleteNotif"
                             onClick={() => deleteNotif(item._id)}
                           />
                         </div>
@@ -126,11 +126,7 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
               })
             ) : (
               <div>
-                <p className="test">Not</p>
-                <p className="test">Not</p>
-                <p className="test"> Not</p>
-                <p className="test">Not</p>
-                <p className="test">Not</p>
+                <p className="test">You have no notifications</p>
               </div>
             )}
           </div>

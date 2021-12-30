@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../Navbar";
+import "./style.css";
 const NewPackage = () => {
   const projectId = useParams().postId; // project id
   const userId = useParams().userId; // User id
@@ -36,14 +38,20 @@ const NewPackage = () => {
   // Return
   return (
     <div>
-      <div>
-        <h1>Package </h1>
-        <form onSubmit={(e) => createNewPackage(e)}>
+      <Navbar />
+      <div className="containerNewPackage">
+        <div className="newPackageH1">
+          {" "}
+          <h1>New Package </h1>
+        </div>
+
+        <form onSubmit={(e) => createNewPackage(e)} className="formNewPackge">
           <div>
             <input
               type="text"
               name="title"
               id="title"
+              className="inputNewPackge"
               placeholder="Enter package title..."
               onChange={(e) => setTitle(e.target.value)}
             />
@@ -53,6 +61,7 @@ const NewPackage = () => {
               type="text"
               name="amount"
               id="amount"
+              className="inputNewPackge"
               placeholder="Enter package amount..."
               onChange={(e) => setAmount(e.target.value)}
             />
@@ -62,6 +71,7 @@ const NewPackage = () => {
               type="text"
               name="describe"
               id="describe"
+              className="inputNewPackge"
               placeholder="Enter package describe..."
               onChange={(e) => setDescribe(e.target.value)}
             />
@@ -71,13 +81,16 @@ const NewPackage = () => {
               type="text"
               name="arraive"
               id="arraive"
+              className="inputNewPackge"
               placeholder="Enter package time arraive..."
               onChange={(e) => setArrive(e.target.value)}
             />
           </div>
-          <div>
-            <input type="submit" value="Create" />
-            <button onClick={() => navigate("/")}>Done</button>
+          <div className="butnNewPackage">
+            <input type="submit" value="Create" className="btnNewPackge" />
+            <button onClick={() => navigate("/")} className="btnNewPackge">
+              Done
+            </button>
           </div>
         </form>
       </div>

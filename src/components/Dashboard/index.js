@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-
+import Navbar from "../Navbar";
 const Dashboard = () => {
   const [projects, setProjects] = useState([]); // all projects, not approved
 
@@ -68,6 +68,7 @@ const Dashboard = () => {
   // Return
   return (
     <div>
+      <Navbar />
       {projects.length > 0 ? (
         <div>
           <h1>Not approved </h1>

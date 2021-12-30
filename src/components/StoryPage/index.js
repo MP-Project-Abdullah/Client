@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Title from "react-vanilla-tilt";
+import Navbar from "../Navbar";
 import "./style.css";
 const StoryPage = () => {
   const id = useParams().id; // Get project id
@@ -26,6 +27,7 @@ const StoryPage = () => {
   // Return
   return (
     <div>
+      <Navbar />
       {story.length &&
         story.map((item) => {
           return (

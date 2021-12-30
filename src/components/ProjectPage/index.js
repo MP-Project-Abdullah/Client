@@ -8,6 +8,7 @@ import Title from "react-vanilla-tilt";
 import "./style.css";
 import Comment from "../Comment";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 const ProjectPage = () => {
   const id = useParams().id; // Get project id
 
@@ -37,6 +38,7 @@ const ProjectPage = () => {
   // Return
   return (
     <div>
+      <Navbar />
       {project.length &&
         project.map((item) => {
           return (

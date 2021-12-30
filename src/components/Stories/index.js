@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 import "./style.css";
 const Stories = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const Stories = () => {
   // Return
   return (
     <div>
+      <Navbar />
       <div className="divSearchInput">
         <input
           type="text"

@@ -25,7 +25,15 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <Notifications toggle={toggle} setToggle={setToggle} setMenu={setMenu} />
+      {state.signin_reducer.token.length > 0 ? (
+        <Notifications
+          toggle={toggle}
+          setToggle={setToggle}
+          setMenu={setMenu}
+        />
+      ) : (
+        ""
+      )}
       <h1 className="websiteName">Website name</h1>
       <div className="lineAll"></div>
       <ul className="ulNav">
@@ -189,17 +197,36 @@ const Navbar = () => {
                         <div className="marginLinks"></div>
                       </>
                     ) : (
-                      <li className="liFooter" id="linkMenuu">
-                        {" "}
-                        <Link
-                          className="linkNav"
-                          id="menuLink"
-                          to="/login"
-                          onClick={() => setMenu(false)}
-                        >
-                          Login
-                        </Link>
-                      </li>
+                      <div>
+                        <div>
+                          <li className="liFooter" id="linkMenuu">
+                            {" "}
+                            <Link
+                              className="linkNav"
+                              id="menuLink"
+                              to="/login"
+                              onClick={() => setMenu(false)}
+                            >
+                              Login
+                            </Link>
+                          </li>
+                        </div>{" "}
+                        <div className="marginLinks"></div>
+                        <div>
+                          {" "}
+                          <li className="liFooter" id="linkMenuu">
+                            {" "}
+                            <Link
+                              className="linkNav"
+                              id="menuLink"
+                              to="/register"
+                              onClick={() => setMenu(false)}
+                            >
+                              Register
+                            </Link>
+                          </li>{" "}
+                        </div>
+                      </div>
                     )}
 
                     <div className="marginLinks"></div>

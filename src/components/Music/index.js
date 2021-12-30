@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Navbar from "../Navbar";
 const Music = () => {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]); // All projects, kind music
@@ -29,6 +30,7 @@ const Music = () => {
   // Return
   return (
     <div>
+      <Navbar />
       <div className="divSearchInput">
         <input
           type="text"

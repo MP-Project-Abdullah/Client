@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 
+import Navbar from "../Navbar";
 const Donate = () => {
   const projectId = useParams().projectId; // Project id
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ const Donate = () => {
   // Return
   return (
     <div>
+      <Navbar />
       {packages.length > 0 ? (
         <div>
           <h2 className="packagesDomnationsH2">Packages</h2>

@@ -1,0 +1,41 @@
+.containerNewPackage {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.newPackageH1 {
+  text-align: center;
+}
+
+.formNewPackge {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputNewPackge {
+  width: 100%;
+  height: 7vh;
+  padding: 1%;
+}
+
+.btnNewPackge {
+  width: 30%;
+  height: 7vh;
+  border: none;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btnNewPackge:hover {
+  transition: 0.3s ease-in-out;
+  background-color: rgba(0, 128, 0, 0.612);
+}
+
+.butnNewPackage {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}

@@ -5,6 +5,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login_reducser } from "../../reducers/login";
 import "./style.css";
+import Navbar from "../Navbar";
 import Swal from "sweetalert2";
 
 const popupTools = require("popup-tools");
@@ -15,7 +16,7 @@ const Login = () => {
 
   const [emailOrUsername, setEmailOrUsername] = useState(""); // Email or username
   const [password, setPassword] = useState(""); // Password
-  
+
   // Login
   const logIn = async (e) => {
     e.preventDefault();
@@ -77,6 +78,7 @@ const Login = () => {
   // Return
   return (
     <div>
+      <Navbar />
       <div className="divLogin">
         <div className="wrapperLogin">
           <h1>Login</h1>
@@ -109,10 +111,10 @@ const Login = () => {
           <button className="google" onClick={oAuth}>
             Google+
           </button>
-          <p onClick={reg} style={{ cursor: "pointer" }}>
+          <p onClick={reg} className="NotForget">
             Not have an account ?
           </p>{" "}
-          <p style={{ cursor: "pointer" }} onClick={reset}>
+          <p className="NotForget" onClick={reset}>
             Forgot the password ?
           </p>
         </div>
