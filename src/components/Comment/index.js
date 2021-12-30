@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
+
 const Comment = ({ id }) => {
   const navigate = useNavigate();
   const [comment, setComment] = useState([]); // All comment

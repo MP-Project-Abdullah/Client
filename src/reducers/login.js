@@ -10,6 +10,7 @@ const signin_reducer = (state = insitialState, action) => {
     case "LOGIN":
       // eslint-disable-next-line
       const { user, token } = payload;
+
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
       return { user, token };

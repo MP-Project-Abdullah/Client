@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Navbar from "../Navbar";
 import "./style.css";
 const SuccessPay = () => {
   const projectId = useParams().projectId; // Project id
@@ -73,6 +74,7 @@ const SuccessPay = () => {
   // Return
   return (
     <div className="success">
+      <Navbar />
       <div>
         <h1 className="h1SuccessPay">Thank you for helping our community </h1>
       </div>

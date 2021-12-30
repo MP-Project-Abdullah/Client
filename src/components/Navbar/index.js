@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { logout_reducser } from "../../reducers/login";
 import { useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
-
+import Notifications from "../Notifications";
 const Navbar = () => {
   const dispatch = useDispatch();
 
   const [menu, setMenu] = useState(false);
   const [toggleCss, setToggleCss] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const logout = () => {
     localStorage.clear();
@@ -24,6 +25,15 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
+      {state.signin_reducer.token.length > 0 ? (
+        <Notifications
+          toggle={toggle}
+          setToggle={setToggle}
+          setMenu={setMenu}
+        />
+      ) : (
+        ""
+      )}
       <h1 className="websiteName">Website name</h1>
       <div className="lineAll"></div>
       <ul className="ulNav">
@@ -35,6 +45,7 @@ const Navbar = () => {
             onClick={() => {
               setMenu(false);
               setToggleCss(true);
+              setToggle(false);
             }}
           >
             Home
@@ -48,6 +59,7 @@ const Navbar = () => {
             onClick={() => {
               setMenu(false);
               setToggleCss(true);
+              setToggle(false);
             }}
           >
             Art
@@ -61,6 +73,7 @@ const Navbar = () => {
             onClick={() => {
               setMenu(false);
               setToggleCss(true);
+              setToggle(false);
             }}
           >
             Film
@@ -74,6 +87,7 @@ const Navbar = () => {
             onClick={() => {
               setMenu(false);
               setToggleCss(true);
+              setToggle(false);
             }}
           >
             Music
@@ -87,6 +101,7 @@ const Navbar = () => {
             onClick={() => {
               setMenu(false);
               setToggleCss(true);
+              setToggle(false);
             }}
           >
             Comics & Illustration
@@ -100,6 +115,7 @@ const Navbar = () => {
             onClick={() => {
               setMenu(false);
               setToggleCss(true);
+              setToggle(false);
             }}
           >
             Success Stories
@@ -114,7 +130,7 @@ const Navbar = () => {
                 onClick={() => {
                   setMenu(!menu);
                   setToggleCss(!toggleCss);
-                  console.log(toggleCss, "TOGLE CSS");
+                  setToggle(false);
                 }}
                 className="linkNav"
               >
@@ -181,17 +197,36 @@ const Navbar = () => {
                         <div className="marginLinks"></div>
                       </>
                     ) : (
-                      <li className="liFooter" id="linkMenuu">
-                        {" "}
-                        <Link
-                          className="linkNav"
-                          id="menuLink"
-                          to="/login"
-                          onClick={() => setMenu(false)}
-                        >
-                          Login
-                        </Link>
-                      </li>
+                      <div>
+                        <div>
+                          <li className="liFooter" id="linkMenuu">
+                            {" "}
+                            <Link
+                              className="linkNav"
+                              id="menuLink"
+                              to="/login"
+                              onClick={() => setMenu(false)}
+                            >
+                              Login
+                            </Link>
+                          </li>
+                        </div>{" "}
+                        <div className="marginLinks"></div>
+                        <div>
+                          {" "}
+                          <li className="liFooter" id="linkMenuu">
+                            {" "}
+                            <Link
+                              className="linkNav"
+                              id="menuLink"
+                              to="/register"
+                              onClick={() => setMenu(false)}
+                            >
+                              Register
+                            </Link>
+                          </li>{" "}
+                        </div>
+                      </div>
                     )}
 
                     <div className="marginLinks"></div>

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { storage } from "../../firebase";
 import "./style.css";
 import axios from "axios";
+import Navbar from "../Navbar";
 const NewProject = () => {
   const state = useSelector((state) => {
     return state;
@@ -90,12 +91,14 @@ const NewProject = () => {
         desc6: desc6,
       }
     );
+    console.log(res, "res");
     navigate(`/newPackage/${res.data._id}/${res.data.user}`);
   };
 
   // Return
   return (
     <div>
+      <Navbar />
       {state.signin_reducer.token.length > 0 ? (
         <div className="containerNewProject">
           {" "}

@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Navbar from "../Navbar";
 const Film = () => {
   const navigate = useNavigate();
   const [film, setFilm] = useState([]); // All projects, kind film
@@ -29,6 +30,7 @@ const Film = () => {
   // Return
   return (
     <div>
+      <Navbar />
       <div className="divSearchInput">
         <input
           type="text"

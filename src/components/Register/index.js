@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import validator from "validator";
 import "./style.css";
+import Navbar from "../Navbar";
 const Register = () => {
   const navigate = useNavigate();
 
@@ -94,70 +95,73 @@ const Register = () => {
 
   // Return
   return (
-    <div className="divLogin">
-      <div className="wrapperLogin">
-        <h1> Register </h1>
+    <div>
+      <Navbar />
+      <div className="divLogin">
+        <div className="wrapperLogin">
+          <h1> Register </h1>
 
-        <div className="btnsForm">
-          <input
-            className="inputLogin"
-            type="text"
-            name="username"
-            placeholder="Username"
-            onChange={(e) => {
-              setUserName(e.target.value);
-            }}
-          />
-          <input
-            className="inputLogin"
-            type="text"
-            name="name"
-            placeholder="Your name"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-          />
-          <input
-            className="inputLogin"
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-          <input
-            className="inputLogin"
-            type="password"
-            name="password"
-            id="passIput"
-            placeholder="Password"
-            onChange={(e) => {
-              validate(e.target.value);
-              setPassword(e.target.value);
-            }}
-          />{" "}
-          <span
-            style={{
-              fontWeight: "bold",
-              color: "red",
-            }}
-          >
-            {errorMessage}
-          </span>
-          <input
-            className="inputLogin"
-            id="loginSubmit"
-            type="submit"
-            value="Register"
-            onClick={
-              errorMessage === "Is Strong Password" ? register : invalPass
-            }
-          />
+          <div className="btnsForm">
+            <input
+              className="inputLogin"
+              type="text"
+              name="username"
+              placeholder="Username"
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+            />
+            <input
+              className="inputLogin"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+            <input
+              className="inputLogin"
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <input
+              className="inputLogin"
+              type="password"
+              name="password"
+              id="passIput"
+              placeholder="Password"
+              onChange={(e) => {
+                validate(e.target.value);
+                setPassword(e.target.value);
+              }}
+            />{" "}
+            <span
+              style={{
+                fontWeight: "bold",
+                color: "red",
+              }}
+            >
+              {errorMessage}
+            </span>
+            <input
+              className="inputLogin"
+              id="loginSubmit"
+              type="submit"
+              value="Register"
+              onClick={
+                errorMessage === "Is Strong Password" ? register : invalPass
+              }
+            />
+          </div>
+          <p onClick={login} style={{ cursor: "pointer" }}>
+            Already have an account ?
+          </p>
         </div>
-        <p onClick={login} style={{ cursor: "pointer" }}>
-          Already have an account ?
-        </p>
       </div>
     </div>
   );

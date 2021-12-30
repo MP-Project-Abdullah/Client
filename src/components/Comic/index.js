@@ -3,6 +3,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import Navbar from "../Navbar";
+
 const Comic = () => {
   const navigate = useNavigate();
   const [comic, setComic] = useState([]); // All projects, kind comic
@@ -31,6 +33,7 @@ const Comic = () => {
   // Return
   return (
     <div>
+      <Navbar />
       <div className="divSearchInput">
         <input
           type="text"

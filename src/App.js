@@ -22,11 +22,13 @@ import Stories from "./components/Stories";
 import StoryPage from "./components/StoryPage";
 import Comic from "./components/Comic";
 import Music from "./components/Music";
+// import Notifications from "./components/Notifications";
 import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Notifications /> */}
+      {/* <Navbar /> */}
       <Routes>
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />

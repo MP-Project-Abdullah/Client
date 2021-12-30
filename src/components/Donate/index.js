@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 
+import Navbar from "../Navbar";
 const Donate = () => {
   const projectId = useParams().projectId; // Project id
   const navigate = useNavigate();
@@ -13,9 +14,11 @@ const Donate = () => {
 
   // Get all packages
   const getData = async () => {
+    console.log(`${process.env.REACT_APP_BASE_URL}/packages/${projectId}`);
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/packages/${projectId}`
     );
+    console.log(res.data, "P");
     setPackages(res.data);
   };
 
@@ -39,6 +42,7 @@ const Donate = () => {
   // Return
   return (
     <div>
+      <Navbar />
       {packages.length > 0 ? (
         <div>
           <h2 className="packagesDomnationsH2">Packages</h2>
