@@ -6,6 +6,7 @@ import { storage } from "../../firebase";
 import "./style.css";
 import axios from "axios";
 import Navbar from "../Navbar";
+import { BsCardImage } from "react-icons/bs";
 const NewProject = () => {
   const state = useSelector((state) => {
     return state;
@@ -123,46 +124,66 @@ const NewProject = () => {
                 </select>
               </form>
             </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Title</h2>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="Enter your title here..."
-                className="inputNewProject"
-                maxLength={50}
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project title</h2>
+                <p>
+                  Write a clear, brief title to help people quickly understand
+                  your project. title will appear on your project and pre-launch
+                  pages.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Title</p>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  placeholder="Enter your title here..."
+                  className="inputNewProjectTitle"
+                  maxLength={50}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
+              </div>
             </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Project image</h2>
-              <div className="uploading">
-                <label style={{ color: "white" }} className="uploadLabel">
-                  Upload Image
-                  <input
-                    style={{ marginLeft: "10px" }}
-                    type="file"
-                    name="postImg"
-                    onChange={(e) => {
-                      setUrlString(e.target.value);
-                      handleChange(e);
-                    }}
-                    required
-                  />
-                </label>
-                <button
-                  style={{
-                    marginRight: "10px",
-                    width: "5%",
-                  }}
-                  className="upBtn"
-                  onClick={handleUpload}
-                >
-                  Upload
-                </button>
-                <progress style={{ width: "12%" }} value={progress} max="100" />
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>{" "}
             <div className="divNewProjectH2AndInput">
