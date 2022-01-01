@@ -6,6 +6,7 @@ import { storage } from "../../firebase";
 import "./style.css";
 import axios from "axios";
 import Navbar from "../Navbar";
+import Swal from "sweetalert2";
 const NewStory = () => {
   const state = useSelector((state) => {
     return state;
@@ -64,8 +65,8 @@ const NewStory = () => {
     );
   };
 
-  // Create new project
-  const newProject = async () => {
+  // Create new story
+  const newStory = async () => {
     let res = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newStory/${state.signin_reducer.user._id}`,
       {
@@ -78,6 +79,13 @@ const NewStory = () => {
         desc3: desc3,
       }
     );
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "New story created",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     navigate(`/`);
   };
 
@@ -275,7 +283,7 @@ const NewStory = () => {
               <progress style={{ width: "12%" }} value={progress} max="100" />
             </div>
           </div>
-          <button onClick={newProject}>Submit</button>
+          <button onClick={newStory}>Submit</button>
         </div>
       ) : (
         <div className="containerAccount">

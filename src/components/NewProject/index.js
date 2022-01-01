@@ -7,6 +7,7 @@ import "./style.css";
 import axios from "axios";
 import Navbar from "../Navbar";
 import { BsCardImage } from "react-icons/bs";
+import Swal from "sweetalert2";
 const NewProject = () => {
   const state = useSelector((state) => {
     return state;
@@ -92,7 +93,13 @@ const NewProject = () => {
         desc6: desc6,
       }
     );
-    console.log(res, "res");
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "New project created",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     navigate(`/newPackage/${res.data._id}/${res.data.user}`);
   };
 
