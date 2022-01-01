@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { login_reducser } from "../../reducers/login";
 import Title from "react-vanilla-tilt";
 import Navbar from "../Navbar";
+import { storage } from "../../firebase";
 const Account = () => {
   const state = useSelector((state) => {
     return state;
@@ -25,12 +26,21 @@ const Account = () => {
   const [packages, setPackages] = useState([]); // user packages
   const [totalPleged, setTotalPleged] = useState(0); // total pledged
   const [userProjects, setUserProjects] = useState([]); // all user projects
+  const [newAvatar, setNewAvatar] = useState(""); // New avatar
 
-  // set new name and bio
+  // New avatar
+  const [image, setImage] = useState(null); // Upload iamge
+  const [url, setUrl] = useState(""); /// Upload iamge
+  // eslint-disable-next-line
+  const [urlString, setUrlString] = useState(""); // Upload iamge
+  const [progress, setProgress] = useState(0); // Upload iamge
+
+  // set new name and bio and avatar
   const bioAndName = () => {
     if (state.signin_reducer.token) {
       setNewName(state.signin_reducer.user.name);
       setNewBio(state.signin_reducer.user.bio);
+      setNewAvatar(state.signin_reducer.user.avatar);
     }
   };
 
@@ -79,12 +89,49 @@ const Account = () => {
       {
         name: newName,
         bio: newBio,
+        avatar: newAvatar,
       }
     );
     setEditProfile(false);
     let token = localStorage.getItem("token");
     const data = { token: token, user: res.data };
     dispatch(login_reducser({ data }));
+  };
+
+  //  New avatar
+  // Uplad image
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  // Upload image
+  const handleUpload = (e) => {
+    e.preventDefault();
+    const uploadImg = storage.ref(`images/${image.name}`).put(image);
+
+    uploadImg.on(
+      "state_changed",
+      (snapshot) => {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((res) => {
+            setNewAvatar(res);
+          });
+      }
+    );
   };
 
   // Use effects
@@ -113,12 +160,44 @@ const Account = () => {
             <div className="infoAndEdit">
               <div className="avatarAndName">
                 <div>
-                  <img
-                    src={state.signin_reducer.user.avatar}
-                    alt="avatarUser"
-                    className="avatar"
-                  />
+                  <div className="divAvatar">
+                    <img
+                      src={state.signin_reducer.user.avatar}
+                      alt="avatarUser"
+                      className="avatar"
+                    />
+                  </div>
+                  {/* Edit avatar */}
+                  <div className="divEditAvatar">
+                    {editProfile ? (
+                      <div className="divNewaAvatar">
+                        <label value="" className="uploadLabelAccount">
+                          <input
+                            type="file"
+                            name="postImg"
+                            className="chooseFile"
+                            onChange={(e) => {
+                              setUrlString(e.target.value);
+                              handleChange(e);
+                            }}
+                            required
+                          />
+                        </label>
+                        <button className="uploadBtn" onClick={handleUpload}>
+                          Click to upload
+                        </button>
+                        <progress
+                          value={progress}
+                          max="100"
+                          className="progress"
+                        />
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
+                {/* Edit user name */}
                 <div className="nameAndUsernmae">
                   {editProfile ? (
                     <div>
@@ -165,6 +244,7 @@ const Account = () => {
               {" "}
               <h1>About {state.signin_reducer.user.name} </h1>
               {editProfile ? (
+                // Edit new bio
                 <div>
                   <input
                     type="text"

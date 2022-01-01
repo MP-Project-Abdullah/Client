@@ -69,7 +69,10 @@
 }
 
 #newName {
+  padding: 5%;
   color: gray;
+  height: 6vh;
+  font-size: 3vh;
 }
 
 #newBio {
@@ -96,4 +99,59 @@
 
 .h2Total {
   font-size: 6vh;
+}
+
+.avatarWithEdit {
+  border: 1px solid black;
+}
+
+.divNewaAvatar {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.avatarWithEdit {
+  width: 100%;
+}
+
+.divAvatar {
+  width: 40%;
+}
+
+.divEditAvatar {
+  width: 15%;
+  position: absolute;
+  margin-top: 1%;
+}
+
+.uploadLabelAccount {
+  display: flex;
+}
+
+.chooseFile {
+  color: white;
+}
+
+.uploadLabelAccount input {
+  border: none;
+}
+
+.progress {
+  width: 100%;
+}
+
+.uploadBtn {
+  width: 100%;
+  border: none;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.uploadBtn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #d6a364;
 }
