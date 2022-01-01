@@ -4,9 +4,10 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import "./style.css"
-
-export default function CheckoutForm({ projectId, donate,packageId }) {
+import "./style.css";
+import Navbar from "../Navbar";
+import { Nav } from "react-bootstrap";
+export default function CheckoutForm({ projectId, donate, packageId }) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -69,19 +70,28 @@ export default function CheckoutForm({ projectId, donate,packageId }) {
     setIsLoading(false);
   };
 
-
-
   return (
+    <div>
+      <Navbar />
       <div className="containerPayment">
-    <form id="payment-form" className="formPay" onSubmit={handleSubmit}>
-      <PaymentElement id="payment-element" />
-      <button className="btnPay" disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-        </span>
-      </button>
-      {message && <div id="payment-message">{message}</div>}
-    </form>
+        <form id="payment-form" className="formPay" onSubmit={handleSubmit}>
+          <PaymentElement id="payment-element" />
+          <button
+            className="btnPay"
+            disabled={isLoading || !stripe || !elements}
+            id="submit"
+          >
+            <span id="button-text">
+              {isLoading ? (
+                <div className="spinner" id="spinner"></div>
+              ) : (
+                "Pay now"
+              )}
+            </span>
+          </button>
+          {message && <div id="payment-message">{message}</div>}
+        </form>
+      </div>
     </div>
   );
 }

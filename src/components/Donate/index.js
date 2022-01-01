@@ -44,13 +44,29 @@ const Donate = () => {
     <div>
       <Navbar />
       {packages.length > 0 ? (
-        <div>
-          <h2 className="packagesDomnationsH2">Packages</h2>
+        <div className="wrapperPackges">
+          <div className="divSelectPackage">
+            <h2 className="packagesDomnationsH2">Select your reward</h2>
+            <p>Select an option below</p>
+          </div>
+          <div className="line"> </div>
           <div className="containerPackages">
             {" "}
             {packages.map((item) => {
               return (
-                <div className="divPackages" key={item._id}>
+                <div
+                  className="divPackages"
+                  key={item._id}
+                  id={
+                    item.amount >= 100
+                      ? item.amount >= 300
+                        ? item.amount >= 500
+                          ? "up500"
+                          : "up300less500"
+                        : "up100less300"
+                      : "less100"
+                  }
+                >
                   <h2 className="packageTitle">{item.title}</h2>
                   <p className="packageDescribe">{item.describe}</p>
                   <p className="packageAmount">Amount : {item.amount}</p>
@@ -74,7 +90,10 @@ const Donate = () => {
 
       <div>
         <div>
-          <h2 className="packagesDomnationsH2">Donations</h2>
+          <div className="divH2AndPDonations">
+            <h2 className="packagesDomnationsH2">Donations</h2>
+            <p>Pledge without a reward</p>
+          </div>
         </div>
         <form className="formDonate" onSubmit={payment}>
           <input
