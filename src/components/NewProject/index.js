@@ -106,24 +106,29 @@ const NewProject = () => {
           <div className="divH1NewProject">
             <h1>New project</h1>{" "}
           </div>
-          <div className="line"> </div>
+          <div className="lineAll"> </div>
           <div className="containerDivNewProject">
-            <div className="divNewProjectH2AndInput">
-              <form>
-                <h2>Choose a kind:</h2>
-                <select
-                  name="kind"
-                  id="kind"
-                  defaultValue="art"
-                  onChange={(e) => setKind(e.target.value)}
-                >
-                  <option value="art">Art</option>
-                  <option value="film">Film</option>
-                  <option value="music">Music</option>
-                  <option value="comic">Comics & Illustration</option>
-                </select>
+            <div className="divKind">
+              <form className="formKind">
+                <div className="h2Kind">
+                  <h2>Choose a kind for your project</h2>
+                </div>
+                <div className="selectKind">
+                  <select
+                    name="kind"
+                    id="kind"
+                    defaultValue="art"
+                    onChange={(e) => setKind(e.target.value)}
+                  >
+                    <option value="art">Art</option>
+                    <option value="film">Film</option>
+                    <option value="music">Music</option>
+                    <option value="comic">Comics & Illustration</option>
+                  </select>
+                </div>
               </form>
             </div>{" "}
+            <div className="lineAll"> </div>
             <div className="divNewProjectH2AndInputTitle">
               <div className="divH2Title">
                 <h2>Project title</h2>
@@ -147,6 +152,7 @@ const NewProject = () => {
                 />
               </div>
             </div>
+            <div className="lineAll"> </div>
             <div className="divNewProjectH2AndInputTitle">
               <div className="divH2Title">
                 <h2>Project image</h2>
@@ -186,297 +192,510 @@ const NewProject = () => {
                 </div>
               </div>
             </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc(e.target.value)}
-                required
-              />
-            </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Describe your project</h2>
-              <input
-                type="text"
-                name="describe"
-                id="describe"
-                placeholder="Nax letter 160"
-                maxLength={160}
-                className="inputNewProject"
-                onChange={(e) => setDescribe(e.target.value)}
-                required
-              />
-            </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Your project goal</h2>
-              <input
-                type="text"
-                name="goal"
-                id="goal"
-                placeholder="Enter your project goal here..."
-                className="inputNewProject"
-                onChange={(e) => setGoal(e.target.value)}
-                required
-              />
-            </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Deadline</h2>
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Enter your project deadline here..."
-                className="inputNewProject"
-                onChange={(e) => setDeadline(e.target.value)}
-                required
-              />
-            </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Location</h2>
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Enter your project deadline here..."
-                className="inputNewProject"
-                onChange={(e) => setLocation(e.target.value)}
-                required
-              />
-            </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc1(e.target.value)}
-              />
-            </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project Description</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc2(e.target.value)}
-              />
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Describe</h2>
+                <p>
+                  Brief describe of your project, describe will appear on your
+                  project and pre-launch pages.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Describe</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name="describe"
+                  id="describe"
+                  placeholder="Nax letter 160"
+                  maxLength={160}
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDescribe(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc3(e.target.value)}
-              />
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
-                <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
-                />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc4(e.target.value)}
-              />
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Funding goal</h2>
+                <p>
+                  Set an achievable goal that covers what you need to complete
+                  your project.
+                </p>
+                <p>
+                  Funding is all-or-nothing. If you don’t meet your goal, you
+                  won’t receive any money.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div>
+                  <p>Goal amount</p>
+                </div>
+                <div className="divGoal">
+                  <p className="dollar">$</p>
+                  <input
+                    type="text"
+                    name="goal"
+                    id="goal"
+                    placeholder="Enter your project goal here..."
+                    className="inputNewProjectTitle"
+                    onChange={(e) => setGoal(e.target.value)}
+                    required
+                  />
+                </div>
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Campaign duration</h2>
+                <p>
+                  Set a time limit for your campaign. You won’t be able to
+                  change this after you launch.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Campaign duration</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter your project deadline here... ( Days )"
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDeadline(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc5(e.target.value)}
-              />
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Location</h2>
+                <p>Set a location for your project</p>
+              </div>
+              <div className="divInputTitle">
+                <p>Location</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="Enter your project deadline here..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setLocation(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc6(e.target.value)}
-              />
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Description (Optional)</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc1(e.target.value)}
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Description (Optional)</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc2(e.target.value)}
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Description (Optional)</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc3(e.target.value)}
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Description (Optional)</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc4(e.target.value)}
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Description (Optional)</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc5(e.target.value)}
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Description (Optional)</h2>
+                <p>
+                  Describe what you're raising funds to do, why you care about
+                  it, how you plan to make it happen, and who you are. Your
+                  description should tell backers everything they need to know.
+                  If possible.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your project description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc6(e.target.value)}
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your project. Choose one
+                  that looks good at different sizes—it’ll appear on your
+                  project page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label class="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
           </div>
-          <button onClick={newStory}>Submit</button>
+          <div className="divSubmitNewProject">
+            <button className="submitNewProject" onClick={newStory}>
+              Create new project
+            </button>
+          </div>
         </div>
       ) : (
         <div className="containerAccount">
