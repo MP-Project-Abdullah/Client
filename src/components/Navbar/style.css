@@ -5,6 +5,16 @@
   z-index: 3;
 }
 
+.logo {
+  /* background-image: url("/public/llllllooogo.png"); */
+  width: 20vh;
+  height: 20vh;
+  background-repeat:no-repeat;
+  position: absolute;
+  background-size: 10vh;
+  margin-left: 1%;
+  
+}
 .ulNav {
   list-style: none;
   display: flex;

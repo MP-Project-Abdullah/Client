@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar";
 import "./style.css";
+import Swal from "sweetalert2";
 const NewPackage = () => {
   const projectId = useParams().postId; // project id
   const userId = useParams().userId; // User id
@@ -29,6 +30,13 @@ const NewPackage = () => {
         arrive: arrive,
       }
     );
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "New package created",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     e.target[0].value = "";
     e.target[1].value = "";
     e.target[2].value = "";

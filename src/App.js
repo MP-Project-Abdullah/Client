@@ -4,7 +4,6 @@ import { Route } from "react-router";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Art from "./components/Art";
 import Account from "./components/Account";
@@ -22,13 +21,11 @@ import Stories from "./components/Stories";
 import StoryPage from "./components/StoryPage";
 import Comic from "./components/Comic";
 import Music from "./components/Music";
-// import Notifications from "./components/Notifications";
+import ContactUs from "./components/ContactUs";
 import "./App.css";
 function App() {
   return (
     <div className="App">
-      {/* <Notifications /> */}
-      {/* <Navbar /> */}
       <Routes>
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />} />
@@ -37,6 +34,7 @@ function App() {
         <Route exact path="/film" element={<Film />} />
         <Route exact path="/music" element={<Music />} />
         <Route exact path="/comic" element={<Comic />} />
+        <Route exact path="/contact" element={<ContactUs />} />
 
         <Route exact path="/stories" element={<Stories />} />
         <Route exact path="/story/:id" element={<StoryPage />} />

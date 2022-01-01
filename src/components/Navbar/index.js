@@ -34,7 +34,9 @@ const Navbar = () => {
       ) : (
         ""
       )}
+      <div className="logo"></div>
       <h1 className="websiteName">Website name</h1>
+    
       <div className="lineAll"></div>
       <ul className="ulNav">
         <li className="liFooter">
