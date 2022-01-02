@@ -255,6 +255,9 @@
 
 .iconMenu {
   margin-bottom: -8%;
-
   font-size: 20px;
+}
+
+.descStorys {
+  width: 55vh;
 }
