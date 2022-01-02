@@ -172,7 +172,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"
@@ -354,7 +354,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"
@@ -417,7 +417,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"
@@ -480,7 +480,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"
@@ -543,7 +543,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"
@@ -606,7 +606,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"
@@ -669,7 +669,7 @@ const NewProject = () => {
               <div className="divInputTitle">
                 <div className="uploading">
                   <div>
-                    <label class="custom-file-upload">
+                    <label className="custom-file-upload">
                       <BsCardImage /> +
                       <input
                         className="inputFile"

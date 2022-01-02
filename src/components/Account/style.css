@@ -21,8 +21,8 @@
 }
 
 .avatar {
-  width: 20vh;
-  height: 20vh;
+  width: 30vh;
+  height: 30vh;
   border-radius: 100%;
 }
 
@@ -35,7 +35,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 4vh;
+  font-size: 5vh;
 }
 
 .infoAndEdit {
@@ -57,13 +57,12 @@
 
 .divBio {
   padding: 1%;
-  margin-top: 1%;
   text-align: center;
 }
 
 .newBioInput {
   width: 100%;
-  height: 10vh;
+  height: 25vh;
   text-align: center;
   font-size: 2vh;
 }
@@ -80,7 +79,29 @@
 }
 
 .divEmail {
-  margin-top: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.19);
+  text-align: left;
+  padding: 2%;
+  width: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.divEmail:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+}
+
+.emailPH2 {
+  display: flex;
+  gap: 1rem;
+}
+.email {
+  font-size: 3.5vh;
+}
+
+.divEMailP {
+  margin-top: 4%;
+  border-top: 1px solid rgba(0, 0, 0, 0.19);
 }
 
 .totalAccount {
@@ -155,3 +176,47 @@
   transition: 0.3s ease-in-out;
   background-color: #d6a364;
 }
+
+.divBio {
+  border: 1px solid rgba(0, 0, 0, 0.19);
+  text-align: left;
+  padding: 2%;
+  width: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.divBio:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.02);
+}
+
+.divBio2 {
+  border-top: 1px solid rgba(0, 0, 0, 0.19);
+}
+.bioP {
+  margin-top: 4%;
+  width: 90%;
+}
+
+.bioAndEMmil {
+  display: flex;
+  gap: 2rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.uploadLabelAccount {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(128, 128, 128, 0.143);
+  cursor: pointer;
+  font-size: 2.4vh;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 2%;
+}
+
+.uploadLabelAccount:hover {
+  transition: 0.3s ease-in-out;
+  background-color: #d6a364;
+}
+

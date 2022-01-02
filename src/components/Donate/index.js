@@ -43,6 +43,8 @@ const Donate = () => {
   return (
     <div>
       <Navbar />
+      <div>
+        <div>
       {packages.length > 0 ? (
         <div className="wrapperPackges">
           <div className="divSelectPackage">
@@ -67,10 +69,28 @@ const Donate = () => {
                       : "less100"
                   }
                 >
-                  <h2 className="packageTitle">{item.title}</h2>
-                  <p className="packageDescribe">{item.describe}</p>
-                  <p className="packageAmount">Amount : {item.amount}</p>
-                  <p className="packageArrive">Arrive :{item.arrive}</p>
+                  <div className="divAllPackage">
+                    <div className="pledgedAndTitleAndP">
+                      <div>
+                        <p className="packageAmount">
+                          • Pledged {item.amount} $
+                        </p>
+                      </div>
+                      <div>
+                        <h2 className="packageTitle">• {item.title}</h2>
+                      </div>
+                      <div>
+                        <p className="packageDescribe"> •{item.describe}</p>
+                      </div>
+                      <div className="divAddOns">
+                        <p className="addOns">Add-ons</p>{" "}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="packageArrive"> • Arrive in </p>
+                      <p>{item.arrive}</p>
+                    </div>
+                  </div>
                   <div className="divBtnDonate">
                     <button
                       className="packageButtonDonate"
@@ -104,6 +124,11 @@ const Donate = () => {
           />
           <input type="submit" value="Donate" id="submitDonate" />
         </form>
+      </div>
+      </div>
+      <div>
+        <p>Your pledge will support an ambitious creative project that has yet to be developed. There’s a risk that, despite a creator’s best efforts, your reward will not be fulfilled, and we urge you to consider this risk prior to pledging. Kickstarter is not responsible for project claims or reward fulfillment</p>
+      </div>
       </div>
     </div>
   );

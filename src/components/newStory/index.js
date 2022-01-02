@@ -7,6 +7,7 @@ import "./style.css";
 import axios from "axios";
 import Navbar from "../Navbar";
 import Swal from "sweetalert2";
+import { BsCardImage } from "react-icons/bs";
 const NewStory = () => {
   const state = useSelector((state) => {
     return state;
@@ -101,189 +102,297 @@ const NewStory = () => {
           </div>
           <div className="line"> </div>
           <div className="containerDivNewProject">
-            <div className="divNewProjectH2AndInput">
-              <h2>Title</h2>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="Enter your title here..."
-                className="inputNewProject"
-                maxLength={50}
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Story image</h2>
-              <div className="uploading">
-                <label style={{ color: "white" }} className="uploadLabel">
-                  Upload Image
-                  <input
-                    style={{ marginLeft: "10px" }}
-                    type="file"
-                    name="postImg"
-                    onChange={(e) => {
-                      setUrlString(e.target.value);
-                      handleChange(e);
-                    }}
-                    required
-                  />
-                </label>
-                <button
-                  style={{
-                    marginRight: "10px",
-                    width: "5%",
-                  }}
-                  className="upBtn"
-                  onClick={handleUpload}
-                >
-                  Upload
-                </button>
-                <progress style={{ width: "12%" }} value={progress} max="100" />
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Project title</h2>
+                <p>
+                  Write a clear, brief title to help people quickly understand
+                  your project. title will appear on your project and pre-launch
+                  pages.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Title</p>
+                <input
+                  type="text"
+                  name="title"
+                  id="title"
+                  placeholder="Enter your title here..."
+                  className="inputNewProjectTitle"
+                  maxLength={50}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
               </div>
             </div>{" "}
+            <div className="lineAll"> </div>
             <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc(e.target.value)}
-                required
-              />
+              <div className="divNewProjectH2AndInputTitle">
+                <div className="divH2Title">
+                  <h2>Story image </h2>
+                  <p>
+                    Add an image that clearly represents your Story. Choose one
+                    that looks good at different sizes—it’ll appear on your
+                    Story page
+                  </p>
+                </div>
+                <div className="divInputTitle">
+                  <div className="uploading">
+                    <div>
+                      <label className="custom-file-upload">
+                        <BsCardImage /> +
+                        <input
+                          className="inputFile"
+                          type="file"
+                          name="postImg"
+                          onChange={(e) => {
+                            setUrlString(e.target.value);
+                            handleChange(e);
+                          }}
+                          required
+                        />
+                      </label>
+                    </div>
+                    <div className="divUpladProgress">
+                      <div>
+                        <button className="uploadButton" onClick={handleUpload}>
+                          Upload
+                        </button>
+                      </div>
+                      <div>
+                        <progress value={progress} max="100" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>{" "}
+              <div className="lineAll"> </div>
             </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Describe your Story</h2>
-              <input
-                type="text"
-                name="describe"
-                id="describe"
-                placeholder="Nax letter 160"
-                maxLength={160}
-                className="inputNewProject"
-                onChange={(e) => setDescribe(e.target.value)}
-                required
-              />
-            </div>{" "}
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc1(e.target.value)}
-              />
-            </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story Description</h2>
+                <p></p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your story description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc2(e.target.value)}
-              />
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Describe</h2>
+                <p>
+                  Brief describe of your story, describe will appear on your
+                  story and pre-launch pages.
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <p>Describe</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name="describe"
+                  id="describe"
+                  placeholder="Nax letter 160"
+                  maxLength={160}
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDescribe(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
-            <div className="divNewProjectH2AndInput">
-              <h2>Description</h2>
-              <input
-                type="text"
-                name="description"
-                id="description"
-                placeholder="Enter your project description..."
-                className="inputNewProject"
-                onChange={(e) => setDesc3(e.target.value)}
-              />
+              </div>
             </div>{" "}
-            <div className="uploading">
-              <label style={{ color: "white" }} className="uploadLabel">
-                Upload Image
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story Description (Optional) </h2>
+                <p></p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
                 <input
-                  style={{ marginLeft: "10px" }}
-                  type="file"
-                  name="postImg"
-                  onChange={handleChange}
-                  // eslint-disable-next-line
-                  onChange={(e) => {
-                    handleChange(e);
-                    setUrlString(e.target.value);
-                  }}
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your story description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc1(e.target.value)}
+                  required
                 />
-              </label>
-              <button
-                style={{
-                  marginRight: "10px",
-                  width: "5%",
-                }}
-                className="upBtn"
-                onClick={handleUpload}
-              >
-                Upload
-              </button>
-              <progress style={{ width: "12%" }} value={progress} max="100" />
-            </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your Story. Choose one
+                  that looks good at different sizes—it’ll appear on your Story
+                  page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label className="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story Description (Optional) </h2>
+                <p></p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your story description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc2(e.target.value)}
+                  required
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story image (Optional)</h2>
+                <p>
+                  Add an image that clearly represents your Story. Choose one
+                  that looks good at different sizes—it’ll appear on your Story
+                  page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label className="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story Description (Optional) </h2>
+                <p></p>
+              </div>
+              <div className="divInputTitle">
+                <p>Description</p>
+                <input
+                  type="text"
+                  name="description"
+                  id="description"
+                  placeholder="Enter your story description..."
+                  className="inputNewProjectTitle"
+                  onChange={(e) => setDesc3(e.target.value)}
+                  required
+                />
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
+            <div className="divNewProjectH2AndInputTitle">
+              <div className="divH2Title">
+                <h2>Story image (Optional) </h2>
+                <p>
+                  Add an image that clearly represents your Story. Choose one
+                  that looks good at different sizes—it’ll appear on your Story
+                  page
+                </p>
+              </div>
+              <div className="divInputTitle">
+                <div className="uploading">
+                  <div>
+                    <label className="custom-file-upload">
+                      <BsCardImage /> +
+                      <input
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="divUpladProgress">
+                    <div>
+                      <button className="uploadButton" onClick={handleUpload}>
+                        Upload
+                      </button>
+                    </div>
+                    <div>
+                      <progress value={progress} max="100" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>{" "}
+            <div className="lineAll"> </div>
           </div>
-          <button onClick={newStory}>Submit</button>
+          <div className="divSubmitNewProject">
+            <button className="submitNewProject" onClick={newStory}>
+              Submit
+            </button>
+          </div>
         </div>
       ) : (
         <div className="containerAccount">

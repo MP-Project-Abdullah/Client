@@ -1,9 +1,9 @@
 .containerPackages {
-  padding: 5%;
+  padding: 2% 5%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: auto;
-  grid-gap: 7rem;
+  grid-gap: 3rem;
   align-items: center;
 }
 
@@ -17,7 +17,6 @@
 .packagesDomnationsH2 {
   text-align: center;
   margin-top: 5%;
-  /* margin-bottom: 2%; */
 }
 
 .divPackages {
@@ -43,11 +42,6 @@
   margin-top: 3%;
   height: 12vh;
   width: 80%;
-  border-bottom: 1px solid rgba(130, 121, 121, 0.401);
-}
-
-.packageAmount {
-  margin-top: 1%;
 }
 
 .divBtnDonate {
@@ -60,8 +54,8 @@
 .packageButtonDonate {
   background-color: #bf8c4c;
   border: none;
-  width: 90%;
-  height: 6vh;
+  width: 45%;
+  height: 8vh;
   cursor: pointer;
   color: white;
   font-size: 4vh;
@@ -104,25 +98,21 @@
 }
 
 #up500 {
-  background-image: url("/public/تصميم\ بدون\ عنوان\ \(5\).gif");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #up300less500 {
-  background-image: url("/public/تصميم\ بدون\ عنوان\ \(6\).gif");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #up100less300 {
-  background-image: url("/public/تصميم\ بدون\ عنوان\ \(3\).gif");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #less100 {
-  background-image: url("/public/تصميم\ بدون\ عنوان\ \(4\).gif");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -132,4 +122,46 @@
   flex-direction: column;
   text-align: center;
   margin-bottom: 2%;
+}
+
+.divAllPackage {
+  display: flex;
+  padding: 2%;
+}
+
+.pledgedAndTitleAndP {
+  width: 50%;
+  margin-right: 2%;
+}
+
+.packageAmount {
+  margin-bottom: 2%;
+  font-size: 3.5vh;
+}
+
+.packageArrive {
+  font-size: 3vh;
+}
+
+.divAddOns {
+  text-align: center;
+  width: 15vh;
+  background-color: #e6faf1;
+  border-radius: 10%;
+  font-size: 3vh;
+}
+
+
+.wrapperPackges {
+  display: flex;
+  flex-direction: column;
+}
+
+.allPackges {
+  display: f;
+}
+
+.resPackges {
+  width: 20%;
+  
 }

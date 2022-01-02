@@ -33,12 +33,12 @@ const SuccessPay = () => {
     if (packageId == 0) {
       // eslint-disable-next-line
       let res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/newUserPackage/${state.signin_reducer.user._id}/${donate}`
+        `${process.env.REACT_APP_BASE_URL}/newUserPackage/${state.signin_reducer.user._id}/${donate}/${projectId}`
       );
     } else {
       // eslint-disable-next-line
       let res = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}/${donate}`
+        `${process.env.REACT_APP_BASE_URL}/newUserPackages/${packageId}/${state.signin_reducer.user._id}/${donate}/${projectId}`
       );
     }
   };

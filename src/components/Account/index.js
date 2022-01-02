@@ -14,8 +14,6 @@ const Account = () => {
     return state;
   });
 
-  console.log(state);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -171,17 +169,18 @@ const Account = () => {
                   <div className="divEditAvatar">
                     {editProfile ? (
                       <div className="divNewaAvatar">
-                        <label value="" className="uploadLabelAccount">
+                        <label className="uploadLabelAccount">
+                          Choose image
                           <input
-                            type="file"
-                            name="postImg"
-                            className="chooseFile"
-                            onChange={(e) => {
-                              setUrlString(e.target.value);
-                              handleChange(e);
-                            }}
-                            required
-                          />
+                        className="inputFile"
+                        type="file"
+                        name="postImg"
+                        onChange={(e) => {
+                          setUrlString(e.target.value);
+                          handleChange(e);
+                        }}
+                        required
+                      />
                         </label>
                         <button className="uploadBtn" onClick={handleUpload}>
                           Click to upload
@@ -240,63 +239,66 @@ const Account = () => {
               )}
             </div>
             <div className="line"> </div>
-            <div className="divBio">
-              {" "}
-              <h1>About {state.signin_reducer.user.name} </h1>
-              {editProfile ? (
-                // Edit new bio
-                <div>
-                  <input
-                    type="text"
-                    name="newBio"
-                    id="newBio"
-                    placeholder="New bio"
-                    className="newBioInput"
-                    defaultValue={state.signin_reducer.user.bio}
-                    onChange={(e) => setNewBio(e.target.value)}
-                  />
+            <div className="bioAndEMmil">
+              <div className="divBio">
+                {" "}
+                <h1>Professional Bio </h1>
+                {editProfile ? (
+                  // Edit new bio
+                  <div className="divNewBio">
+                    <input
+                      type="text"
+                      name="newBio"
+                      id="newBio"
+                      placeholder="New bio"
+                      className="newBioInput"
+                      defaultValue={state.signin_reducer.user.bio}
+                      onChange={(e) => setNewBio(e.target.value)}
+                    />
+                  </div>
+                ) : (
+                  <div className="divBio2">
+                    <p className="bioP">{state.signin_reducer.user.bio}</p>{" "}
+                  </div>
+                )}
+              </div>
+
+              <div className="divEmail">
+                <div className="emailPH2">
+                  <h2>Your Email :</h2>{" "}
+                  <p className="email">{state.signin_reducer.user.email}</p>
                 </div>
-              ) : (
-                <div>
-                  <p>{state.signin_reducer.user.bio}</p>{" "}
+                <div className="divEMailP"></div>
+                <div className="totalAccount">
+                  <Title
+                    style={{
+                      height: "0",
+                    }}
+                  >
+                    <div className="h2Div">
+                      {" "}
+                      <h2 className="h2Total">
+                        {totalDonations && totalDonations}
+                      </h2>
+                      <h2 className="h2Total">Total donations</h2>
+                    </div>
+                  </Title>
+                  <Title
+                    style={{
+                      height: "0",
+                    }}
+                  >
+                    <div className="h2Div">
+                      <h2 className="h2Total">{totalPleged && totalPleged}</h2>
+                      <h2 className="h2Total">Total pledged</h2>
+                    </div>{" "}
+                  </Title>
                 </div>
-              )}
-            </div>
-            <div className="line"> </div>
-            <div className="totalAccount">
-              <Title
-                style={{
-                  height: "0",
-                }}
-              >
-                <div className="h2Div">
-                  {" "}
-                  <h2 className="h2Total">
-                    {totalDonations && totalDonations}
-                  </h2>
-                  <h2 className="h2Total">Total donations</h2>
-                </div>
-              </Title>
-              <Title
-                style={{
-                  height: "0",
-                }}
-              >
-                <div className="h2Div">
-                  <h2 className="h2Total">{totalPleged && totalPleged}</h2>
-                  <h2 className="h2Total">Total pledged</h2>
-                </div>{" "}
-              </Title>
+              </div>
             </div>
 
-            <div className="divEmail">
-              <h2>Email</h2>
-              <h4>{state.signin_reducer.user.email}</h4>
-            </div>
-            <div className="divPassword">
-              <h2>Password</h2>
-              <h4>**************</h4>
-            </div>
+            {/* <div className="line"> </div> */}
+
             <div>
               <h2>Your Packages</h2>
               <div className="containerPackages">

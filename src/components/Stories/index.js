@@ -12,7 +12,6 @@ const Stories = () => {
   // Get all projects, kind art
   const getData = async () => {
     const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/stories`);
-    console.log(res.data);
     setStories(res.data);
   };
 
