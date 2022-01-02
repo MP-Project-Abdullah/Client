@@ -17,6 +17,7 @@ const Home = () => {
   const [totalProject, setTotalProject] = useState(0); // Total projects
 
   const navigate = useNavigate();
+  
 
   // Get all project
   const getData = async () => {

@@ -46,6 +46,7 @@ const StoryPage = () => {
                   />{" "}
                 </div>
               </div>
+              <div className="line"> </div>
               <div>
                 <div className="divBtnsCC">
                   <div className="divBtnCompaign"></div>{" "}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { logout_reducser } from "../../reducers/login";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Notifications from "../Notifications";
 const Navbar = () => {
@@ -13,6 +13,8 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [toggleCss, setToggleCss] = useState(true);
   const [toggle, setToggle] = useState(false);
+  const [homeNav, setHomeNav] = useState(false);
+  const [homeOrNot, setHomeOrNot] = useState(false);
 
   const logout = () => {
     localStorage.clear();
@@ -23,8 +25,29 @@ const Navbar = () => {
     return state;
   });
 
+  // const changeColor = () => {
+  //   if (window.scrollY > 1) {
+  //     setHomeNav(true);
+  //   } else {
+  //     setHomeNav(false);
+  //   }
+  // };
+  // window.addEventListener("scroll", changeColor);
+
+  const hider = () => {
+    if (window.location.href == "http://localhost:3000/") {
+      setHomeOrNot(true);
+    } else {
+      setHomeOrNot(false);
+    }
+  };
+
+  useEffect(() => {
+    hider();
+  }, []);
+
   return (
-    <div className="navbar">
+    <div className={homeOrNot ? "NewBar" : "navbar"}>
       {state.signin_reducer.token.length > 0 ? (
         <Notifications
           toggle={toggle}
@@ -34,15 +57,15 @@ const Navbar = () => {
       ) : (
         ""
       )}
-      <div className="logo"></div>
+
       <h1 className="websiteName">Website name</h1>
-    
+
       <div className="lineAll"></div>
-      <ul className="ulNav">
+      <ul className={homeOrNot ? "newUl" : "ulNav"}>
         <li className="liFooter">
           {" "}
           <Link
-            className="linkNav"
+            className={homeOrNot ? "newLinkNav" : "linkNav"}
             to="/"
             onClick={() => {
               setMenu(false);
@@ -56,7 +79,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className="linkNav"
+            className={homeOrNot ? "newLinkNav" : "linkNav"}
             to="/art"
             onClick={() => {
               setMenu(false);
@@ -70,7 +93,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className="linkNav"
+            className={homeOrNot ? "newLinkNav" : "linkNav"}
             to="/film"
             onClick={() => {
               setMenu(false);
@@ -84,7 +107,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className="linkNav"
+            className={homeOrNot ? "newLinkNav" : "linkNav"}
             to="/music"
             onClick={() => {
               setMenu(false);
@@ -98,7 +121,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className="linkNav"
+            className={homeOrNot ? "newLinkNav" : "linkNav"}
             to="/comic"
             onClick={() => {
               setMenu(false);
@@ -112,7 +135,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className="linkNav"
+            className={homeOrNot ? "newLinkNav" : "linkNav"}
             to="/stories"
             onClick={() => {
               setMenu(false);
@@ -134,7 +157,7 @@ const Navbar = () => {
                   setToggleCss(!toggleCss);
                   setToggle(false);
                 }}
-                className="linkNav"
+                className={homeOrNot ? "newLinkNav" : "linkNav"}
               >
                 <IoMdArrowDropdown className="iconMenu" /> Menu
               </p>

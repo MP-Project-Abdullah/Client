@@ -12,11 +12,9 @@ const Comic = () => {
 
   // Get all projects, kind comic
   const getData = async () => {
-    console.log(`${process.env.REACT_APP_BASE_URL}/projectsKind/comic`);
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/projectsKind/comic`
     );
-    console.log(res.data);
     setComic(res.data);
   };
 

@@ -17,7 +17,7 @@ const ProjectPage = () => {
   const [project, setProject] = useState([]); // The project
   const [compaignComment, setCompaignComment] = useState(true); // Toggle between compaign and comment
   const [green, setGreen] = useState(false); // Change color pf pledged if it more then goal
-
+  const [backers, setBackers] = useState(0);
   // Get project by id
   const getData = async () => {
     const res = await axios.get(
@@ -28,6 +28,17 @@ const ProjectPage = () => {
     }
     setProject(res.data);
   };
+
+  const getBackers = async () => {
+    let res = await axios.get(
+      `${process.env.REACT_APP_BASE_URL}/backersPackage/${id}`
+    );
+    setBackers(res.data.length);
+  };
+
+  useEffect(() => {
+    getBackers();
+  }, []);
 
   // Invoke getData
   useEffect(() => {
@@ -76,7 +87,7 @@ const ProjectPage = () => {
                     </p>{" "}
                   </div>
                   <div>
-                    <p className="pGPD">Backers {item.deadline}</p>{" "}
+                    <p className="pGPD">backers {backers} </p>{" "}
                   </div>
                   <div className="divDonateBtn">
                     <button

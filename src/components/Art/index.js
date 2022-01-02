@@ -3,11 +3,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
+import { useSelector } from "react-redux";
 import "./style.css";
 const Art = () => {
   const navigate = useNavigate();
   const [art, setArt] = useState([]); // All projects, kind art
   const [search, setSearch] = useState("");
+
+  const state = useSelector((state) => {
+    return state;
+  });
 
   // Get all projects, kind art
   const getData = async () => {
@@ -25,6 +30,15 @@ const Art = () => {
   // Navigate to project page
   const projectPage = (id) => {
     navigate(`/project/${id}`);
+  };
+
+  const deleteProject = async (id) => {
+    console.log(id);
+
+    let res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/deleteProject/${id}`
+    );
+    getData();
   };
 
   // Return
@@ -55,30 +69,57 @@ const Art = () => {
             })
             .map((item) => {
               return (
-                <div
-                  key={item._id}
-                  className="projectLeatset"
-                  onClick={() => projectPage(item._id)}
-                >
-                  <img className="leatestImg" src={item.url[0]} alt="project" />
+                <div key={item._id} className="projectLeatset">
+                  <div>
+                    <img
+                      className="leatestImg"
+                      src={item.url[0]}
+                      alt="project"
+                      onClick={() => projectPage(item._id)}
+                    />
+                  </div>
                   <div className="divInsideLeatestProject">
-                    <h2 className="titleLeatestProject">Title: {item.title}</h2>
-                    <div className="pDescribe">
-                      <p className="describeProjectLeatest">{item.describe}</p>
+                    <div onClick={() => projectPage(item._id)}>
+                      <h2 className="titleLeatestProject">
+                        Title: {item.title}
+                      </h2>
+                      <div className="pDescribe">
+                        <p className="describeProjectLeatest">
+                          {item.describe}
+                        </p>
+                      </div>
+                      <hr />
+                      <p className="goalLeatsetProject">Goal: {item.goal} $</p>
+                      <p className="pledgedLeatsetProject">
+                        {item.pledged} $ Pledged
+                      </p>
+                      <p className="deadlineLeatsetProject">
+                        {item.deadline} to go
+                      </p>
+                      <div className="kindAndLocation">
+                        <p className="kind">{item.kind}</p>
+                        <p className="location"> {item.location}</p>
+                      </div>
                     </div>
-                    <hr />
-                    <p className="goalLeatsetProject">Goal: {item.goal} $</p>
-                    <p className="pledgedLeatsetProject">
-                      {item.pledged} $ Pledged
-                    </p>
-                    <p className="deadlineLeatsetProject">
-                      {item.deadline} to go
-                    </p>
-                    <div className="kindAndLocation">
-                      <p className="kind">{item.kind}</p>
-                      <p className="location"> {item.location}</p>
+                    <div>
+                      <div>
+                        <p className="time">{item.time}</p>
+                      </div>
+                      {state.signin_reducer.user.role ==
+                      "61c04770ff8aeaad62406e9b" ? (
+                        <div className="divBtnDelete">
+                          {" "}
+                          <button
+                            className="btnDelete"
+                            onClick={() => deleteProject(item._id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      ) : (
+                        ""
+                      )}
                     </div>
-                    <p className="time">{item.time}</p>
                   </div>
                 </div>
               );

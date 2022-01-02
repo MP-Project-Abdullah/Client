@@ -46,6 +46,12 @@ const Login = () => {
     };
     dispatch(login_reducser({ data }));
     navigate("/");
+    Swal.fire({
+      icon: "success",
+      title: "Login successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
 
   // Google login
