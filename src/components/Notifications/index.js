@@ -4,13 +4,14 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { BiNotification } from "react-icons/bi";
 import { MdDeleteOutline } from "react-icons/md";
+import { BiNotificationOff } from "react-icons/bi";
 import "./style.css";
 const Notifications = ({ toggle, setToggle, setMenu }) => {
   const [notif, setNotif] = useState([]);
 
   const [colorNotf, setColorNotf] = useState(false);
   const [homeNotif, setHomeNotif] = useState(false);
-  const [showInfo, setShowInfo] = useState(false);
+  const [totalNotif, setTotalNotif] = useState(0);
 
   const state = useSelector((state) => {
     return state;
@@ -19,8 +20,9 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/getNotif/${state.signin_reducer.user._id}`
     );
-
+    setTotalNotif(res.data.length);
     setNotif(res.data);
+    console.log(res.data.length);
   };
 
   useEffect(() => {
@@ -66,15 +68,23 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
 
   return (
     <div className="notif">
-      <div className="containerNotif">
+      <div
+        className="containerNotif"
+        onClick={() => {
+          setToggle(!toggle);
+          setMenu(false);
+        }}
+      >
         {" "}
-        <BiNotification
-          className="iconNotif"
-          onClick={() => {
-            setToggle(!toggle);
-            setMenu(false);
-          }}
-        />
+        {totalNotif > 0 ? (
+          <div>
+            {" "}
+            <p className="totalNotif">{totalNotif && totalNotif}</p>
+            <BiNotification className="iconNotif" />
+          </div>
+        ) : (
+          <BiNotificationOff className="iconNotif" />
+        )}
       </div>
       {toggle ? (
         <div

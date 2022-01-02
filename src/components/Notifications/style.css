@@ -1,5 +1,5 @@
 .iconNotif {
-  font-size: 6vh;
+  font-size: 7vh;
   color: black;
   /* border: 1px solid black; */
   background-color: #d18c36;
@@ -13,6 +13,7 @@
   z-index: 99;
   margin-left: 1%;
   bottom: 15px;
+  cursor: pointer;
 }
 
 .notifs {
@@ -28,30 +29,37 @@
 }
 
 .notHome {
-    padding: 4px;
-    position: fixed;
-    z-index: 99;
-    margin-left: 1%;
-    bottom: 4rem;
-     /* background-color: transparent; */
-    backdrop-filter: blur(10px); 
-    color: black;
-    width: 15rem;
+  padding: 4px;
+  position: fixed;
+  z-index: 99;
+  margin-left: 1%;
+  bottom: 4rem;
+  backdrop-filter: blur(10px);
+  color: black;
+  width: 15rem;
 }
 
 .titleNotif {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .messageNotif {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .divAprrovedAndIcon {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .deleteNotif {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.totalNotif {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  margin-left: 40%;
+  margin-top: 22%;
+
 }
