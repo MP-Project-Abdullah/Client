@@ -1,8 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 .navbar {
   margin-top: 0.5%;
   background-color: transparent;
   position: relative;
   z-index: 3;
+}
+.websiteName {
+  color: #d58829;
+  font-family: "Cookie", cursive;
+}
+
+.websiteNameHome {
+  text-align: center;
+
+  padding: 0.5%;
+  font-family: "Cookie", cursive;
 }
 
 /* *************************************** */
@@ -28,9 +40,6 @@
   /* font-weight: bold; */
 }
 
-.newLinkNav:hover {
-}
-
 /* *************************************** */
 
 .logo {
@@ -41,6 +50,12 @@
   background-size: 10vh;
   margin-left: 1%;
 }
+
+.lineAll2 {
+  margin-top: 1%;
+  border-top: 1px solid rgba(52, 51, 51, 0.401)
+}
+
 
 .ulNav {
   list-style: none;
@@ -116,5 +131,7 @@
 }
 
 .logo {
-  background-image: url("/public/cd031c449e4b2e0a5b88badfdb5a8eafad05907c_s2_n2.png");
+  background-image: url("/public/image02.png");
+  margin-top: -1%;
+  height: 12vh;
 }

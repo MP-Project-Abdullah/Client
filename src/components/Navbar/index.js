@@ -59,9 +59,12 @@ const Navbar = () => {
         ""
       )}
 
-      <h1 className="websiteName">Website name</h1>
+      <h1 className={homeOrNot ? "websiteNameHome" : "websiteName"}>
+        Simply idea
+      </h1>
 
-      <div className="lineAll"></div>
+      <div className="lineAll2"></div>
+      <div className="divUlNav">
       <ul className="ulNav">
         <li className="liFooter">
           {" "}
@@ -290,6 +293,7 @@ const Navbar = () => {
           </li>
         </div>
       </ul>
+      </div>
       <div className="lineAll"></div>
     </div>
   );

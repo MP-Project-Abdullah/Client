@@ -318,31 +318,47 @@ const Account = () => {
                   packages.map((item) => {
                     return (
                       <div
-                        className="divPackages"
-                        key={item._id}
-                        id={
-                          item.package.amount >= 100
-                            ? item.package.amount >= 300
-                              ? item.package.amount >= 500
-                                ? "up500Account"
-                                : "up300less500Account"
-                              : "up100less300Account"
-                            : "less100Account"
-                        }
-                      >
+                      className="divPackages"
+                      key={item.package._id}
+                      id={
+                        item.amount >= 100
+                          ? item.amount >= 300
+                            ? item.amount >= 500
+                              ? "up500"
+                              : "up300less500"
+                            : "up100less300"
+                          : "less100"
+                      }
+                    >
+                      <div className="divAllPackage">
+                        <div className="pledgedAndTitleAndP">
+                          <div>
+                            <p className="packageAmount">
+                              • Pledged {item.package.amount} $
+                            </p>
+                          </div>
+                          <div>
+                            <h2 className="packageTitle">• {item.package.title}</h2>
+                          </div>
+                          <div>
+                            <p className="packageDescribe">
+                              {" "}
+                              • {item.package.describe}
+                            </p>
+                          </div>
+                          <div className="divAddOns">
+                            <p className="addOns">Add-ons</p>{" "}
+                          </div>
+                        </div>
                         <div>
-                          <h2 className="packageTitle">{item.package.title}</h2>
-                          <p className="packageDescribe">
-                            {item.package.describe}
-                          </p>
-                          <p className="packageAmount">
-                            Amount : {item.package.amount}
-                          </p>
-                          <p className="packageArrive">
-                            Arrive :{item.package.arrive}
-                          </p>{" "}
+                          <p className="packageArrive"> • Arrive in </p>
+                          <p>{item.package.arrive}</p>
                         </div>
                       </div>
+                      <div className="divBtnDonate">
+                       
+                      </div>
+                    </div>
                     );
                   })
                 ) : (

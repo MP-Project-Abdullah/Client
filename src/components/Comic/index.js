@@ -4,12 +4,16 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import Navbar from "../Navbar";
+import { useSelector } from "react-redux";
 
 const Comic = () => {
   const navigate = useNavigate();
   const [comic, setComic] = useState([]); // All projects, kind comic
   const [search, setSearch] = useState("");
 
+  const state = useSelector((state) => {
+    return state;
+  });
   // Get all projects, kind comic
   const getData = async () => {
     const res = await axios.get(
@@ -26,6 +30,13 @@ const Comic = () => {
   // Navigate to project page
   const projectPage = (id) => {
     navigate(`/project/${id}`);
+  };
+
+  const deleteProject = async (id) => {
+    let res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/deleteProject/${id}`
+    );
+    getData();
   };
 
   // Return
@@ -81,6 +92,20 @@ const Comic = () => {
                     </div>
                     <p className="time">{item.time}</p>
                   </div>
+                  {state.signin_reducer.user.role ==
+                  "61c04770ff8aeaad62406e9b" ? (
+                    <div className="divBtnDelete">
+                      {" "}
+                      <button
+                        className="btnDelete"
+                        onClick={() => deleteProject(item._id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               );
             })}
