@@ -91,6 +91,9 @@ const NewProject = () => {
         desc4: desc4,
         desc5: desc5,
         desc6: desc6,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
     Swal.fire({

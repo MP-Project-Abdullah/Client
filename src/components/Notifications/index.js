@@ -22,7 +22,6 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
     );
     setTotalNotif(res.data.length);
     setNotif(res.data);
-    console.log(res.data.length);
   };
 
   useEffect(() => {
@@ -58,11 +57,9 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
   };
 
   const deleteNotif = async (id) => {
-    console.log(id);
     let res = await axios.delete(
       `${process.env.REACT_APP_BASE_URL}/deleteNotif/${id}`
     );
-    console.log(res.data);
     getData();
   };
 

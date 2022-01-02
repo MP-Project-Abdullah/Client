@@ -80,6 +80,7 @@ const NewStory = () => {
         desc3: desc3,
       }
     );
+
     Swal.fire({
       position: "top-end",
       icon: "success",

@@ -6,12 +6,17 @@ import { RiMailSendLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
 
 const ContactUs = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [question, setQuestion] = useState("");
+
+  const state = useSelector((state) => {
+    return state;
+  });
 
   const navigate = useNavigate();
 
@@ -34,7 +39,6 @@ const ContactUs = () => {
         question,
       }
     );
-    console.log("HERE");
   };
 
   return (
