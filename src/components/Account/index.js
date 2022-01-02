@@ -172,15 +172,15 @@ const Account = () => {
                         <label className="uploadLabelAccount">
                           Choose image
                           <input
-                        className="inputFile"
-                        type="file"
-                        name="postImg"
-                        onChange={(e) => {
-                          setUrlString(e.target.value);
-                          handleChange(e);
-                        }}
-                        required
-                      />
+                            className="inputFile"
+                            type="file"
+                            name="postImg"
+                            onChange={(e) => {
+                              setUrlString(e.target.value);
+                              handleChange(e);
+                            }}
+                            required
+                          />
                         </label>
                         <button className="uploadBtn" onClick={handleUpload}>
                           Click to upload
@@ -296,16 +296,25 @@ const Account = () => {
                 </div>
               </div>
             </div>
-
-            {/* <div className="line"> </div> */}
-
             <div>
               <h2>Your Packages</h2>
-              <div className="containerPackages">
+              <div className="containerPackages" id="accountPackges">
                 {packages.length > 0 ? (
                   packages.map((item) => {
                     return (
-                      <div className="divPackages" key={item._id}>
+                      <div
+                        className="divPackages"
+                        key={item._id}
+                        id={
+                          item.package.amount >= 100
+                            ? item.package.amount >= 300
+                              ? item.package.amount >= 500
+                                ? "up500Account"
+                                : "up300less500Account"
+                              : "up100less300Account"
+                            : "less100Account"
+                        }
+                      >
                         <div>
                           <h2 className="packageTitle">{item.package.title}</h2>
                           <p className="packageDescribe">

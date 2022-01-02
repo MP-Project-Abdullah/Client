@@ -80,7 +80,7 @@ const Donate = () => {
                         <h2 className="packageTitle">• {item.title}</h2>
                       </div>
                       <div>
-                        <p className="packageDescribe"> •{item.describe}</p>
+                        <p className="packageDescribe"> • {item.describe}</p>
                       </div>
                       <div className="divAddOns">
                         <p className="addOns">Add-ons</p>{" "}
