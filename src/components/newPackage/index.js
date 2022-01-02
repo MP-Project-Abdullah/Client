@@ -6,6 +6,7 @@ import axios from "axios";
 import Navbar from "../Navbar";
 import "./style.css";
 import Swal from "sweetalert2";
+import { useSelector } from "react-redux";
 const NewPackage = () => {
   const projectId = useParams().postId; // project id
   const userId = useParams().userId; // User id
@@ -17,6 +18,10 @@ const NewPackage = () => {
   const [describe, setDescribe] = useState(""); // describe  of the package
   const [arrive, setArrive] = useState(""); // arrive  of the package
 
+  const state = useSelector((state) => {
+    return state;
+  });
+  
   // Create new package
   const createNewPackage = async (e) => {
     e.preventDefault();
@@ -28,6 +33,9 @@ const NewPackage = () => {
         amount: amount,
         describe: describe,
         arrive: arrive,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
     Swal.fire({

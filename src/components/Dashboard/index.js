@@ -4,10 +4,15 @@ import { useState, useEffect } from "react";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
+import { useSelector } from "react-redux";
 const Dashboard = () => {
   const [projects, setProjects] = useState([]); // all projects, not approved
   const [stories, setStories] = useState([]);
   const navigate = useNavigate();
+
+  const state = useSelector((state) => {
+    return state;
+  });
 
   // Get all projects not approved
   const getData = async () => {
@@ -41,9 +46,11 @@ const Dashboard = () => {
       {
         title: titleNotif,
         message: messageNotif,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
-    console.log(res.data);
 
     getDataStory();
   };
@@ -61,9 +68,11 @@ const Dashboard = () => {
       {
         title: titleNotif,
         message: messageNotif,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
-    console.log(res.data);
     getDataStory();
   };
 
@@ -79,6 +88,9 @@ const Dashboard = () => {
       {
         title: titleNotif,
         message: messageNotif,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
 
@@ -98,9 +110,11 @@ const Dashboard = () => {
       {
         title: titleNotif,
         message: messageNotif,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
-    console.log(result.data);
 
     getData();
   };
@@ -193,7 +207,16 @@ const Dashboard = () => {
           </div>
           <div>
             <h1>Stories not approved </h1>
-            <div className="projectLeatsetDiv">
+           
+          </div>
+        </div>
+      ) : (
+        <div className="divNoPRoject">
+          {" "}
+          <h1 className="noProjectH1">No projects</h1>{" "}
+        </div>
+      )}
+       <div className="projectLeatsetDiv">
               {stories &&
                 stories.map((item) => {
                   return (
@@ -242,14 +265,6 @@ const Dashboard = () => {
                   );
                 })}
             </div>
-          </div>
-        </div>
-      ) : (
-        <div className="divNoPRoject">
-          {" "}
-          <h1 className="noProjectH1">No projects</h1>{" "}
-        </div>
-      )}
     </div>
   );
 };

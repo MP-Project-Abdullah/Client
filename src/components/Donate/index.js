@@ -4,11 +4,16 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import { useSelector } from "react-redux";
 
 import Navbar from "../Navbar";
 const Donate = () => {
   const projectId = useParams().projectId; // Project id
   const navigate = useNavigate();
+
+  const state = useSelector((state) => {
+    return state;
+  });
 
   const [packages, setPackages] = useState([]); // All packages of the project
 
@@ -30,7 +35,9 @@ const Donate = () => {
 
   // Navigate to payment page with one package
   const paymentPackage = (val, packageId) => {
-    navigate(`/payment/${projectId}/${val}/${packageId}`);
+    navigate(`/payment/${projectId}/${val}/${packageId}`, {
+      headers: { Authorization: `Bearer ${state.signIn.token}` },
+    });
   };
 
   // Invoke get all packges

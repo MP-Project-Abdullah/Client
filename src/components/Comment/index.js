@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import "./style.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../Navbar";
 
 const Comment = ({ id }) => {
   const navigate = useNavigate();
@@ -31,6 +30,9 @@ const Comment = ({ id }) => {
         `${process.env.REACT_APP_BASE_URL}/newComment/${state.signin_reducer.user._id}/${id}`,
         {
           desc: e.target[0].value,
+        },
+        {
+          headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
         }
       );
       getData();

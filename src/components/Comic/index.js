@@ -34,7 +34,10 @@ const Comic = () => {
 
   const deleteProject = async (id) => {
     let res = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/deleteProject/${id}`
+      `${process.env.REACT_APP_BASE_URL}/deleteProject/${id}`,
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
+      }
     );
     getData();
   };
