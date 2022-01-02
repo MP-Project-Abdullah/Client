@@ -311,7 +311,7 @@ const NewProject = () => {
                   type="text"
                   name=""
                   id=""
-                  placeholder="Enter your project deadline here..."
+                  placeholder="Enter your project location here..."
                   className="inputNewProjectTitle"
                   onChange={(e) => setLocation(e.target.value)}
                   required

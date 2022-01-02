@@ -13,19 +13,19 @@ const Footer = () => {
           </li>
           <li className="liFooter">
             {" "}
-            <Link className="linkNav" to="/twitter">
+            <Link className="linkNav" to="/">
               Twitter
             </Link>
           </li>
           <li className="liFooter">
             {" "}
-            <Link className="linkNav" to="/instgram">
+            <Link className="linkNav" to="/">
               Instgram
             </Link>
           </li>
           <li className="liFooter">
             {" "}
-            <Link className="linkNav" to="/facebook">
+            <Link className="linkNav" to="/">
               Facebook
             </Link>
           </li>

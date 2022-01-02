@@ -84,6 +84,7 @@
   padding: 2%;
   width: 50%;
   transition: 0.3s ease-in-out;
+  min-height: 45vh;
 }
 
 .divEmail:hover {
@@ -220,3 +221,7 @@
   background-color: #d6a364;
 }
 
+
+.havntPosted {
+  margin-top: -12%;
+}

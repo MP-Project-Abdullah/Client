@@ -9,6 +9,7 @@ import { login_reducser } from "../../reducers/login";
 import Title from "react-vanilla-tilt";
 import Navbar from "../Navbar";
 import { storage } from "../../firebase";
+import CountUp from "react-countup";
 const Account = () => {
   const state = useSelector((state) => {
     return state;
@@ -278,7 +279,13 @@ const Account = () => {
                     <div className="h2Div">
                       {" "}
                       <h2 className="h2Total">
-                        {totalDonations && totalDonations}
+                        {totalDonations && (
+                          <CountUp
+                            start={0}
+                            end={totalDonations}
+                            duration={2.75}
+                          />
+                        )}
                       </h2>
                       <h2 className="h2Total">Total donations</h2>
                     </div>
@@ -289,7 +296,15 @@ const Account = () => {
                     }}
                   >
                     <div className="h2Div">
-                      <h2 className="h2Total">{totalPleged && totalPleged}</h2>
+                      <h2 className="h2Total">
+                        {totalPleged && (
+                          <CountUp
+                            start={0}
+                            end={totalPleged}
+                            duration={2.75}
+                          />
+                        )}
+                      </h2>
                       <h2 className="h2Total">Total pledged</h2>
                     </div>{" "}
                   </Title>
@@ -375,7 +390,7 @@ const Account = () => {
                   );
                 })
               ) : (
-                <div>You haven't posted any project yet </div>
+                <div className="havntPosted">You haven't posted any project yet </div>
               )}
             </div>
           </div>

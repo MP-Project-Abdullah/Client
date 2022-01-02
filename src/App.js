@@ -22,6 +22,7 @@ import StoryPage from "./components/StoryPage";
 import Comic from "./components/Comic";
 import Music from "./components/Music";
 import ContactUs from "./components/ContactUs";
+import Confirm from "./components/Confirm";
 import "./App.css";
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/music" element={<Music />} />
         <Route exact path="/comic" element={<Comic />} />
         <Route exact path="/contact" element={<ContactUs />} />
+        <Route exact path="/confirm/:id" element={<Confirm />} />
 
         <Route exact path="/stories" element={<Stories />} />
         <Route exact path="/story/:id" element={<StoryPage />} />

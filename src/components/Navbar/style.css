@@ -25,7 +25,7 @@
   text-decoration: none;
   color: black;
   cursor: pointer;
-
+  /* font-weight: bold; */
 }
 
 .newLinkNav:hover {
@@ -65,7 +65,7 @@
 }
 
 .linkNav:hover {
-  color: #bf8c4c;
+  color: #d58829;
 }
 
 .logout:hover {
@@ -113,4 +113,8 @@
 
 #linkDashboard {
   position: absolute;
+}
+
+.logo {
+  background-image: url("/public/cd031c449e4b2e0a5b88badfdb5a8eafad05907c_s2_n2.png");
 }
