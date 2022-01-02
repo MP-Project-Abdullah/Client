@@ -66,7 +66,7 @@ const Register = () => {
           name,
         }
       );
-      console.log(res.data._id);
+      navigate(`/confirm/${res.data._id}`);
     }
   };
 

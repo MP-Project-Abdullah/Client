@@ -9,6 +9,7 @@ import { login_reducser } from "../../reducers/login";
 import Title from "react-vanilla-tilt";
 import Navbar from "../Navbar";
 import { storage } from "../../firebase";
+import CountUp from "react-countup";
 const Account = () => {
   const state = useSelector((state) => {
     return state;
@@ -278,7 +279,13 @@ const Account = () => {
                     <div className="h2Div">
                       {" "}
                       <h2 className="h2Total">
-                        {totalDonations && totalDonations}
+                        {totalDonations && (
+                          <CountUp
+                            start={0}
+                            end={totalDonations}
+                            duration={2.75}
+                          />
+                        )}
                       </h2>
                       <h2 className="h2Total">Total donations</h2>
                     </div>
@@ -289,7 +296,15 @@ const Account = () => {
                     }}
                   >
                     <div className="h2Div">
-                      <h2 className="h2Total">{totalPleged && totalPleged}</h2>
+                      <h2 className="h2Total">
+                        {totalPleged && (
+                          <CountUp
+                            start={0}
+                            end={totalPleged}
+                            duration={2.75}
+                          />
+                        )}
+                      </h2>
                       <h2 className="h2Total">Total pledged</h2>
                     </div>{" "}
                   </Title>
@@ -303,31 +318,47 @@ const Account = () => {
                   packages.map((item) => {
                     return (
                       <div
-                        className="divPackages"
-                        key={item._id}
-                        id={
-                          item.package.amount >= 100
-                            ? item.package.amount >= 300
-                              ? item.package.amount >= 500
-                                ? "up500Account"
-                                : "up300less500Account"
-                              : "up100less300Account"
-                            : "less100Account"
-                        }
-                      >
+                      className="divPackages"
+                      key={item.package._id}
+                      id={
+                        item.amount >= 100
+                          ? item.amount >= 300
+                            ? item.amount >= 500
+                              ? "up500"
+                              : "up300less500"
+                            : "up100less300"
+                          : "less100"
+                      }
+                    >
+                      <div className="divAllPackage">
+                        <div className="pledgedAndTitleAndP">
+                          <div>
+                            <p className="packageAmount">
+                              • Pledged {item.package.amount} $
+                            </p>
+                          </div>
+                          <div>
+                            <h2 className="packageTitle">• {item.package.title}</h2>
+                          </div>
+                          <div>
+                            <p className="packageDescribe">
+                              {" "}
+                              • {item.package.describe}
+                            </p>
+                          </div>
+                          <div className="divAddOns">
+                            <p className="addOns">Add-ons</p>{" "}
+                          </div>
+                        </div>
                         <div>
-                          <h2 className="packageTitle">{item.package.title}</h2>
-                          <p className="packageDescribe">
-                            {item.package.describe}
-                          </p>
-                          <p className="packageAmount">
-                            Amount : {item.package.amount}
-                          </p>
-                          <p className="packageArrive">
-                            Arrive :{item.package.arrive}
-                          </p>{" "}
+                          <p className="packageArrive"> • Arrive in </p>
+                          <p>{item.package.arrive}</p>
                         </div>
                       </div>
+                      <div className="divBtnDonate">
+                       
+                      </div>
+                    </div>
                     );
                   })
                 ) : (
@@ -375,7 +406,7 @@ const Account = () => {
                   );
                 })
               ) : (
-                <div>You haven't posted any project yet </div>
+                <div className="havntPosted">You haven't posted any project yet </div>
               )}
             </div>
           </div>

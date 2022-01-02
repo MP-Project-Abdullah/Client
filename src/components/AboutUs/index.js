@@ -14,7 +14,7 @@ const AboutUs = () => {
           alt="about us"
         />
         <p className="pAbout">
-          [website name] campaigns make ideas into reality. It’s where creators
+          Simply idea campaigns make ideas into reality. It’s where creators
           share new visions for creative work with the communities that will
           come together to fund them.
         </p>

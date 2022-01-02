@@ -47,7 +47,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={homeOrNot ? "NewBar" : "navbar"}>
+    <div className="navbar">
+      <div className="logo"></div>
       {state.signin_reducer.token.length > 0 ? (
         <Notifications
           toggle={toggle}
@@ -58,14 +59,17 @@ const Navbar = () => {
         ""
       )}
 
-      <h1 className="websiteName">Website name</h1>
+      <h1 className={homeOrNot ? "websiteNameHome" : "websiteName"}>
+        Simply idea
+      </h1>
 
-      <div className="lineAll"></div>
-      <ul className={homeOrNot ? "newUl" : "ulNav"}>
+      <div className="lineAll2"></div>
+      <div className="divUlNav">
+      <ul className="ulNav">
         <li className="liFooter">
           {" "}
           <Link
-            className={homeOrNot ? "newLinkNav" : "linkNav"}
+            className="linkNav"
             to="/"
             onClick={() => {
               setMenu(false);
@@ -79,7 +83,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className={homeOrNot ? "newLinkNav" : "linkNav"}
+            className="linkNav"
             to="/art"
             onClick={() => {
               setMenu(false);
@@ -93,7 +97,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className={homeOrNot ? "newLinkNav" : "linkNav"}
+            className="linkNav"
             to="/film"
             onClick={() => {
               setMenu(false);
@@ -107,7 +111,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className={homeOrNot ? "newLinkNav" : "linkNav"}
+            className="linkNav"
             to="/music"
             onClick={() => {
               setMenu(false);
@@ -121,7 +125,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className={homeOrNot ? "newLinkNav" : "linkNav"}
+            className="linkNav"
             to="/comic"
             onClick={() => {
               setMenu(false);
@@ -135,7 +139,7 @@ const Navbar = () => {
         <li className="liFooter">
           {" "}
           <Link
-            className={homeOrNot ? "newLinkNav" : "linkNav"}
+            className="linkNav"
             to="/stories"
             onClick={() => {
               setMenu(false);
@@ -157,7 +161,7 @@ const Navbar = () => {
                   setToggleCss(!toggleCss);
                   setToggle(false);
                 }}
-                className={homeOrNot ? "newLinkNav" : "linkNav"}
+                className="linkNav"
               >
                 <IoMdArrowDropdown className="iconMenu" /> Menu
               </p>
@@ -289,6 +293,7 @@ const Navbar = () => {
           </li>
         </div>
       </ul>
+      </div>
       <div className="lineAll"></div>
     </div>
   );

@@ -7,6 +7,7 @@ import AboutUs from "../AboutUs";
 import { useNavigate } from "react-router-dom";
 import Title from "react-vanilla-tilt";
 import Navbar from "../Navbar";
+import CountUp from "react-countup";
 
 const Home = () => {
   const [latestWork, setLatestWork] = useState([]); // Leatest work
@@ -17,7 +18,6 @@ const Home = () => {
   const [totalProject, setTotalProject] = useState(0); // Total projects
 
   const navigate = useNavigate();
-  
 
   // Get all project
   const getData = async () => {
@@ -116,12 +116,11 @@ const Home = () => {
         <div className="divImg">
           <div className="backgroundDiv"></div>
           <img
-            src="https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            src="https://firebasestorage.googleapis.com/v0/b/project-2-4f59d.appspot.com/o/pexels-photo-2325446.jpeg?alt=media&token=b059e7b2-e0a8-480e-accc-59608134cd68"
             alt="background"
             className="background"
           />
           <div className="totalDiv">
-            {/* <h1 className="welcoming">Blab leb lab lob</h1> */}
             <div className="totalDonateProject">
               <div className="total">
                 <Title
@@ -130,7 +129,7 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <h1>{donations} $</h1>
+                    <CountUp start={0} end={donations} duration={5} />
                     <p>Total donations </p>
                   </div>
                 </Title>
@@ -143,7 +142,7 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <h1> {totalProject} </h1>
+                    <CountUp start={0} end={totalProject} duration={2.75} />
                     <p>Total projects</p>
                   </div>
                 </Title>

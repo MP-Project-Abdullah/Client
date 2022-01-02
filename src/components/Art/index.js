@@ -33,8 +33,6 @@ const Art = () => {
   };
 
   const deleteProject = async (id) => {
-    console.log(id);
-
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/deleteProject/${id}`
     );

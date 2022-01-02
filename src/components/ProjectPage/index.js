@@ -9,6 +9,7 @@ import "./style.css";
 import Comment from "../Comment";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
+import CountUp from "react-countup";
 const ProjectPage = () => {
   const id = useParams().id; // Get project id
 
@@ -83,7 +84,8 @@ const ProjectPage = () => {
                   </div>
                   <div>
                     <p className={green ? "pGPD1" : "pGPD"}>
-                      Pledged {item.pledged}
+                      Pledged{" "}
+                      <CountUp start={0} end={item.pledged} duration={2.75} />
                     </p>{" "}
                   </div>
                   <div>
