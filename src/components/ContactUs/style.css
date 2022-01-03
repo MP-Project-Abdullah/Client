@@ -6,7 +6,7 @@
 
 .iconSend {
   font-size: 40vh;
-  color:  #e2a75e;;
+  color: #e2a75e;
 }
 
 .inputWithIcon {
@@ -44,5 +44,5 @@
 }
 
 #question {
-    height: 12vh;
+  height: 12vh;
 }

@@ -42,6 +42,7 @@ const Stories = () => {
       <div className="projects" id="allProjects">
         {stories.length &&
           stories
+            // eslint-disable-next-line
             .filter((item) => {
               if (search === "") {
                 return item;
@@ -58,7 +59,7 @@ const Stories = () => {
                   className="projectLeatset"
                   onClick={() => projectPage(item._id)}
                 >
-                  <img className="leatestImg" src={item.img} alt="project" />
+                  <img className="leatestImg" src={item.url[0]} alt="project" />
                   <div className="divInsideLeatestProject">
                     <h2 className="titleLeatestProject">Title: {item.title}</h2>
                     <div className="pDescribe">

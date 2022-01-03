@@ -41,9 +41,10 @@ const Film = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="projects"  id="allProjects">
+      <div className="projects" id="allProjects">
         {film.length &&
           film
+          // eslint-disable-next-line
             .filter((item) => {
               if (search === "") {
                 return item;

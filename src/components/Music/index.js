@@ -41,9 +41,10 @@ const Music = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>{" "}
-      <div className="projects"  id="allProjects">
+      <div className="projects" id="allProjects">
         {music.length &&
           music
+          // eslint-disable-next-line
             .filter((item) => {
               if (search === "") {
                 return item;

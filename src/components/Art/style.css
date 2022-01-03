@@ -45,7 +45,6 @@
 }
 
 @media only screen and (max-height: 627px) {
-  
   #allProjects {
     display: flex;
     flex-direction: column;

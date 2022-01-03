@@ -129,7 +129,12 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <CountUp start={0} end={donations} duration={5} className="totalNum" />
+                    <CountUp
+                      start={0}
+                      end={donations}
+                      duration={5}
+                      className="totalNum"
+                    />
                     <p className="pTotal">Total donations </p>
                   </div>
                 </Title>
@@ -142,8 +147,13 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <CountUp start={0} end={totalProject} duration={2.75} className="totalNum" />
-                    <p  className="pTotal">Total projects</p>
+                    <CountUp
+                      start={0}
+                      end={totalProject}
+                      duration={2.75}
+                      className="totalNum"
+                    />
+                    <p className="pTotal">Total projects</p>
                   </div>
                 </Title>
               </div>
@@ -222,7 +232,7 @@ const Home = () => {
                         <h2 className="titleStory">{item.title}</h2>
                         <div className="lineFirst"></div>
                         <div className="divDescStory">
-                        <p className="descStorys">{item.desc}</p>
+                          <p className="descStorys">{item.desc}</p>
                         </div>
                       </div>
                       <div className="lineBetweenStory"> </div>

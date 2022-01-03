@@ -1,25 +1,23 @@
 .containerNewProject {
-    padding: 4%;
+  padding: 4%;
 }
 
-
 .divH1NewProject {
-    text-align: center;
-    margin-bottom: 1%;
+  text-align: center;
+  margin-bottom: 1%;
 }
 
 .divNewProjectH2AndInput {
-    margin-top: 1%;
-    display: flex;
-    flex-direction: column;
-    gap: 1vh;
+  margin-top: 1%;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
 }
 
 .inputNewProject {
-    width: 100%;
-    height: 7vh;
-    border: none;
-    border-bottom: 1px solid gray;
-    padding: 1%;
+  width: 100%;
+  height: 7vh;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 1%;
 }
-
