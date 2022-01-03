@@ -20,6 +20,11 @@
   padding: 5%;
 }
 
+#accountPackage {
+  background-image: url("/public/test\ \(9\).png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .avatar {
   width: 30vh;
   height: 30vh;
@@ -96,6 +101,7 @@
   display: flex;
   gap: 1rem;
 }
+
 .email {
   font-size: 3.5vh;
 }
@@ -221,7 +227,139 @@
   background-color: #d6a364;
 }
 
-
 .havntPosted {
   margin-top: -12%;
+}
+
+@media only screen and (max-height: 627px) {
+  .avatar {
+    width: 15vh;
+    height: 15vh;
+  }
+
+  .nameAndUsernmae {
+    font-size: 2vh;
+  }
+
+  .editProfile {
+    width: 12vh;
+    font-size: 2.5vh;
+  }
+  .email {
+    font-size: 2vh;
+  }
+
+  .h2Email {
+    font-size: 2vh;
+  }
+
+  .bioH2 {
+    font-size: 2vh;
+  }
+
+  .bioP {
+    font-size: 1vh;
+  }
+
+  .h2Total {
+    font-size: 3vh;
+  }
+
+  .totalAccount {
+    gap: 0rem;
+  }
+  .divEditAvatar {
+    width: 20%;
+    margin-top: -17%;
+  }
+
+  .uploadLabelAccount {
+    font-size: 1vh;
+    width: 15vh;
+    background-color: rgb(230, 230, 230);
+  }
+
+  .chooseFile {
+    font-size: 1vh;
+  }
+
+  .uploadLabelAccount input {
+    font-size: 1vh;
+  }
+
+  .progress {
+    width: 100%;
+  }
+
+  .uploadBtn {
+    font-size: 1vh;
+    width: 15vh;
+  }
+
+  .editProfile {
+    font-size: 2vh;
+  }
+
+  #newName {
+    height: 4vh;
+    font-size: 2vh;
+  }
+
+  .newBioInput {
+    font-size: 1vh;
+  }
+
+  #accountPackage {
+  }
+
+  #amountackageAccount {
+    font-size: 2vh;
+  }
+
+  #divAllPackgeAccount {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #titlePackageAccount {
+    font-size: 2vh;
+  }
+
+  .divDEscribePAckegeACcount {
+    width: 23vh;
+  }
+
+  #describePackageAccount {
+    font-size: 1vh;
+  }
+
+  #divAddOneAccount {
+    width: 8vh;
+  }
+
+  #addOneAccount {
+    font-size: 2vh;
+  }
+
+  #arrivePackageAccount {
+    font-size: 2vh;
+  }
+
+  #arrivePackage {
+    font-size: 1.8vh;
+  }
+
+  #accountProject {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #projectAccount {
+    width: 55vh;
+  }
+
+  .havntPosted {
+    font-size: 2vh;
+    width: 25vh;
+  }
 }
