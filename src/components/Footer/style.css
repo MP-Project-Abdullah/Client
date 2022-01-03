@@ -21,3 +21,9 @@
 .liFooter:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-height: 627px) {
+  .footer {
+    width: 68vh;
+  }
+}

@@ -31,5 +31,26 @@
   z-index: 1;
   width: 98%;
   color: white;
-  background-color: #BF8C4C;
+  background-color: #bf8c4c;
+}
+
+@media only screen and (max-height: 627px) {
+  .aboutus {
+    height: 100vh;
+    /* margin-left: 5%; */
+    margin-right: 2%;
+  }
+
+  .imgAbout {
+    width: 57vh;
+  }
+
+  .ourMission {
+    font-size: 2vh;
+    width: 100%;
+  }
+
+  .pAbout {
+    font-size: 15px;
+  }
 }

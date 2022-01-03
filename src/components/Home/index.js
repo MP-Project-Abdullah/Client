@@ -129,8 +129,8 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <CountUp start={0} end={donations} duration={5} />
-                    <p>Total donations </p>
+                    <CountUp start={0} end={donations} duration={5} className="totalNum" />
+                    <p className="pTotal">Total donations </p>
                   </div>
                 </Title>
               </div>
@@ -142,8 +142,8 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <CountUp start={0} end={totalProject} duration={2.75} />
-                    <p>Total projects</p>
+                    <CountUp start={0} end={totalProject} duration={2.75} className="totalNum" />
+                    <p  className="pTotal">Total projects</p>
                   </div>
                 </Title>
               </div>
@@ -186,7 +186,7 @@ const Home = () => {
             })}
         </div>
         <div className="line"></div>
-        <h1 className="h1Success">Success storys</h1>
+        <h1 className="h1Success">Success stories</h1>
         <div className="containerStory">
           <div className="storyDiv">
             {lastStory.length && (
@@ -200,7 +200,7 @@ const Home = () => {
                   alt="imgStory"
                 />{" "}
                 <div className="paddingPandTitle">
-                  <h2>{lastStory[0].title}</h2>
+                  <h2 className="titleLastStory">{lastStory[0].title}</h2>
                   <div className="lineFirst"></div>
 
                   <p className="lastStoryP">{lastStory[0].desc}</p>
@@ -221,7 +221,9 @@ const Home = () => {
                       <div className="paddingPandTitle">
                         <h2 className="titleStory">{item.title}</h2>
                         <div className="lineFirst"></div>
+                        <div className="divDescStory">
                         <p className="descStorys">{item.desc}</p>
+                        </div>
                       </div>
                       <div className="lineBetweenStory"> </div>
                     </div>

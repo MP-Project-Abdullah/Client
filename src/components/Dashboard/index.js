@@ -27,7 +27,6 @@ const Dashboard = () => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/storiesNotApproved`
     );
-    console.log(res.data);
     setStories(res.data);
   };
 
@@ -141,7 +140,9 @@ const Dashboard = () => {
       {projects.length > 0 ? (
         <div>
           <div>
-            <h1>Not approved </h1>
+            <div className="aproovedProject">
+              <h1>Project not approved </h1>
+            </div>
             <div className="projectLeatsetDiv">
               {projects &&
                 projects.map((item) => {
@@ -205,9 +206,9 @@ const Dashboard = () => {
                 })}
             </div>
           </div>
-          <div>
+          <div className="lineAll"> </div>
+          <div className="aproovedProject">
             <h1>Stories not approved </h1>
-           
           </div>
         </div>
       ) : (
@@ -216,55 +217,45 @@ const Dashboard = () => {
           <h1 className="noProjectH1">No projects</h1>{" "}
         </div>
       )}
-       <div className="projectLeatsetDiv">
-              {stories &&
-                stories.map((item) => {
-                  return (
-                    <div key={item._id} className="projectLeatset">
-                      <div onClick={() => storyPage(item._id)}>
-                        <img
-                          className="leatestImg"
-                          src={item.img}
-                          alt="project"
-                        />
-                        <div className="divInsideLeatestProject">
-                          <h2 className="titleLeatestProject">
-                            Title: {item.title}
-                          </h2>
-                          <div className="pDescribe">
-                            <p className="describeProjectLeatest">
-                              {item.describe}
-                            </p>
-                          </div>
-                          <hr />
-                          <p className="time">{item.time}</p>
-                        </div>
-                      </div>
-                      <div className="divBtnRejectAndApproved">
-                        <button
-                          className="btnApprovedAndReject"
-                          id="approved"
-                          onClick={() =>
-                            aproovedStory(item._id, item.user, item.title)
-                          }
-                        >
-                          Approved
-                        </button>
-
-                        <button
-                          className="btnApprovedAndReject"
-                          id="reject"
-                          onClick={() =>
-                            rejectStory(item._id, item.user, item.title)
-                          }
-                        >
-                          Reject
-                        </button>
-                      </div>
+      <div className="projectLeatsetDiv">
+        {stories &&
+          stories.map((item) => {
+            return (
+              <div key={item._id} className="projectLeatset">
+                <div onClick={() => storyPage(item._id)}>
+                  <img className="leatestImg" src={item.img} alt="project" />
+                  <div className="divInsideLeatestProject">
+                    <h2 className="titleLeatestProject">Title: {item.title}</h2>
+                    <div className="pDescribe">
+                      <p className="describeProjectLeatest">{item.describe}</p>
                     </div>
-                  );
-                })}
-            </div>
+                    <hr />
+                    <p className="time">{item.time}</p>
+                  </div>
+                </div>
+                <div className="divBtnRejectAndApproved">
+                  <button
+                    className="btnApprovedAndReject"
+                    id="approved"
+                    onClick={() =>
+                      aproovedStory(item._id, item.user, item.title)
+                    }
+                  >
+                    Approved
+                  </button>
+
+                  <button
+                    className="btnApprovedAndReject"
+                    id="reject"
+                    onClick={() => rejectStory(item._id, item.user, item.title)}
+                  >
+                    Reject
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };

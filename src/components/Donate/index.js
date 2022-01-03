@@ -19,11 +19,9 @@ const Donate = () => {
 
   // Get all packages
   const getData = async () => {
-    console.log(`${process.env.REACT_APP_BASE_URL}/packages/${projectId}`);
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/packages/${projectId}`
     );
-    console.log(res.data, "P");
     setPackages(res.data);
   };
 
@@ -35,9 +33,7 @@ const Donate = () => {
 
   // Navigate to payment page with one package
   const paymentPackage = (val, packageId) => {
-    navigate(`/payment/${projectId}/${val}/${packageId}`, {
-      headers: { Authorization: `Bearer ${state.signIn.token}` },
-    });
+    navigate(`/payment/${projectId}/${val}/${packageId}`, {});
   };
 
   // Invoke get all packges
@@ -86,7 +82,7 @@ const Donate = () => {
                           <div>
                             <h2 className="packageTitle">• {item.title}</h2>
                           </div>
-                          <div>
+                          <div className="dectibePackge">
                             <p className="packageDescribe">
                               {" "}
                               • {item.describe}

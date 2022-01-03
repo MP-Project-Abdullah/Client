@@ -25,11 +25,6 @@
   color: green;
 }
 
-.imgProjectInfo {
-  width: 120vh;
-  height: 65vh;
-}
-
 .divGPD {
   display: flex;
   flex-direction: column;
@@ -45,7 +40,6 @@
 
 .pDeadline {
   font-size: 11px;
-  margin-top: -12%;
 }
 
 .divDonateBtn {
@@ -135,4 +129,84 @@
 .comment {
   margin-top: 5%;
   padding: 4.5%;
+}
+
+#deadlineId {
+  margin-top: -12%;
+}
+
+#imgInfo {
+  width: 120vh;
+  height: 70vh;
+}
+
+#imgInfoId {
+  width: 120vh;
+  height: 70vh;
+
+}
+
+@media only screen and (max-height: 627px) {
+  .h1Title {
+    font-size: 4vh;
+  }
+
+  .imgProjectInfo {
+    width: 60vh;
+    height: 45vh;
+  }
+  .imgWithLocation {
+    width: 20vh;
+  }
+
+  .pDescribeInfo {
+    font-size: 2vh;
+  }
+
+  #imgInfo {
+    width: 60vh;
+  }
+
+  .pLocation {
+    font-size: 2vh;
+    margin-bottom: 2%;
+  }
+
+  .pKind {
+    font-size: 2vh;
+  }
+
+  .projectImg {
+    width: 20vh;
+    height: 30vh;
+    display: none;
+  }
+
+  .containerInfoProject {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    justify-content: space-around;
+  }
+
+  #divGPDid {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: 3vh;
+    border-top: 3px solid #bf8c4c;
+  }
+
+  .pDeadline {
+    margin: 0;
+    padding: 0;
+  }
+
+  #deadlineId {
+    margin: 0;
+  }
+
+  #imgInfoId {
+    width: 60vh;
+  }
 }

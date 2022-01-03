@@ -60,12 +60,13 @@ const ProjectPage = () => {
                 <p className="pDescribeInfo">{item.describe}</p>
               </div>
               <div className="containerInfoProject">
-                <div>
+                <div className="imgWithLocation">
                   {" "}
                   <img
                     src={item.url[0]}
                     alt="projectImg"
                     className="imgProjectInfo"
+                    id="imgInfo"
                   />{" "}
                   <div className="divLK">
                     <p className="pLocation">
@@ -75,7 +76,7 @@ const ProjectPage = () => {
                     <p className="pKind">{item.kind}</p>
                   </div>
                 </div>
-                <div className="divGPD">
+                <div className="divGPD" id="divGPDid">
                   {" "}
                   <div>
                     <p className="pGPD" id="goal">
@@ -99,9 +100,9 @@ const ProjectPage = () => {
                       Donate
                     </button>{" "}
                   </div>
-                  <div>
+                  <div className="divDeadline">
                     {" "}
-                    <p className="pDeadline">
+                    <p className="pDeadline" id="deadlineId">
                       {" "}
                       This project will only be funded if it reaches its goal by{" "}
                       {item.deadline} days left
@@ -186,7 +187,12 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.url[1]} alt="project img" />
+                                    <img
+                                      src={item.url[1]}
+                                      alt="project img"
+                                      className="imgInfo"
+                                      id="imgInfoId"
+                                    />
                                   </div>
                                 </Title>
                               </div>
@@ -209,7 +215,12 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.url[2]} alt="project img" />
+                                    <img
+                                      src={item.url[2]}
+                                      alt="project img"
+                                      className="imgInfo"
+                                      id="imgInfoId"
+                                    />
                                   </div>
                                 </Title>
                               </div>
@@ -232,7 +243,12 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.url[3]} alt="project img" />
+                                    <img
+                                      src={item.url[3]}
+                                      alt="project img"
+                                      className="imgInfo"
+                                      id="imgInfoId"
+                                    />
                                   </div>
                                 </Title>
                               </div>
@@ -255,7 +271,11 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.url[4]} alt="project img" />
+                                    <img
+                                      src={item.url[4]}
+                                      alt="project img"
+                                      className="imgInfo"
+                                    />
                                   </div>
                                 </Title>
                               </div>
@@ -278,7 +298,12 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.url[5]} alt="project img" />
+                                    <img
+                                      src={item.url[5]}
+                                      alt="project img"
+                                      className="imgInfo"
+                                      id="imgInfoId"
+                                    />
                                   </div>
                                 </Title>
                               </div>
@@ -301,7 +326,12 @@ const ProjectPage = () => {
                                     data-tilt-scale="1.1"
                                     className="divInfoProjectImg"
                                   >
-                                    <img src={item.url[6]} alt="project img" />
+                                    <img
+                                      src={item.url[6]}
+                                      alt="project img"
+                                      className="imgInfo"
+                                      id="imgInfoId"
+                                    />
                                   </div>
                                 </Title>
                               </div>

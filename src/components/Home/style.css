@@ -262,4 +262,104 @@
   width: 55vh;
 }
 
+@media only screen and (max-height: 627px) {
+  .background {
+    width: 68vh;
+  }
+  .total {
+    height: 0;
+    width: 14vh;
+  }
 
+  .pTotal {
+    font-size: 2vh;
+  }
+
+  .totalNum {
+    font-size: 5vh;
+  }
+
+  .projectLeatsetDiv {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 2rem;
+    margin-left: 7%;
+  }
+
+  .projectLeatset {
+    width: 90%;
+    font-size: 2vh;
+  }
+
+  .projectLeatset p {
+    font-size: 12px;
+  }
+
+  /* Stories */
+
+  .containerStory {
+    width: 60vh;
+  }
+
+  .storyDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lastStory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+    cursor: pointer;
+  }
+
+  .lastStoryImg {
+    width: 50vh;
+    height: 40vh;
+  }
+
+  .titleLastStory {
+    font-size: 14px;
+  }
+
+  .lastStoryP {
+    display: none;
+  }
+
+  .descStorys {
+    display: none;
+  }
+
+  .divDescStory {
+    width: 57%;
+  }
+
+  .titleStory {
+    font-size: 15px;
+  }
+
+  .storysDiv {
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+  }
+
+  .story {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.333);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .imgStory {
+    width: 26vh;
+    height: 35vh;
+  }
+
+  .paddingPandTitle {
+    padding: 2%;
+  }
+}

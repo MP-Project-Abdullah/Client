@@ -21,14 +21,14 @@ const NewStory = () => {
   const [urlString, setUrlString] = useState(""); // Upload iamge
   const [progress, setProgress] = useState(0); // Upload iamge
 
-  // New project state
-  const [title, setTitle] = useState(""); // title of the project
-  const [describe, setDescribe] = useState(""); // describe of the project
-  const [desc, setDesc] = useState(""); // desc of the project
+  // New story state
+  const [title, setTitle] = useState(""); // title of the story
+  const [describe, setDescribe] = useState(""); // describe of the story
+  const [desc, setDesc] = useState(""); // desc of the story
 
-  const [desc1, setDesc1] = useState(""); // desc  of the project
-  const [desc2, setDesc2] = useState(""); // desc  of the project
-  const [desc3, setDesc3] = useState(""); // desc  of the project
+  const [desc1, setDesc1] = useState(""); // desc  of the story
+  const [desc2, setDesc2] = useState(""); // desc  of the story
+  const [desc3, setDesc3] = useState(""); // desc  of the story
 
   // Uplad image
   const handleChange = (e) => {
@@ -68,6 +68,7 @@ const NewStory = () => {
 
   // Create new story
   const newStory = async () => {
+    // eslint-disable-next-line
     let res = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newStory/${state.signin_reducer.user._id}`,
       {
@@ -155,12 +156,12 @@ const NewStory = () => {
                       </label>
                     </div>
                     <div className="divUpladProgress">
-                      <div>
+                      <div className="divBtnUpload">
                         <button className="uploadButton" onClick={handleUpload}>
                           Upload
                         </button>
                       </div>
-                      <div>
+                      <div className="progress">
                         <progress value={progress} max="100" />
                       </div>
                     </div>
@@ -257,12 +258,12 @@ const NewStory = () => {
                     </label>
                   </div>
                   <div className="divUpladProgress">
-                    <div>
+                    <div className="divBtnUpload">
                       <button className="uploadButton" onClick={handleUpload}>
                         Upload
                       </button>
                     </div>
-                    <div>
+                    <div className="progress">
                       <progress value={progress} max="100" />
                     </div>
                   </div>
@@ -316,12 +317,12 @@ const NewStory = () => {
                     </label>
                   </div>
                   <div className="divUpladProgress">
-                    <div>
+                    <div className="divBtnUpload">
                       <button className="uploadButton" onClick={handleUpload}>
                         Upload
                       </button>
                     </div>
-                    <div>
+                    <div className="progress">
                       <progress value={progress} max="100" />
                     </div>
                   </div>
@@ -375,12 +376,12 @@ const NewStory = () => {
                     </label>
                   </div>
                   <div className="divUpladProgress">
-                    <div>
+                    <div className="divBtnUpload">
                       <button className="uploadButton" onClick={handleUpload}>
                         Upload
                       </button>
                     </div>
-                    <div>
+                    <div className="progress">
                       <progress value={progress} max="100" />
                     </div>
                   </div>

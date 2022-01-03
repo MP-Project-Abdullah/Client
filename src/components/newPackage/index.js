@@ -21,7 +21,7 @@ const NewPackage = () => {
   const state = useSelector((state) => {
     return state;
   });
-  
+
   // Create new package
   const createNewPackage = async (e) => {
     e.preventDefault();
@@ -39,7 +39,6 @@ const NewPackage = () => {
       }
     );
     Swal.fire({
-      position: "top-end",
       icon: "success",
       title: "New package created",
       showConfirmButton: false,

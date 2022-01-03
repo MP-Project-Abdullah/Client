@@ -56,7 +56,7 @@ const Comic = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="projects">
+      <div className="projects" id="allProjects">
         {comic.length &&
           comic
             .filter((item) => {

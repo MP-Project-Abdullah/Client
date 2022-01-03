@@ -56,7 +56,7 @@ const Art = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="projects">
+      <div className="projects" id="allProjects">
         {art.length &&
           art
             .filter((item) => {

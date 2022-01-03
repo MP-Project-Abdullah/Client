@@ -76,3 +76,16 @@
   margin-top: 1%;
   font-size: 2vh;
 }
+
+@media only screen and (max-height: 627px) {
+  .h2AndPNewPAckage {
+    font-size: 1.5vh;
+    margin-right: 5%;
+    width: 25vh;
+  }
+
+  .inputNewPackge {
+    width: 100%;
+    font-size: 1.5vh;
+  }
+}
