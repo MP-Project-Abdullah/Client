@@ -275,6 +275,7 @@ const ProjectPage = () => {
                                       src={item.url[4]}
                                       alt="project img"
                                       className="imgInfo"
+                                      id="imgInfoId"
                                     />
                                   </div>
                                 </Title>

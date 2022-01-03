@@ -156,8 +156,9 @@ const Navbar = () => {
                     setToggle(false);
                   }}
                   className="linkNav"
+                  id="menuNav"
                 >
-                  <IoMdArrowDropdown className="iconMenu" /> Menu
+                  <IoMdArrowDropdown className="iconMenu" id="iconMenu"/> Menu
                 </p>
               </div>
               <div className="menu">

@@ -362,4 +362,8 @@
     font-size: 2vh;
     width: 25vh;
   }
+
+  .notLogin {
+    height: 63vh;
+  }
 }
