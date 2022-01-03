@@ -6,7 +6,6 @@ import {
 } from "@stripe/react-stripe-js";
 import "./style.css";
 import Navbar from "../Navbar";
-import { Nav } from "react-bootstrap";
 export default function CheckoutForm({ projectId, donate, packageId }) {
   const stripe = useStripe();
   const elements = useElements();

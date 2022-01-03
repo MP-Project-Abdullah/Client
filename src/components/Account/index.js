@@ -246,7 +246,7 @@ const Account = () => {
             <div className="bioAndEMmil">
               <div className="divBio">
                 {" "}
-                <h1>Professional Bio </h1>
+                <h2 className="bioH2">Professional Bio </h2>
                 {editProfile ? (
                   // Edit new bio
                   <div className="divNewBio">
@@ -269,7 +269,7 @@ const Account = () => {
 
               <div className="divEmail">
                 <div className="emailPH2">
-                  <h2>Your Email :</h2>{" "}
+                  <h2 className="h2Email">Your Email :</h2>{" "}
                   <p className="email">{state.signin_reducer.user.email}</p>
                 </div>
                 <div className="divEMailP"></div>
@@ -323,41 +323,50 @@ const Account = () => {
                       <div
                         className="divPackages"
                         key={item._id}
-                        id={
-                          item.amount >= 100
-                            ? item.amount >= 300
-                              ? item.amount >= 500
-                                ? "up500"
-                                : "up300less500"
-                              : "up100less300"
-                            : "less100"
-                        }
+                        id="accountPackage"
                       >
-                        <div className="divAllPackage">
+                        <div className="divAllPackage" id="divAllPackgeAccount">
                           <div className="pledgedAndTitleAndP">
                             <div>
-                              <p className="packageAmount">
+                              <p
+                                className="packageAmount"
+                                id="amountackageAccount"
+                              >
                                 • Pledged {item.package.amount} $
                               </p>
                             </div>
                             <div>
-                              <h2 className="packageTitle">
+                              <h2
+                                className="packageTitle"
+                                id="titlePackageAccount"
+                              >
                                 • {item.package.title}
                               </h2>
                             </div>
-                            <div>
-                              <p className="packageDescribe">
+                            <div className="divDEscribePAckegeACcount">
+                              <p
+                                className="packageDescribe"
+                                id="describePackageAccount"
+                              >
                                 {" "}
                                 • {item.package.describe}
                               </p>
                             </div>
-                            <div className="divAddOns">
-                              <p className="addOns">Add-ons</p>{" "}
+                            <div className="divAddOns" id="divAddOneAccount">
+                              <p className="addOns" id="addOneAccount">
+                                Add-ons
+                              </p>{" "}
                             </div>
                           </div>
                           <div>
-                            <p className="packageArrive"> • Arrive in </p>
-                            <p>{item.package.arrive}</p>
+                            <p
+                              className="packageArrive"
+                              id="arrivePackageAccount"
+                            >
+                              {" "}
+                              • Arrive in{" "}
+                            </p>
+                            <p id="arrivePackage">{item.package.arrive}</p>
                           </div>
                         </div>
                         <div className="divBtnDonate"></div>
@@ -365,7 +374,9 @@ const Account = () => {
                     );
                   })
                 ) : (
-                  <div>You haven't contributions yet</div>
+                  <div className="havntPosted">
+                    You haven't contributions yet
+                  </div>
                 )}
               </div>
             </div>
@@ -374,7 +385,11 @@ const Account = () => {
               {userProjects.length > 0 ? (
                 userProjects.map((item) => {
                   return (
-                    <div key={item._id} className="projectLeatset">
+                    <div
+                      key={item._id}
+                      className="projectLeatset"
+                      id="projectAccount"
+                    >
                       <img
                         className="leatestImg"
                         src={item.url[0]}
