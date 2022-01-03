@@ -41,7 +41,7 @@ const Film = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="projects">
+      <div className="projects"  id="allProjects">
         {film.length &&
           film
             .filter((item) => {

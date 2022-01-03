@@ -41,7 +41,7 @@ const Music = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>{" "}
-      <div className="projects">
+      <div className="projects"  id="allProjects">
         {music.length &&
           music
             .filter((item) => {

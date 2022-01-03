@@ -37,11 +37,12 @@
 @media only screen and (max-height: 627px) {
   .aboutus {
     height: 100vh;
-    margin-left: 12%;
+    /* margin-left: 5%; */
+    margin-right: 2%;
   }
 
   .imgAbout {
-    width: 50vh;
+    width: 57vh;
   }
 
   .ourMission {

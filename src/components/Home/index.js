@@ -129,7 +129,7 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <CountUp start={0} end={donations} duration={5} />
+                    <CountUp start={0} end={donations} duration={5} className="totalNum" />
                     <p className="pTotal">Total donations </p>
                   </div>
                 </Title>
@@ -142,7 +142,7 @@ const Home = () => {
                   }}
                 >
                   <div>
-                    <CountUp start={0} end={totalProject} duration={2.75} />
+                    <CountUp start={0} end={totalProject} duration={2.75} className="totalNum" />
                     <p  className="pTotal">Total projects</p>
                   </div>
                 </Title>

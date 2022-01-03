@@ -39,7 +39,7 @@ const Stories = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <div className="projects">
+      <div className="projects" id="allProjects">
         {stories.length &&
           stories
             .filter((item) => {
