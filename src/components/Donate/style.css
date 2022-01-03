@@ -223,7 +223,7 @@
     font-size: 2vh;
   }
 
-  .formDonate {
-    margin-left: 9%;
+  #formDonate {
+    width: 68vh;
   }
 }

@@ -127,9 +127,9 @@
     }
   }
   
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 627px) {
     form {
-      width: 80vw;
+      width: 80vh;
       min-width: initial;
     }
   }
