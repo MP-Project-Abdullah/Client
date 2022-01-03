@@ -27,7 +27,6 @@ const Dashboard = () => {
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/storiesNotApproved`
     );
-    console.log(res.data);
     setStories(res.data);
   };
 

@@ -130,7 +130,7 @@ const Home = () => {
                 >
                   <div>
                     <CountUp start={0} end={donations} duration={5} />
-                    <p>Total donations </p>
+                    <p className="pTotal">Total donations </p>
                   </div>
                 </Title>
               </div>
@@ -143,7 +143,7 @@ const Home = () => {
                 >
                   <div>
                     <CountUp start={0} end={totalProject} duration={2.75} />
-                    <p>Total projects</p>
+                    <p  className="pTotal">Total projects</p>
                   </div>
                 </Title>
               </div>
@@ -200,7 +200,7 @@ const Home = () => {
                   alt="imgStory"
                 />{" "}
                 <div className="paddingPandTitle">
-                  <h2>{lastStory[0].title}</h2>
+                  <h2 className="titleLastStory">{lastStory[0].title}</h2>
                   <div className="lineFirst"></div>
 
                   <p className="lastStoryP">{lastStory[0].desc}</p>
@@ -221,7 +221,9 @@ const Home = () => {
                       <div className="paddingPandTitle">
                         <h2 className="titleStory">{item.title}</h2>
                         <div className="lineFirst"></div>
+                        <div className="divDescStory">
                         <p className="descStorys">{item.desc}</p>
+                        </div>
                       </div>
                       <div className="lineBetweenStory"> </div>
                     </div>

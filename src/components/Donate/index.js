@@ -19,11 +19,9 @@ const Donate = () => {
 
   // Get all packages
   const getData = async () => {
-    console.log(`${process.env.REACT_APP_BASE_URL}/packages/${projectId}`);
     let res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/packages/${projectId}`
     );
-    console.log(res.data, "P");
     setPackages(res.data);
   };
 
