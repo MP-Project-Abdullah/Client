@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 import { useSelector } from "react-redux";
-
+import Swal from "sweetalert2";
 import Navbar from "../Navbar";
 const Donate = () => {
   const projectId = useParams().projectId; // Project id
@@ -28,6 +28,13 @@ const Donate = () => {
   // Navigate to payment page with no packages
   const payment = (e) => {
     e.preventDefault();
+    if (e.target[0].value < 1) {
+      return Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Invalid input",
+      });
+    }
     navigate(`/payment/${projectId}/${e.target[0].value}/0`);
   };
 
@@ -121,7 +128,7 @@ const Donate = () => {
                 <p>Pledge without a reward</p>
               </div>
             </div>
-            <form className="formDonate" onSubmit={payment}>
+            <form className="formDonate" id="formDonate" onSubmit={payment}>
               <input
                 type="number"
                 name="donate"
