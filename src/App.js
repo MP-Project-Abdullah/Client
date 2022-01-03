@@ -37,33 +37,33 @@ function App() {
         <Route exact path="/comic" element={<Comic />} />
         <Route exact path="/contact" element={<ContactUs />} />
         <Route exact path="/confirm/:id" element={<Confirm />} />
-
         <Route exact path="/stories" element={<Stories />} />
         <Route exact path="/story/:id" element={<StoryPage />} />
-
         <Route exact path="/profile" element={<Account />} />
         <Route exact path="/reset" element={<Reset />} />
         <Route exact path="/newProject" element={<NewProject />} />
         <Route exact path="/newStory" element={<NewStory />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/project/:id" element={<ProjectPage />} />
+        <Route exact path="/donate/:projectId" element={<Donate />} />
+
+        <Route
+          exact
+          path="/payment/:projectId/:donate/:packageId"
+          element={<Payment />}
+        />
 
         <Route
           exact
           path="/newPackage/:postId/:userId"
           element={<NewPackage />}
         />
-        <Route exact path="/project/:id" element={<ProjectPage />} />
-        <Route exact path="/donate/:projectId" element={<Donate />} />
-        <Route
-          exact
-          path="/payment/:projectId/:donate/:packageId"
-          element={<Payment />}
-        />
+
         <Route
           exact
           path="/successPay/:projectId/:donate/:packageId"
           element={<SuccessPay />}
         />
-        <Route exact path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </div>

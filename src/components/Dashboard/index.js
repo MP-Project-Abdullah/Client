@@ -35,11 +35,13 @@ const Dashboard = () => {
   }, []);
 
   const aproovedStory = async (storyId, userId, storytName) => {
+    // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/aproovedStory/${storyId}`
     );
     let titleNotif = `Approved`;
     let messageNotif = `we are happy to inform you, your story ${storytName} has been approved.`;
+    // eslint-disable-next-line
     let result = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newNotif/${storyId}/${userId}`,
       {
@@ -56,12 +58,14 @@ const Dashboard = () => {
 
   // Reject project
   const rejectStory = async (projectId, userId, projectName) => {
+    // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/rejectStory/${projectId}`
     );
 
     let titleNotif = `Rejected`;
     let messageNotif = `we are sorry to inform you, your story ${projectName} has been rejected.`;
+    // eslint-disable-next-line
     let result = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newNotif/${projectId}/${userId}`,
       {
@@ -77,11 +81,13 @@ const Dashboard = () => {
 
   // Aproved project
   const aprooved = async (projectId, userId, projectName) => {
+    // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/aprooved/${projectId}`
     );
     let titleNotif = `Approved`;
     let messageNotif = `we are happy to inform you, your project ${projectName} has been approved.`;
+    // eslint-disable-next-line
     let result = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newNotif/${projectId}/${userId}`,
       {
@@ -98,12 +104,14 @@ const Dashboard = () => {
 
   // Reject project
   const reject = async (projectId, userId, projectName) => {
+    // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/reject/${projectId}`
     );
 
     let titleNotif = `Rejected`;
     let messageNotif = `we are sorry to inform you, your project ${projectName} has been rejected.`;
+    // eslint-disable-next-line
     let result = await axios.post(
       `${process.env.REACT_APP_BASE_URL}/newNotif/${projectId}/${userId}`,
       {
@@ -223,7 +231,7 @@ const Dashboard = () => {
             return (
               <div key={item._id} className="projectLeatset">
                 <div onClick={() => storyPage(item._id)}>
-                  <img className="leatestImg" src={item.img} alt="project" />
+                  <img className="leatestImg" src={item.url[0]} alt="project" />
                   <div className="divInsideLeatestProject">
                     <h2 className="titleLeatestProject">Title: {item.title}</h2>
                     <div className="pDescribe">

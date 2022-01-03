@@ -42,8 +42,8 @@ const StoryPage = () => {
                   <img
                     src={item.img}
                     alt="projectImg"
-                    className="imgProjectInfo"     id="imgInfoId"
-                    
+                    className="imgProjectInfo"
+                    id="imgInfoId"
                   />{" "}
                 </div>
               </div>
@@ -77,7 +77,11 @@ const StoryPage = () => {
                                   data-tilt-scale="1.1"
                                   className="divInfoProjectImg"
                                 >
-                                  <img src={item.url[1]} alt="project img"  id="imgInfoId"/>
+                                  <img
+                                    src={item.url[1]}
+                                    alt="project img"
+                                    id="imgInfoId"
+                                  />
                                 </div>
                               </Title>
                             </div>
@@ -100,7 +104,11 @@ const StoryPage = () => {
                                   data-tilt-scale="1.1"
                                   className="divInfoProjectImg"
                                 >
-                                  <img src={item.url[2]} alt="project img"  id="imgInfoId"/>
+                                  <img
+                                    src={item.url[2]}
+                                    alt="project img"
+                                    id="imgInfoId"
+                                  />
                                 </div>
                               </Title>
                             </div>
@@ -123,7 +131,11 @@ const StoryPage = () => {
                                   data-tilt-scale="1.1"
                                   className="divInfoProjectImg"
                                 >
-                                  <img src={item.url[3]} alt="project img"  id="imgInfoId"/>
+                                  <img
+                                    src={item.url[3]}
+                                    alt="project img"
+                                    id="imgInfoId"
+                                  />
                                 </div>
                               </Title>
                             </div>

@@ -38,7 +38,6 @@
   text-decoration: none;
   color: black;
   cursor: pointer;
-  /* font-weight: bold; */
 }
 
 /* *************************************** */
@@ -166,9 +165,7 @@
 
   .ulNav {
     display: flex;
-    justify-content: start;
-    gap: 4vh;
-    margin-left: 3%;
+    gap: 2.7vh;
   }
 
   #menuNav {

@@ -8,13 +8,13 @@ import { Elements } from "@stripe/react-stripe-js";
 import { stripePromise } from "./components/Payment";
 
 ReactDOM.render(
-    <Provider store={store}>
-      <Elements stripe={stripePromise}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Elements>
-    </Provider>,
+  <Provider store={store}>
+    <Elements stripe={stripePromise}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Elements>
+  </Provider>,
 
   document.getElementById("root")
 );

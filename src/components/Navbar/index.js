@@ -28,7 +28,7 @@ const Navbar = () => {
   });
 
   const hider = () => {
-        // eslint-disable-next-line
+    // eslint-disable-next-line
     if (window.location.href == "http://localhost:3000/") {
       setHomeOrNot(true);
     } else {
@@ -158,7 +158,7 @@ const Navbar = () => {
                   className="linkNav"
                   id="menuNav"
                 >
-                  <IoMdArrowDropdown className="iconMenu" id="iconMenu"/> Menu
+                  <IoMdArrowDropdown className="iconMenu" id="iconMenu" /> Menu
                 </p>
               </div>
               <div className="menu">
