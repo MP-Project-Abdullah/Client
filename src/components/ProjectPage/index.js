@@ -191,6 +191,7 @@ const ProjectPage = () => {
                                       src={item.url[1]}
                                       alt="project img"
                                       className="imgInfo"
+                                      id="imgInfoId"
                                     />
                                   </div>
                                 </Title>
@@ -218,6 +219,7 @@ const ProjectPage = () => {
                                       src={item.url[2]}
                                       alt="project img"
                                       className="imgInfo"
+                                      id="imgInfoId"
                                     />
                                   </div>
                                 </Title>
@@ -245,6 +247,7 @@ const ProjectPage = () => {
                                       src={item.url[3]}
                                       alt="project img"
                                       className="imgInfo"
+                                      id="imgInfoId"
                                     />
                                   </div>
                                 </Title>
@@ -299,6 +302,7 @@ const ProjectPage = () => {
                                       src={item.url[5]}
                                       alt="project img"
                                       className="imgInfo"
+                                      id="imgInfoId"
                                     />
                                   </div>
                                 </Title>
@@ -326,6 +330,7 @@ const ProjectPage = () => {
                                       src={item.url[6]}
                                       alt="project img"
                                       className="imgInfo"
+                                      id="imgInfoId"
                                     />
                                   </div>
                                 </Title>

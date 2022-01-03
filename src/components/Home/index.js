@@ -186,7 +186,7 @@ const Home = () => {
             })}
         </div>
         <div className="line"></div>
-        <h1 className="h1Success">Success storys</h1>
+        <h1 className="h1Success">Success stories</h1>
         <div className="containerStory">
           <div className="storyDiv">
             {lastStory.length && (

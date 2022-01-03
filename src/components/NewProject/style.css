@@ -151,3 +151,53 @@ input[type="file"] {
   transition: 0.3s ease-in-out;
   background-color: #d19750e3;
 }
+
+@media only screen and (max-height: 627px) {
+  .divH2Title {
+    width: 27vh;
+    font-size: 1.5vh;
+  }
+
+  .divNewProjectH2AndInputTitle {
+    gap: 2vh;
+  }
+
+  .uploadButton {
+    margin-top: -30%;
+    width: 10vh;
+    font-size: 1vh;
+  }
+
+  .divUpladProgress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divBtnUpload {
+    margin-top: -6%;
+  }
+
+  .progress {
+    margin-top: -20%;
+  }
+
+  .inputNewProjectTitle {
+    font-size: 1vh;
+    height: 3.5vh;
+  }
+
+  #description {
+    font-size: 1vh;
+    height: 11.5vh;
+  }
+
+  .dollar {
+    font-size: 2.5vh;
+  }
+
+  .formKind {
+    margin-left: 7%;
+  }
+}

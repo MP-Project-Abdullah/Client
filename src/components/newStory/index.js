@@ -156,12 +156,12 @@ const NewStory = () => {
                       </label>
                     </div>
                     <div className="divUpladProgress">
-                      <div>
+                      <div className="divBtnUpload">
                         <button className="uploadButton" onClick={handleUpload}>
                           Upload
                         </button>
                       </div>
-                      <div>
+                      <div className="progress">
                         <progress value={progress} max="100" />
                       </div>
                     </div>
@@ -258,12 +258,12 @@ const NewStory = () => {
                     </label>
                   </div>
                   <div className="divUpladProgress">
-                    <div>
+                    <div className="divBtnUpload">
                       <button className="uploadButton" onClick={handleUpload}>
                         Upload
                       </button>
                     </div>
-                    <div>
+                    <div className="progress">
                       <progress value={progress} max="100" />
                     </div>
                   </div>
@@ -317,12 +317,12 @@ const NewStory = () => {
                     </label>
                   </div>
                   <div className="divUpladProgress">
-                    <div>
+                    <div className="divBtnUpload">
                       <button className="uploadButton" onClick={handleUpload}>
                         Upload
                       </button>
                     </div>
-                    <div>
+                    <div className="progress">
                       <progress value={progress} max="100" />
                     </div>
                   </div>
@@ -376,12 +376,12 @@ const NewStory = () => {
                     </label>
                   </div>
                   <div className="divUpladProgress">
-                    <div>
+                    <div className="divBtnUpload">
                       <button className="uploadButton" onClick={handleUpload}>
                         Upload
                       </button>
                     </div>
-                    <div>
+                    <div className="progress">
                       <progress value={progress} max="100" />
                     </div>
                   </div>
