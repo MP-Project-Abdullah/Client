@@ -206,7 +206,7 @@ const Home = () => {
               >
                 <img
                   className="lastStoryImg"
-                  src={lastStory[0].img}
+                  src={lastStory[0].url[0]}
                   alt="imgStory"
                 />{" "}
                 <div className="paddingPandTitle">
@@ -227,7 +227,7 @@ const Home = () => {
                       key={item._id}
                       onClick={() => storyPage(item._id)}
                     >
-                      <img className="imgStory" src={item.img} alt="story" />
+                      <img className="imgStory" src={item.url[0]} alt="story" />
                       <div className="paddingPandTitle">
                         <h2 className="titleStory">{item.title}</h2>
                         <div className="lineFirst"></div>

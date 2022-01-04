@@ -55,7 +55,7 @@
 
 .leatestImg {
   width: 100%;
-  height: 38vh;
+  height: 43vh;
 }
 
 .projectLeatsetDiv {
@@ -83,6 +83,7 @@
 }
 
 .titleLeatestProject {
+  height: 13vh;
   margin: 2vh 0;
 }
 

@@ -10,7 +10,7 @@ import Navbar from "../Navbar";
 const Donate = () => {
   const projectId = useParams().projectId; // Project id
   const navigate = useNavigate();
-
+// eslint-disable-next-line
   const state = useSelector((state) => {
     return state;
   });

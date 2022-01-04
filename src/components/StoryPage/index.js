@@ -40,7 +40,7 @@ const StoryPage = () => {
                 <div>
                   {" "}
                   <img
-                    src={item.img}
+                    src={item.url[0]}
                     alt="projectImg"
                     className="imgProjectInfo"
                     id="imgInfoId"

@@ -83,7 +83,6 @@ const NewStory = () => {
     );
 
     Swal.fire({
-      position: "top-end",
       icon: "success",
       title: "New story created",
       showConfirmButton: false,
@@ -106,7 +105,7 @@ const NewStory = () => {
           <div className="containerDivNewProject">
             <div className="divNewProjectH2AndInputTitle">
               <div className="divH2Title">
-                <h2>Project title</h2>
+                <h2>Story title</h2>
                 <p>
                   Write a clear, brief title to help people quickly understand
                   your project. title will appear on your project and pre-launch

@@ -25,6 +25,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .avatar {
   width: 30vh;
   height: 30vh;
@@ -200,6 +201,7 @@
 .divBio2 {
   border-top: 1px solid rgba(0, 0, 0, 0.19);
 }
+
 .bioP {
   margin-top: 4%;
   width: 90%;
@@ -229,6 +231,10 @@
 
 .havntPosted {
   margin-top: -12%;
+}
+
+#haventPackage {
+  margin-top: 0%;
 }
 
 @media only screen and (max-height: 627px) {

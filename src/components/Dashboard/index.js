@@ -220,49 +220,82 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div className="divNoPRoject">
           {" "}
-          <h1 className="noProjectH1">No projects</h1>{" "}
+          <h1 className="noProjectH1">No projects posted yet</h1>{" "}
         </div>
       )}
-      <div className="projectLeatsetDiv">
-        {stories &&
-          stories.map((item) => {
-            return (
-              <div key={item._id} className="projectLeatset">
-                <div onClick={() => storyPage(item._id)}>
-                  <img className="leatestImg" src={item.url[0]} alt="project" />
-                  <div className="divInsideLeatestProject">
-                    <h2 className="titleLeatestProject">Title: {item.title}</h2>
-                    <div className="pDescribe">
-                      <p className="describeProjectLeatest">{item.describe}</p>
+      <div >
+        {stories.length > 0 ? (
+          <div className="projectLeatsetDiv">
+            {stories.map((item) => {
+              return (
+                <div key={item._id} className="projectLeatset">
+                  <div onClick={() => storyPage(item._id)}>
+                    <img
+                      className="leatestImg"
+                      src={item.url[0]}
+                      alt="project"
+                    />
+                    <div className="divInsideLeatestProject">
+                      <h2 className="titleLeatestProject">
+                        Title: {item.title}
+                      </h2>
+                      <div className="pDescribe">
+                        <p className="describeProjectLeatest">
+                          {item.describe}
+                        </p>
+                      </div>
+                      <hr />
+                      <p className="time">{item.time}</p>
                     </div>
-                    <hr />
-                    <p className="time">{item.time}</p>
+                  </div>
+                  <div className="divBtnRejectAndApproved">
+                    <button
+                      className="btnApprovedAndReject"
+                      id="approved"
+                      onClick={() =>
+                        aproovedStory(item._id, item.user, item.title)
+                      }
+                    >
+                      Approved
+                    </button>
+
+                    <button
+                      className="btnApprovedAndReject"
+                      id="reject"
+                      onClick={() =>
+                        rejectStory(item._id, item.user, item.title)
+                      }
+                    >
+                      Reject
+                    </button>
                   </div>
                 </div>
-                <div className="divBtnRejectAndApproved">
-                  <button
-                    className="btnApprovedAndReject"
-                    id="approved"
-                    onClick={() =>
-                      aproovedStory(item._id, item.user, item.title)
-                    }
-                  >
-                    Approved
-                  </button>
-
-                  <button
-                    className="btnApprovedAndReject"
-                    id="reject"
-                    onClick={() => rejectStory(item._id, item.user, item.title)}
-                  >
-                    Reject
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+        ) : (
+          <div className="divNoPRoject">
+            {" "}
+            <h1 className="noProjectH1">No stories posted yet</h1>{" "}
+          </div>
+        )}
       </div>
     </div>
   );

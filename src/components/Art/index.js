@@ -33,6 +33,7 @@ const Art = () => {
   };
 
   const deleteProject = async (id) => {
+    // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/deleteProject/${id}`,
       {
@@ -59,6 +60,7 @@ const Art = () => {
       <div className="projects" id="allProjects">
         {art.length &&
           art
+            // eslint-disable-next-line
             .filter((item) => {
               if (search === "") {
                 return item;
@@ -106,20 +108,24 @@ const Art = () => {
                       <div>
                         <p className="time">{item.time}</p>
                       </div>
-                      {state.signin_reducer.user.role ==
-                      "61c04770ff8aeaad62406e9b" ? (
-                        <div className="divBtnDelete">
-                          {" "}
-                          <button
-                            className="btnDelete"
-                            onClick={() => deleteProject(item._id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      ) : (
-                        ""
-                      )}
+
+                      {
+                        // eslint-disable-next-line
+                        state.signin_reducer.user.role ==
+                        "61c04770ff8aeaad62406e9b" ? (
+                          <div className="divBtnDelete">
+                            {" "}
+                            <button
+                              className="btnDelete"
+                              onClick={() => deleteProject(item._id)}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        ) : (
+                          ""
+                        )
+                      }
                     </div>
                   </div>
                 </div>
