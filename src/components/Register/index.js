@@ -41,6 +41,8 @@ const Register = () => {
 
   // Register
   const register = async () => {
+    console.log("HERE ");
+
     let check = false;
     // eslint-disable-next-line
     users.map((item) => {
@@ -49,6 +51,7 @@ const Register = () => {
         check = true;
       }
     });
+
     if (check) {
       Swal.fire({
         icon: "error",
@@ -66,7 +69,9 @@ const Register = () => {
           name,
         }
       );
-      navigate(`/confirm/${res.data._id}`);
+      if (res) {
+        navigate(`/confirm/${res.data._id}`);
+      }
     }
   };
 

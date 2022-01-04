@@ -29,6 +29,7 @@ const Account = () => {
 
   // New avatar
   const [image, setImage] = useState(null); // Upload iamge
+  // eslint-disable-next-line
   const [url, setUrl] = useState(""); /// Upload iamge
   // eslint-disable-next-line
   const [urlString, setUrlString] = useState(""); // Upload iamge
@@ -67,6 +68,7 @@ const Account = () => {
     // Take only the packages
     let newArr = [];
     for (let i = 0; i < res.data.length; i++) {
+      // eslint-disable-next-line
       if (res.data[i].package != undefined) {
         newArr.push(res.data[i]);
       }
@@ -80,6 +82,21 @@ const Account = () => {
     }
     setTotalDonations(total);
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // Update bio and name
   const changeBioAndName = async () => {
@@ -99,6 +116,30 @@ const Account = () => {
     const data = { token: token, user: res.data };
     dispatch(login_reducser({ data }));
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   //  New avatar
   // Uplad image
@@ -374,7 +415,7 @@ const Account = () => {
                     );
                   })
                 ) : (
-                  <div className="havntPosted">
+                  <div className="havntPosted" id="haventPackage">
                     You haven't contributions yet
                   </div>
                 )}
