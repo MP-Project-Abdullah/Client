@@ -24,7 +24,7 @@ const ProjectPage = () => {
     const res = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/project/${id}`
     );
-    if (res.data[0].pledged > res.data[0].goal) {
+    if (res.data[0].pledged >= res.data[0].goal) {
       setGreen(true);
     }
     setProject(res.data);
@@ -39,6 +39,7 @@ const ProjectPage = () => {
 
   useEffect(() => {
     getBackers();
+    // eslint-disable-next-line
   }, []);
 
   // Invoke getData

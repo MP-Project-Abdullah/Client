@@ -11,7 +11,7 @@ const SuccessPay = () => {
   const donate = useParams().donate; // Donate
   const packageId = useParams().packageId; // package id
 
-  const [seconds, setSeconds] = useState(5); // 5 second to navigate to home page
+  const [seconds, setSeconds] = useState(2); // 5 second to navigate to home page
 
   const navigate = useNavigate();
 

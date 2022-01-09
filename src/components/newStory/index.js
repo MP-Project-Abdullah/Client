@@ -79,6 +79,9 @@ const NewStory = () => {
         desc1: desc1,
         desc2: desc2,
         desc3: desc3,
+      },
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
       }
     );
 

@@ -83,21 +83,6 @@ const Account = () => {
     setTotalDonations(total);
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // Update bio and name
   const changeBioAndName = async () => {
     let res = await axios.put(
@@ -116,30 +101,6 @@ const Account = () => {
     const data = { token: token, user: res.data };
     dispatch(login_reducser({ data }));
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
   //  New avatar
   // Uplad image

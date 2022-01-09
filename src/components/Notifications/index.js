@@ -26,6 +26,7 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
 
   useEffect(() => {
     getData();
+     // eslint-disable-next-line
   }, []);
 
   const changeColor = () => {
@@ -38,6 +39,7 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
   window.addEventListener("scroll", changeColor);
 
   const hider = () => {
+     // eslint-disable-next-line
     if (window.location.href == "http://localhost:3000/") {
       setHomeNotif(true);
     } else {
@@ -50,6 +52,7 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
   }, []);
 
   const showMessageFunction = async (id) => {
+     // eslint-disable-next-line
     let res = await axios.put(
       `${process.env.REACT_APP_BASE_URL}/showHide/${id}`
     );
@@ -57,8 +60,12 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
   };
 
   const deleteNotif = async (id) => {
+     // eslint-disable-next-line
     let res = await axios.delete(
-      `${process.env.REACT_APP_BASE_URL}/deleteNotif/${id}`
+      `${process.env.REACT_APP_BASE_URL}/deleteNotif/${id}`,
+      {
+        headers: { Authorization: `Bearer ${state.signin_reducer.token}` },
+      }
     );
     getData();
   };
@@ -114,7 +121,8 @@ const Notifications = ({ toggle, setToggle, setMenu }) => {
                         </div>
                       </div>
                       <hr />
-                      {item.showMessage == true ? (
+                      { // eslint-disable-next-line
+                      item.showMessage == true ? (
                         <p
                           className="messageNotif"
                           onClick={() => {

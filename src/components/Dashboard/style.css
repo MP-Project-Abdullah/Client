@@ -40,7 +40,13 @@
   text-align: center;
 }
 
-/* #storiesHavent {
-  background-color: red;
-  width: 100%;
-} */
+.divForbidden {
+  display: flex;
+  height: 64vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.forbidden {
+  font-size: 7vh;
+}
