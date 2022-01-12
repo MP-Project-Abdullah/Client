@@ -8,6 +8,7 @@ const AboutUs = () => {
         <h1> projects to life.</h1>
       </div>
       <div className="aboutDiv">
+        
         <img
           className="imgAbout"
           src="https://www.bkacontent.com/wp-content/uploads/2020/06/about-us.jpg"
